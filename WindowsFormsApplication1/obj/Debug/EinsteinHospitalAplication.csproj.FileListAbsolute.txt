@@ -4,3 +4,6 @@ C:\Users\Zé-PC\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\De
 C:\Users\Zé-PC\Desktop\EinsteinHospitalAplication\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
 C:\Users\Zé-PC\Desktop\EinsteinHospitalAplication\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\Zé-PC\Desktop\EinsteinHospitalAplication\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\DiogoMartins\Documents\GitHub\EinsteinHospitalAplication\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\DiogoMartins\Documents\GitHub\EinsteinHospitalAplication\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\DiogoMartins\Documents\GitHub\EinsteinHospitalAplication\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
