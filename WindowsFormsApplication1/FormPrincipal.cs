@@ -28,5 +28,10 @@ namespace WindowsFormsApplication1
             Form1 a = new Form1();
             a.Show();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
