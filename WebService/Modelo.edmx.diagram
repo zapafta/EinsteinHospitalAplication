@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b50ba5d6efca4ef5b7f642d944342b38" Name="Diagram1" >
+        <EntityTypeShape EntityType="EinsteinHospitalBDModel.Utilizador" Width="1.5" PointX="4.25" PointY="0.5" />
+        <EntityTypeShape EntityType="EinsteinHospitalBDModel.Rececionista" Width="1.5" PointX="1.625" PointY="2.875" />
+        <EntityTypeShape EntityType="EinsteinHospitalBDModel.Medico" Width="1.5" PointX="3.5" PointY="2.875" />
+        <EntityTypeShape EntityType="EinsteinHospitalBDModel.Enfermeiro" Width="1.5" PointX="5.75" PointY="2.875" />
+        <EntityTypeShape EntityType="EinsteinHospitalBDModel.Administrador" Width="1.5" PointX="8.25" PointY="2.875" />
+        <InheritanceConnector EntityType="EinsteinHospitalBDModel.Medico" />
+        <InheritanceConnector EntityType="EinsteinHospitalBDModel.Enfermeiro" />
+        <InheritanceConnector EntityType="EinsteinHospitalBDModel.Administrador" />
+        <InheritanceConnector EntityType="EinsteinHospitalBDModel.Rececionista" />
+        <EntityTypeShape EntityType="EinsteinHospitalBDModel.Exame" Width="1.5" PointX="0.625" PointY="6.25" />
+        <AssociationConnector Association="EinsteinHospitalBDModel.ExameRececionista" />
+        <EntityTypeShape EntityType="EinsteinHospitalBDModel.Utente" Width="1.5" PointX="2.75" PointY="8.25" />
+        <AssociationConnector Association="EinsteinHospitalBDModel.ExameUtente" />
+        <AssociationConnector Association="EinsteinHospitalBDModel.ExameMedico" />
+        <EntityTypeShape EntityType="EinsteinHospitalBDModel.Consulta" Width="1.5" PointX="4.75" PointY="6.375" />
+        <AssociationConnector Association="EinsteinHospitalBDModel.UtenteConsulta" />
+        <AssociationConnector Association="EinsteinHospitalBDModel.MedicoConsulta" />
+        <EntityTypeShape EntityType="EinsteinHospitalBDModel.Medicacao" Width="1.5" PointX="9" PointY="6.625" />
+        <AssociationConnector Association="EinsteinHospitalBDModel.ConsultaMedicacao" />
+        <EntityTypeShape EntityType="EinsteinHospitalBDModel.Sintomas" Width="1.5" PointX="6.75" PointY="9.875" />
+        <AssociationConnector Association="EinsteinHospitalBDModel.ConsultaSintomas" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
