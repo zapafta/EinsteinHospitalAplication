@@ -14,11 +14,6 @@ namespace WebService
     
     public partial class Exame
     {
-        public Exame()
-        {
-            this.Medico = new HashSet<Medico>();
-        }
-    
         public int Id { get; set; }
         public string especialidade { get; set; }
         public string preco { get; set; }
@@ -26,6 +21,6 @@ namespace WebService
     
         public virtual Rececionista Rececionista { get; set; }
         public virtual Utente Utente { get; set; }
-        public virtual ICollection<Medico> Medico { get; set; }
+        public virtual Medico Medico { get; set; }
     }
 }

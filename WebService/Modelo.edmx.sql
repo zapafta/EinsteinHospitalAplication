@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/24/2016 10:43:20
+-- Date Created: 05/24/2016 11:12:34
 -- Generated from EDMX file: C:\Users\Zé-PC\Desktop\EinsteinHospitalAplication\WebService\Modelo.edmx
 -- --------------------------------------------------
 
@@ -21,13 +21,13 @@ IF OBJECT_ID(N'[dbo].[FK_ExameRececionista]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[ExameSet] DROP CONSTRAINT [FK_ExameRececionista];
 GO
 IF OBJECT_ID(N'[dbo].[FK_ExameUtente]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[UtenteSet] DROP CONSTRAINT [FK_ExameUtente];
+    ALTER TABLE [dbo].[ExameSet] DROP CONSTRAINT [FK_ExameUtente];
 GO
 IF OBJECT_ID(N'[dbo].[FK_ExameMedico]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[UtilizadorSet_Medico] DROP CONSTRAINT [FK_ExameMedico];
 GO
 IF OBJECT_ID(N'[dbo].[FK_UtenteConsulta]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[UtenteSet] DROP CONSTRAINT [FK_UtenteConsulta];
+    ALTER TABLE [dbo].[ConsultaSet] DROP CONSTRAINT [FK_UtenteConsulta];
 GO
 IF OBJECT_ID(N'[dbo].[FK_MedicoConsulta]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[UtilizadorSet_Medico] DROP CONSTRAINT [FK_MedicoConsulta];
@@ -118,7 +118,8 @@ CREATE TABLE [dbo].[ExameSet] (
     [preco] nvarchar(max)  NOT NULL,
     [data] datetime  NOT NULL,
     [Rececionista_Id] int  NOT NULL,
-    [Utente_Id] int  NOT NULL
+    [Utente_Id] int  NOT NULL,
+    [Medico_Id] int  NOT NULL
 );
 GO
 
@@ -148,7 +149,8 @@ CREATE TABLE [dbo].[ConsultaSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [data] datetime  NOT NULL,
     [diagnostico] nvarchar(max)  NOT NULL,
-    [Utente_Id] int  NOT NULL
+    [Utente_Id] int  NOT NULL,
+    [Medico_Id] int  NOT NULL
 );
 GO
 
@@ -189,9 +191,7 @@ CREATE TABLE [dbo].[UtilizadorSet_Medico] (
     [morada] nvarchar(max)  NOT NULL,
     [dataNascimento] datetime  NOT NULL,
     [cargo] nvarchar(max)  NOT NULL,
-    [Id] int  NOT NULL,
-    [Exame_Id] int  NOT NULL,
-    [Consulta_Id] int  NOT NULL
+    [Id] int  NOT NULL
 );
 GO
 
@@ -339,18 +339,18 @@ ON [dbo].[ExameSet]
     ([Utente_Id]);
 GO
 
--- Creating foreign key on [Exame_Id] in table 'UtilizadorSet_Medico'
-ALTER TABLE [dbo].[UtilizadorSet_Medico]
+-- Creating foreign key on [Medico_Id] in table 'ExameSet'
+ALTER TABLE [dbo].[ExameSet]
 ADD CONSTRAINT [FK_ExameMedico]
-    FOREIGN KEY ([Exame_Id])
-    REFERENCES [dbo].[ExameSet]
+    FOREIGN KEY ([Medico_Id])
+    REFERENCES [dbo].[UtilizadorSet_Medico]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_ExameMedico'
 CREATE INDEX [IX_FK_ExameMedico]
-ON [dbo].[UtilizadorSet_Medico]
-    ([Exame_Id]);
+ON [dbo].[ExameSet]
+    ([Medico_Id]);
 GO
 
 -- Creating foreign key on [Utente_Id] in table 'ConsultaSet'
@@ -367,18 +367,18 @@ ON [dbo].[ConsultaSet]
     ([Utente_Id]);
 GO
 
--- Creating foreign key on [Consulta_Id] in table 'UtilizadorSet_Medico'
-ALTER TABLE [dbo].[UtilizadorSet_Medico]
+-- Creating foreign key on [Medico_Id] in table 'ConsultaSet'
+ALTER TABLE [dbo].[ConsultaSet]
 ADD CONSTRAINT [FK_MedicoConsulta]
-    FOREIGN KEY ([Consulta_Id])
-    REFERENCES [dbo].[ConsultaSet]
+    FOREIGN KEY ([Medico_Id])
+    REFERENCES [dbo].[UtilizadorSet_Medico]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_MedicoConsulta'
 CREATE INDEX [IX_FK_MedicoConsulta]
-ON [dbo].[UtilizadorSet_Medico]
-    ([Consulta_Id]);
+ON [dbo].[ConsultaSet]
+    ([Medico_Id]);
 GO
 
 -- Creating foreign key on [Consulta_Id] in table 'ConsultaMedicacao'
