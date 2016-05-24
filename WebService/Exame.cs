@@ -16,7 +16,6 @@ namespace WebService
     {
         public Exame()
         {
-            this.Utente = new HashSet<Utente>();
             this.Medico = new HashSet<Medico>();
         }
     
@@ -26,7 +25,7 @@ namespace WebService
         public System.DateTime data { get; set; }
     
         public virtual Rececionista Rececionista { get; set; }
-        public virtual ICollection<Utente> Utente { get; set; }
+        public virtual Utente Utente { get; set; }
         public virtual ICollection<Medico> Medico { get; set; }
     }
 }
