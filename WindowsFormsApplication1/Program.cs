@@ -8,6 +8,7 @@ namespace WindowsFormsApplication1
 {
     static class Program
     {
+        public static bool OpenDetailFormOnClose { get; set; }
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,7 +17,13 @@ namespace WindowsFormsApplication1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormPrincipal());
+            OpenDetailFormOnClose = false;
+            Application.Run(new FormLogin());
+
+            if (OpenDetailFormOnClose)
+            {
+                Application.Run(new FormLogin());
+            }
         }
     }
 }

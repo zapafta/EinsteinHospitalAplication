@@ -79,6 +79,7 @@
     <Property Name="username" Type="nvarchar(max)" Nullable="false" />
     <Property Name="password" Type="nvarchar(max)" Nullable="false" />
     <Property Name="tipoUtilizador" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="suspensao" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="ExameSet">
     <Key>
@@ -414,6 +415,7 @@
           <Property Name="username" Type="String" Nullable="false" />
           <Property Name="password" Type="String" Nullable="false" />
           <Property Name="tipoUtilizador" Type="String" Nullable="false" />
+          <Property Name="suspensao" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="Rececionista" BaseType="EinsteinHospitalBDModel.Utilizador">
           <Property Name="nome" Type="String" Nullable="false" />
@@ -555,6 +557,7 @@
           <ScalarProperty Name="username" ColumnName="username" />
           <ScalarProperty Name="password" ColumnName="password" />
           <ScalarProperty Name="tipoUtilizador" ColumnName="tipoUtilizador" />
+          <ScalarProperty Name="suspensao" ColumnName="suspensao" />
         </MappingFragment>
       </EntityTypeMapping>
       <EntityTypeMapping TypeName="IsTypeOf(EinsteinHospitalBDModel.Rececionista)">

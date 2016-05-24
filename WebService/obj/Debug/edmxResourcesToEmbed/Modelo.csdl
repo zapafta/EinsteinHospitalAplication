@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EinsteinHospitalBDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EinsteinHospitalBDEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="UtilizadorSet" EntityType="EinsteinHospitalBDModel.Utilizador" />
+    <EntitySet Name="ExameSet" EntityType="EinsteinHospitalBDModel.Exame" />
+    <AssociationSet Name="ExameRececionista" Association="EinsteinHospitalBDModel.ExameRececionista">
+      <End Role="Exame" EntitySet="ExameSet" />
+      <End Role="Rececionista" EntitySet="UtilizadorSet" />
+    </AssociationSet>
+    <EntitySet Name="UtenteSet" EntityType="EinsteinHospitalBDModel.Utente" />
+    <AssociationSet Name="ExameUtente" Association="EinsteinHospitalBDModel.ExameUtente">
+      <End Role="Exame" EntitySet="ExameSet" />
+      <End Role="Utente" EntitySet="UtenteSet" />
+    </AssociationSet>
+    <AssociationSet Name="ExameMedico" Association="EinsteinHospitalBDModel.ExameMedico">
+      <End Role="Exame" EntitySet="ExameSet" />
+      <End Role="Medico" EntitySet="UtilizadorSet" />
+    </AssociationSet>
+    <EntitySet Name="ConsultaSet" EntityType="EinsteinHospitalBDModel.Consulta" />
+    <AssociationSet Name="UtenteConsulta" Association="EinsteinHospitalBDModel.UtenteConsulta">
+      <End Role="Utente" EntitySet="UtenteSet" />
+      <End Role="Consulta" EntitySet="ConsultaSet" />
+    </AssociationSet>
+    <AssociationSet Name="MedicoConsulta" Association="EinsteinHospitalBDModel.MedicoConsulta">
+      <End Role="Medico" EntitySet="UtilizadorSet" />
+      <End Role="Consulta" EntitySet="ConsultaSet" />
+    </AssociationSet>
+    <EntitySet Name="MedicacaoSet" EntityType="EinsteinHospitalBDModel.Medicacao" />
+    <AssociationSet Name="ConsultaMedicacao" Association="EinsteinHospitalBDModel.ConsultaMedicacao">
+      <End Role="Consulta" EntitySet="ConsultaSet" />
+      <End Role="Medicacao" EntitySet="MedicacaoSet" />
+    </AssociationSet>
+    <EntitySet Name="SintomasSet" EntityType="EinsteinHospitalBDModel.Sintomas" />
+    <AssociationSet Name="ConsultaSintomas" Association="EinsteinHospitalBDModel.ConsultaSintomas">
+      <End Role="Consulta" EntitySet="ConsultaSet" />
+      <End Role="Sintomas" EntitySet="SintomasSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Utilizador">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" Nullable="false" />
+    <Property Name="password" Type="String" Nullable="false" />
+    <Property Name="tipoUtilizador" Type="String" Nullable="false" />
+    <Property Name="suspensao" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rececionista" BaseType="EinsteinHospitalBDModel.Utilizador">
+    <Property Name="nome" Type="String" Nullable="false" />
+    <Property Name="nInterno" Type="Int32" Nullable="false" />
+    <Property Name="morada" Type="String" Nullable="false" />
+    <Property Name="dataNascimento" Type="DateTime" Nullable="false" />
+    <Property Name="cargo" Type="String" Nullable="false" />
+    <NavigationProperty Name="Exame" Relationship="EinsteinHospitalBDModel.ExameRececionista" FromRole="Rececionista" ToRole="Exame" />
+  </EntityType>
+  <EntityType Name="Medico" BaseType="EinsteinHospitalBDModel.Utilizador">
+    <Property Name="nome" Type="String" Nullable="false" />
+    <Property Name="nInterno" Type="Int32" Nullable="false" />
+    <Property Name="morada" Type="String" Nullable="false" />
+    <Property Name="dataNascimento" Type="DateTime" Nullable="false" />
+    <Property Name="cargo" Type="String" Nullable="false" />
+    <NavigationProperty Name="Exame" Relationship="EinsteinHospitalBDModel.ExameMedico" FromRole="Medico" ToRole="Exame" />
+    <NavigationProperty Name="Consulta" Relationship="EinsteinHospitalBDModel.MedicoConsulta" FromRole="Medico" ToRole="Consulta" />
+  </EntityType>
+  <EntityType Name="Enfermeiro" BaseType="EinsteinHospitalBDModel.Utilizador">
+    <Property Name="nome" Type="String" Nullable="false" />
+    <Property Name="nInterno" Type="Int32" Nullable="false" />
+    <Property Name="morada" Type="String" Nullable="false" />
+    <Property Name="dataNascimento" Type="DateTime" Nullable="false" />
+    <Property Name="cargo" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Administrador" BaseType="EinsteinHospitalBDModel.Utilizador">
+    <Property Name="nome" Type="String" Nullable="false" />
+    <Property Name="nInterno" Type="Int32" Nullable="false" />
+    <Property Name="morada" Type="String" Nullable="false" />
+    <Property Name="dataNascimento" Type="DateTime" Nullable="false" />
+    <Property Name="cargo" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Exame">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="especialidade" Type="String" Nullable="false" />
+    <Property Name="preco" Type="String" Nullable="false" />
+    <Property Name="data" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Rececionista" Relationship="EinsteinHospitalBDModel.ExameRececionista" FromRole="Exame" ToRole="Rececionista" />
+    <NavigationProperty Name="Utente" Relationship="EinsteinHospitalBDModel.ExameUtente" FromRole="Exame" ToRole="Utente" />
+    <NavigationProperty Name="Medico" Relationship="EinsteinHospitalBDModel.ExameMedico" FromRole="Exame" ToRole="Medico" />
+  </EntityType>
+  <Association Name="ExameRececionista">
+    <End Type="EinsteinHospitalBDModel.Exame" Role="Exame" Multiplicity="*" />
+    <End Type="EinsteinHospitalBDModel.Rececionista" Role="Rececionista" Multiplicity="1" />
+  </Association>
+  <EntityType Name="Utente">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Exame" Relationship="EinsteinHospitalBDModel.ExameUtente" FromRole="Utente" ToRole="Exame" />
+    <Property Name="primeiroNome" Type="String" Nullable="false" />
+    <Property Name="apelido" Type="String" Nullable="false" />
+    <Property Name="dataNascimento" Type="DateTime" Nullable="false" />
+    <Property Name="morada" Type="String" Nullable="false" />
+    <Property Name="codigoPostal" Type="String" Nullable="false" />
+    <Property Name="email" Type="String" Nullable="false" />
+    <Property Name="sexo" Type="String" Nullable="false" />
+    <Property Name="contacto" Type="String" Nullable="false" />
+    <Property Name="peso" Type="String" Nullable="true" />
+    <Property Name="altura" Type="String" Nullable="true" />
+    <Property Name="glicemia" Type="String" Nullable="true" />
+    <Property Name="tensao" Type="String" Nullable="true" />
+    <Property Name="colestrol" Type="String" Nullable="true" />
+    <Property Name="saturacao" Type="String" Nullable="true" />
+    <Property Name="batimentoCardiaco" Type="String" Nullable="true" />
+    <NavigationProperty Name="Consulta" Relationship="EinsteinHospitalBDModel.UtenteConsulta" FromRole="Utente" ToRole="Consulta" />
+  </EntityType>
+  <Association Name="ExameUtente">
+    <End Type="EinsteinHospitalBDModel.Exame" Role="Exame" Multiplicity="*" />
+    <End Type="EinsteinHospitalBDModel.Utente" Role="Utente" Multiplicity="1" />
+  </Association>
+  <Association Name="ExameMedico">
+    <End Type="EinsteinHospitalBDModel.Exame" Role="Exame" Multiplicity="*" />
+    <End Type="EinsteinHospitalBDModel.Medico" Role="Medico" Multiplicity="1" />
+  </Association>
+  <EntityType Name="Consulta">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="data" Type="DateTime" Nullable="false" />
+    <Property Name="diagnostico" Type="String" Nullable="false" />
+    <NavigationProperty Name="Utente" Relationship="EinsteinHospitalBDModel.UtenteConsulta" FromRole="Consulta" ToRole="Utente" />
+    <NavigationProperty Name="Medico" Relationship="EinsteinHospitalBDModel.MedicoConsulta" FromRole="Consulta" ToRole="Medico" />
+    <NavigationProperty Name="Medicacao" Relationship="EinsteinHospitalBDModel.ConsultaMedicacao" FromRole="Consulta" ToRole="Medicacao" />
+    <NavigationProperty Name="Sintomas" Relationship="EinsteinHospitalBDModel.ConsultaSintomas" FromRole="Consulta" ToRole="Sintomas" />
+  </EntityType>
+  <Association Name="UtenteConsulta">
+    <End Type="EinsteinHospitalBDModel.Utente" Role="Utente" Multiplicity="1" />
+    <End Type="EinsteinHospitalBDModel.Consulta" Role="Consulta" Multiplicity="*" />
+  </Association>
+  <Association Name="MedicoConsulta">
+    <End Type="EinsteinHospitalBDModel.Medico" Role="Medico" Multiplicity="1" />
+    <End Type="EinsteinHospitalBDModel.Consulta" Role="Consulta" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Medicacao">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nomeMedicacao" Type="String" Nullable="false" />
+    <Property Name="administracao" Type="String" Nullable="false" />
+    <Property Name="preco" Type="String" Nullable="false" />
+    <Property Name="data" Type="DateTime" Nullable="false" />
+    <Property Name="dosagem" Type="String" Nullable="false" />
+    <Property Name="comparticao" Type="String" Nullable="false" />
+    <NavigationProperty Name="Consulta" Relationship="EinsteinHospitalBDModel.ConsultaMedicacao" FromRole="Medicacao" ToRole="Consulta" />
+  </EntityType>
+  <Association Name="ConsultaMedicacao">
+    <End Type="EinsteinHospitalBDModel.Consulta" Role="Consulta" Multiplicity="*" />
+    <End Type="EinsteinHospitalBDModel.Medicacao" Role="Medicacao" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Sintomas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Consulta" Relationship="EinsteinHospitalBDModel.ConsultaSintomas" FromRole="Sintomas" ToRole="Consulta" />
+    <Property Name="descricao" Type="String" Nullable="false" />
+  </EntityType>
+  <Association Name="ConsultaSintomas">
+    <End Type="EinsteinHospitalBDModel.Consulta" Role="Consulta" Multiplicity="*" />
+    <End Type="EinsteinHospitalBDModel.Sintomas" Role="Sintomas" Multiplicity="*" />
+  </Association>
+</Schema>

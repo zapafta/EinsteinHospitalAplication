@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EinsteinHospitalBDModelStoreContainer" CdmEntityContainer="EinsteinHospitalBDEntities">
+    <EntitySetMapping Name="UtilizadorSet">
+      <EntityTypeMapping TypeName="IsTypeOf(EinsteinHospitalBDModel.Utilizador)">
+        <MappingFragment StoreEntitySet="UtilizadorSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="tipoUtilizador" ColumnName="tipoUtilizador" />
+          <ScalarProperty Name="suspensao" ColumnName="suspensao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(EinsteinHospitalBDModel.Rececionista)">
+        <MappingFragment StoreEntitySet="UtilizadorSet_Rececionista">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="nInterno" ColumnName="nInterno" />
+          <ScalarProperty Name="morada" ColumnName="morada" />
+          <ScalarProperty Name="dataNascimento" ColumnName="dataNascimento" />
+          <ScalarProperty Name="cargo" ColumnName="cargo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(EinsteinHospitalBDModel.Medico)">
+        <MappingFragment StoreEntitySet="UtilizadorSet_Medico">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="nInterno" ColumnName="nInterno" />
+          <ScalarProperty Name="morada" ColumnName="morada" />
+          <ScalarProperty Name="dataNascimento" ColumnName="dataNascimento" />
+          <ScalarProperty Name="cargo" ColumnName="cargo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(EinsteinHospitalBDModel.Enfermeiro)">
+        <MappingFragment StoreEntitySet="UtilizadorSet_Enfermeiro">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="nInterno" ColumnName="nInterno" />
+          <ScalarProperty Name="morada" ColumnName="morada" />
+          <ScalarProperty Name="dataNascimento" ColumnName="dataNascimento" />
+          <ScalarProperty Name="cargo" ColumnName="cargo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(EinsteinHospitalBDModel.Administrador)">
+        <MappingFragment StoreEntitySet="UtilizadorSet_Administrador">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="nInterno" ColumnName="nInterno" />
+          <ScalarProperty Name="morada" ColumnName="morada" />
+          <ScalarProperty Name="dataNascimento" ColumnName="dataNascimento" />
+          <ScalarProperty Name="cargo" ColumnName="cargo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExameSet">
+      <EntityTypeMapping TypeName="IsTypeOf(EinsteinHospitalBDModel.Exame)">
+        <MappingFragment StoreEntitySet="ExameSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="especialidade" ColumnName="especialidade" />
+          <ScalarProperty Name="preco" ColumnName="preco" />
+          <ScalarProperty Name="data" ColumnName="data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UtenteSet">
+      <EntityTypeMapping TypeName="IsTypeOf(EinsteinHospitalBDModel.Utente)">
+        <MappingFragment StoreEntitySet="UtenteSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="primeiroNome" ColumnName="primeiroNome" />
+          <ScalarProperty Name="apelido" ColumnName="apelido" />
+          <ScalarProperty Name="dataNascimento" ColumnName="dataNascimento" />
+          <ScalarProperty Name="morada" ColumnName="morada" />
+          <ScalarProperty Name="codigoPostal" ColumnName="codigoPostal" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="contacto" ColumnName="contacto" />
+          <ScalarProperty Name="peso" ColumnName="peso" />
+          <ScalarProperty Name="altura" ColumnName="altura" />
+          <ScalarProperty Name="glicemia" ColumnName="glicemia" />
+          <ScalarProperty Name="tensao" ColumnName="tensao" />
+          <ScalarProperty Name="colestrol" ColumnName="colestrol" />
+          <ScalarProperty Name="saturacao" ColumnName="saturacao" />
+          <ScalarProperty Name="batimentoCardiaco" ColumnName="batimentoCardiaco" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConsultaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(EinsteinHospitalBDModel.Consulta)">
+        <MappingFragment StoreEntitySet="ConsultaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="diagnostico" ColumnName="diagnostico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MedicacaoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(EinsteinHospitalBDModel.Medicacao)">
+        <MappingFragment StoreEntitySet="MedicacaoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nomeMedicacao" ColumnName="nomeMedicacao" />
+          <ScalarProperty Name="administracao" ColumnName="administracao" />
+          <ScalarProperty Name="preco" ColumnName="preco" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="dosagem" ColumnName="dosagem" />
+          <ScalarProperty Name="comparticao" ColumnName="comparticao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SintomasSet">
+      <EntityTypeMapping TypeName="IsTypeOf(EinsteinHospitalBDModel.Sintomas)">
+        <MappingFragment StoreEntitySet="SintomasSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ExameRececionista" TypeName="EinsteinHospitalBDModel.ExameRececionista" StoreEntitySet="ExameSet">
+      <EndProperty Name="Rececionista">
+        <ScalarProperty Name="Id" ColumnName="Rececionista_Id" />
+      </EndProperty>
+      <EndProperty Name="Exame">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ExameUtente" TypeName="EinsteinHospitalBDModel.ExameUtente" StoreEntitySet="ExameSet">
+      <EndProperty Name="Utente">
+        <ScalarProperty Name="Id" ColumnName="Utente_Id" />
+      </EndProperty>
+      <EndProperty Name="Exame">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ExameMedico" TypeName="EinsteinHospitalBDModel.ExameMedico" StoreEntitySet="ExameSet">
+      <EndProperty Name="Medico">
+        <ScalarProperty Name="Id" ColumnName="Medico_Id" />
+      </EndProperty>
+      <EndProperty Name="Exame">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UtenteConsulta" TypeName="EinsteinHospitalBDModel.UtenteConsulta" StoreEntitySet="ConsultaSet">
+      <EndProperty Name="Utente">
+        <ScalarProperty Name="Id" ColumnName="Utente_Id" />
+      </EndProperty>
+      <EndProperty Name="Consulta">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MedicoConsulta" TypeName="EinsteinHospitalBDModel.MedicoConsulta" StoreEntitySet="ConsultaSet">
+      <EndProperty Name="Medico">
+        <ScalarProperty Name="Id" ColumnName="Medico_Id" />
+      </EndProperty>
+      <EndProperty Name="Consulta">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ConsultaMedicacao" TypeName="EinsteinHospitalBDModel.ConsultaMedicacao" StoreEntitySet="ConsultaMedicacao">
+      <EndProperty Name="Consulta">
+        <ScalarProperty Name="Id" ColumnName="Consulta_Id" />
+      </EndProperty>
+      <EndProperty Name="Medicacao">
+        <ScalarProperty Name="Id" ColumnName="Medicacao_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ConsultaSintomas" TypeName="EinsteinHospitalBDModel.ConsultaSintomas" StoreEntitySet="ConsultaSintomas">
+      <EndProperty Name="Consulta">
+        <ScalarProperty Name="Id" ColumnName="Consulta_Id" />
+      </EndProperty>
+      <EndProperty Name="Sintomas">
+        <ScalarProperty Name="Id" ColumnName="Sintomas_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

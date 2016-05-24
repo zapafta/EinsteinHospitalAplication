@@ -166,13 +166,14 @@
             // 
             // checkedListBox1
             // 
+            this.checkedListBox1.CheckOnClick = true;
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Items.AddRange(new object[] {
-            "Atendente",
+            "Rececionista",
             "Médico",
             "Enfermeiro",
             "Administrador de Sistema"});
-            this.checkedListBox1.Location = new System.Drawing.Point(455, 315);
+            this.checkedListBox1.Location = new System.Drawing.Point(455, 305);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(201, 64);
             this.checkedListBox1.TabIndex = 14;
@@ -186,8 +187,9 @@
             this.buttonGravar.TabIndex = 15;
             this.buttonGravar.Text = "Gravar";
             this.buttonGravar.UseVisualStyleBackColor = true;
+            this.buttonGravar.Click += new System.EventHandler(this.buttonGravar_Click);
             // 
-            // FormRegistarUtilizador
+            // FormDadosUtilizador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -208,7 +210,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "FormRegistarUtilizador";
+            this.Name = "FormDadosUtilizador";
             this.Text = "FormRegistarUtilizador";
             this.ResumeLayout(false);
             this.PerformLayout();
