@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/23/2016 17:04:43
+-- Date Created: 05/24/2016 10:43:20
 -- Generated from EDMX file: C:\Users\Zé-PC\Desktop\EinsteinHospitalAplication\WebService\Modelo.edmx
 -- --------------------------------------------------
 
@@ -17,11 +17,86 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_ExameRececionista]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ExameSet] DROP CONSTRAINT [FK_ExameRececionista];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ExameUtente]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UtenteSet] DROP CONSTRAINT [FK_ExameUtente];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ExameMedico]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UtilizadorSet_Medico] DROP CONSTRAINT [FK_ExameMedico];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UtenteConsulta]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UtenteSet] DROP CONSTRAINT [FK_UtenteConsulta];
+GO
+IF OBJECT_ID(N'[dbo].[FK_MedicoConsulta]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UtilizadorSet_Medico] DROP CONSTRAINT [FK_MedicoConsulta];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ConsultaMedicacao_Consulta]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ConsultaMedicacao] DROP CONSTRAINT [FK_ConsultaMedicacao_Consulta];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ConsultaMedicacao_Medicacao]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ConsultaMedicacao] DROP CONSTRAINT [FK_ConsultaMedicacao_Medicacao];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ConsultaSintomas_Consulta]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ConsultaSintomas] DROP CONSTRAINT [FK_ConsultaSintomas_Consulta];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ConsultaSintomas_Sintomas]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ConsultaSintomas] DROP CONSTRAINT [FK_ConsultaSintomas_Sintomas];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Rececionista_inherits_Utilizador]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UtilizadorSet_Rececionista] DROP CONSTRAINT [FK_Rececionista_inherits_Utilizador];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Medico_inherits_Utilizador]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UtilizadorSet_Medico] DROP CONSTRAINT [FK_Medico_inherits_Utilizador];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Enfermeiro_inherits_Utilizador]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UtilizadorSet_Enfermeiro] DROP CONSTRAINT [FK_Enfermeiro_inherits_Utilizador];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Administrador_inherits_Utilizador]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UtilizadorSet_Administrador] DROP CONSTRAINT [FK_Administrador_inherits_Utilizador];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[UtilizadorSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UtilizadorSet];
+GO
+IF OBJECT_ID(N'[dbo].[ExameSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ExameSet];
+GO
+IF OBJECT_ID(N'[dbo].[UtenteSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UtenteSet];
+GO
+IF OBJECT_ID(N'[dbo].[ConsultaSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ConsultaSet];
+GO
+IF OBJECT_ID(N'[dbo].[MedicacaoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MedicacaoSet];
+GO
+IF OBJECT_ID(N'[dbo].[SintomasSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[SintomasSet];
+GO
+IF OBJECT_ID(N'[dbo].[UtilizadorSet_Rececionista]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UtilizadorSet_Rececionista];
+GO
+IF OBJECT_ID(N'[dbo].[UtilizadorSet_Medico]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UtilizadorSet_Medico];
+GO
+IF OBJECT_ID(N'[dbo].[UtilizadorSet_Enfermeiro]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UtilizadorSet_Enfermeiro];
+GO
+IF OBJECT_ID(N'[dbo].[UtilizadorSet_Administrador]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UtilizadorSet_Administrador];
+GO
+IF OBJECT_ID(N'[dbo].[ConsultaMedicacao]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ConsultaMedicacao];
+GO
+IF OBJECT_ID(N'[dbo].[ConsultaSintomas]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ConsultaSintomas];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -42,7 +117,8 @@ CREATE TABLE [dbo].[ExameSet] (
     [especialidade] nvarchar(max)  NOT NULL,
     [preco] nvarchar(max)  NOT NULL,
     [data] datetime  NOT NULL,
-    [Rececionista_Id] int  NOT NULL
+    [Rececionista_Id] int  NOT NULL,
+    [Utente_Id] int  NOT NULL
 );
 GO
 
@@ -63,9 +139,7 @@ CREATE TABLE [dbo].[UtenteSet] (
     [tensao] nvarchar(max)  NULL,
     [colestrol] nvarchar(max)  NULL,
     [saturacao] nvarchar(max)  NULL,
-    [batimentoCardiaco] nvarchar(max)  NULL,
-    [Exame_Id] int  NOT NULL,
-    [Consulta_Id] int  NOT NULL
+    [batimentoCardiaco] nvarchar(max)  NULL
 );
 GO
 
@@ -73,7 +147,8 @@ GO
 CREATE TABLE [dbo].[ConsultaSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [data] datetime  NOT NULL,
-    [diagnostico] nvarchar(max)  NOT NULL
+    [diagnostico] nvarchar(max)  NOT NULL,
+    [Utente_Id] int  NOT NULL
 );
 GO
 
@@ -250,18 +325,18 @@ ON [dbo].[ExameSet]
     ([Rececionista_Id]);
 GO
 
--- Creating foreign key on [Exame_Id] in table 'UtenteSet'
-ALTER TABLE [dbo].[UtenteSet]
+-- Creating foreign key on [Utente_Id] in table 'ExameSet'
+ALTER TABLE [dbo].[ExameSet]
 ADD CONSTRAINT [FK_ExameUtente]
-    FOREIGN KEY ([Exame_Id])
-    REFERENCES [dbo].[ExameSet]
+    FOREIGN KEY ([Utente_Id])
+    REFERENCES [dbo].[UtenteSet]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_ExameUtente'
 CREATE INDEX [IX_FK_ExameUtente]
-ON [dbo].[UtenteSet]
-    ([Exame_Id]);
+ON [dbo].[ExameSet]
+    ([Utente_Id]);
 GO
 
 -- Creating foreign key on [Exame_Id] in table 'UtilizadorSet_Medico'
@@ -278,18 +353,18 @@ ON [dbo].[UtilizadorSet_Medico]
     ([Exame_Id]);
 GO
 
--- Creating foreign key on [Consulta_Id] in table 'UtenteSet'
-ALTER TABLE [dbo].[UtenteSet]
+-- Creating foreign key on [Utente_Id] in table 'ConsultaSet'
+ALTER TABLE [dbo].[ConsultaSet]
 ADD CONSTRAINT [FK_UtenteConsulta]
-    FOREIGN KEY ([Consulta_Id])
-    REFERENCES [dbo].[ConsultaSet]
+    FOREIGN KEY ([Utente_Id])
+    REFERENCES [dbo].[UtenteSet]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_UtenteConsulta'
 CREATE INDEX [IX_FK_UtenteConsulta]
-ON [dbo].[UtenteSet]
-    ([Consulta_Id]);
+ON [dbo].[ConsultaSet]
+    ([Utente_Id]);
 GO
 
 -- Creating foreign key on [Consulta_Id] in table 'UtilizadorSet_Medico'
