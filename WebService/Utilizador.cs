@@ -18,5 +18,6 @@ namespace WebService
         public string username { get; set; }
         public string password { get; set; }
         public string tipoUtilizador { get; set; }
+        public bool suspensao { get; set; }
     }
 }

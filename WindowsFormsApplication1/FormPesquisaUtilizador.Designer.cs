@@ -39,9 +39,12 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(0, 33);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(875, 398);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -61,6 +64,7 @@
             this.buttonProcurar.TabIndex = 2;
             this.buttonProcurar.Text = "Procurar";
             this.buttonProcurar.UseVisualStyleBackColor = true;
+            this.buttonProcurar.Click += new System.EventHandler(this.buttonProcurar_Click);
             // 
             // buttonVoltar
             // 
@@ -81,6 +85,7 @@
             this.buttonAlterar.TabIndex = 4;
             this.buttonAlterar.Text = "Alterar Utilizador";
             this.buttonAlterar.UseVisualStyleBackColor = true;
+            this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
             // 
             // buttonSuspensao
             // 
@@ -91,6 +96,7 @@
             this.buttonSuspensao.TabIndex = 5;
             this.buttonSuspensao.Text = "Alterar Suspensão";
             this.buttonSuspensao.UseVisualStyleBackColor = true;
+            this.buttonSuspensao.Click += new System.EventHandler(this.buttonSuspensao_Click);
             // 
             // FormPesquisaUtilizador
             // 

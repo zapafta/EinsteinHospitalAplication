@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EinsteinHospitalAplication", "WindowsFormsApplication1\EinsteinHospitalAplication.csproj", "{CAD86EED-BE83-4B33-8B06-24AB047F2086}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5466113A-3E33-4A8E-8205-02E038C80C27} = {5466113A-3E33-4A8E-8205-02E038C80C27}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService", "WebService\WebService.csproj", "{5466113A-3E33-4A8E-8205-02E038C80C27}"
 EndProject

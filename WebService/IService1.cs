@@ -19,6 +19,14 @@ namespace WebService
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
+        [OperationContract]
+        UtilizadorWeb validarLogin(string username, string password);
+
+        [OperationContract]
+        List<UtilizadorWeb> procurarUtilizadores(string campoPesquisa);
+
+
+
         // TODO: Add your service operations here
     }
 
@@ -42,6 +50,84 @@ namespace WebService
         {
             get { return stringValue; }
             set { stringValue = value; }
+        }
+    }
+    [DataContract]
+    public class UtilizadorWeb
+    {
+        string username;
+        string password;
+        string tipoUtilizador;
+        string nome;
+        int nInterno;
+        int id;
+        string morada;
+        DateTime dataNascimento;
+        string cargo;
+        bool suspensao;
+
+        [DataMember]
+        public string Username
+        {
+            get { return username; }
+            set { username = value; }
+        }
+        [DataMember]
+        public bool Suspensao
+        {
+            get { return suspensao; }
+            set { suspensao = value; }
+        }
+
+
+        [DataMember]
+        public string Password
+        {
+            get { return password; }
+            set { password = value; }
+        }
+        
+        [DataMember]
+        public string TipoUtilizador
+        {
+            get { return tipoUtilizador; }
+            set { tipoUtilizador = value; }
+        }
+        [DataMember]
+        public string Nome
+        {
+            get { return nome; }
+            set { nome = value; }
+        }
+        [DataMember]
+        public int NInterno
+        {
+            get { return nInterno; }
+            set { nInterno = value; }
+        }
+        [DataMember]
+        public int ID
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        [DataMember]
+        public string Morada
+        {
+            get { return morada; }
+            set { morada = value; }
+        }
+        [DataMember]
+        public DateTime DataNascimento
+        {
+            get { return dataNascimento; }
+            set { dataNascimento = value; }
+        }
+        [DataMember]
+        public string Cargo
+        {
+            get { return cargo; }
+            set { cargo = value; }
         }
     }
 }
