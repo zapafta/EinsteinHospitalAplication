@@ -90,6 +90,7 @@
     <Property Name="data" Type="datetime" Nullable="false" />
     <Property Name="Rececionista_Id" Type="int" Nullable="false" />
     <Property Name="Utente_Id" Type="int" Nullable="false" />
+    <Property Name="Medico_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="UtenteSet">
     <Key>
@@ -120,6 +121,7 @@
     <Property Name="data" Type="datetime" Nullable="false" />
     <Property Name="diagnostico" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Utente_Id" Type="int" Nullable="false" />
+    <Property Name="Medico_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="MedicacaoSet">
     <Key>
@@ -161,8 +163,6 @@
     <Property Name="dataNascimento" Type="datetime" Nullable="false" />
     <Property Name="cargo" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Id" Type="int" Nullable="false" />
-    <Property Name="Exame_Id" Type="int" Nullable="false" />
-    <Property Name="Consulta_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="UtilizadorSet_Enfermeiro">
     <Key>
@@ -227,14 +227,14 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="ExameMedico">
-    <End Role="Exame" Type="EinsteinHospitalBDModel.Store.ExameSet" Multiplicity="1" />
-    <End Role="Medico" Type="EinsteinHospitalBDModel.Store.UtilizadorSet_Medico" Multiplicity="*" />
+    <End Role="Exame" Type="EinsteinHospitalBDModel.Store.ExameSet" Multiplicity="*" />
+    <End Role="Medico" Type="EinsteinHospitalBDModel.Store.UtilizadorSet_Medico" Multiplicity="1" />
     <ReferentialConstraint>
-      <Principal Role="Exame">
+      <Principal Role="Medico">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Medico">
-        <PropertyRef Name="Exame_Id" />
+      <Dependent Role="Exame">
+        <PropertyRef Name="Medico_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -251,14 +251,14 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="MedicoConsulta">
-    <End Role="Medico" Type="EinsteinHospitalBDModel.Store.UtilizadorSet_Medico" Multiplicity="*" />
-    <End Role="Consulta" Type="EinsteinHospitalBDModel.Store.ConsultaSet" Multiplicity="1" />
+    <End Role="Medico" Type="EinsteinHospitalBDModel.Store.UtilizadorSet_Medico" Multiplicity="1" />
+    <End Role="Consulta" Type="EinsteinHospitalBDModel.Store.ConsultaSet" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Consulta">
+      <Principal Role="Medico">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Medico">
-        <PropertyRef Name="Consulta_Id" />
+      <Dependent Role="Consulta">
+        <PropertyRef Name="Medico_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -490,8 +490,8 @@
           <End Type="EinsteinHospitalBDModel.Utente" Role="Utente" Multiplicity="1" />
         </Association>
         <Association Name="ExameMedico">
-          <End Type="EinsteinHospitalBDModel.Exame" Role="Exame" Multiplicity="1" />
-          <End Type="EinsteinHospitalBDModel.Medico" Role="Medico" Multiplicity="*" />
+          <End Type="EinsteinHospitalBDModel.Exame" Role="Exame" Multiplicity="*" />
+          <End Type="EinsteinHospitalBDModel.Medico" Role="Medico" Multiplicity="1" />
         </Association>
         <EntityType Name="Consulta">
           <Key>
@@ -510,8 +510,8 @@
           <End Type="EinsteinHospitalBDModel.Consulta" Role="Consulta" Multiplicity="*" />
         </Association>
         <Association Name="MedicoConsulta">
-          <End Type="EinsteinHospitalBDModel.Medico" Role="Medico" Multiplicity="*" />
-          <End Type="EinsteinHospitalBDModel.Consulta" Role="Consulta" Multiplicity="1" />
+          <End Type="EinsteinHospitalBDModel.Medico" Role="Medico" Multiplicity="1" />
+          <End Type="EinsteinHospitalBDModel.Consulta" Role="Consulta" Multiplicity="*" />
         </Association>
         <EntityType Name="Medicacao">
           <Key>
@@ -676,11 +676,11 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="ExameMedico" TypeName="EinsteinHospitalBDModel.ExameMedico" StoreEntitySet="UtilizadorSet_Medico">
-      <EndProperty Name="Exame">
-        <ScalarProperty Name="Id" ColumnName="Exame_Id" />
-      </EndProperty>
+    <AssociationSetMapping Name="ExameMedico" TypeName="EinsteinHospitalBDModel.ExameMedico" StoreEntitySet="ExameSet">
       <EndProperty Name="Medico">
+        <ScalarProperty Name="Id" ColumnName="Medico_Id" />
+      </EndProperty>
+      <EndProperty Name="Exame">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
@@ -692,11 +692,11 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="MedicoConsulta" TypeName="EinsteinHospitalBDModel.MedicoConsulta" StoreEntitySet="UtilizadorSet_Medico">
-      <EndProperty Name="Consulta">
-        <ScalarProperty Name="Id" ColumnName="Consulta_Id" />
-      </EndProperty>
+    <AssociationSetMapping Name="MedicoConsulta" TypeName="EinsteinHospitalBDModel.MedicoConsulta" StoreEntitySet="ConsultaSet">
       <EndProperty Name="Medico">
+        <ScalarProperty Name="Id" ColumnName="Medico_Id" />
+      </EndProperty>
+      <EndProperty Name="Consulta">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>

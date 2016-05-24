@@ -16,7 +16,6 @@ namespace WebService
     {
         public Consulta()
         {
-            this.Medico = new HashSet<Medico>();
             this.Medicacao = new HashSet<Medicacao>();
             this.Sintomas = new HashSet<Sintomas>();
         }
@@ -26,7 +25,7 @@ namespace WebService
         public string diagnostico { get; set; }
     
         public virtual Utente Utente { get; set; }
-        public virtual ICollection<Medico> Medico { get; set; }
+        public virtual Medico Medico { get; set; }
         public virtual ICollection<Medicacao> Medicacao { get; set; }
         public virtual ICollection<Sintomas> Sintomas { get; set; }
     }

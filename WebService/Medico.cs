@@ -14,13 +14,19 @@ namespace WebService
     
     public partial class Medico : Utilizador
     {
+        public Medico()
+        {
+            this.Exame = new HashSet<Exame>();
+            this.Consulta = new HashSet<Consulta>();
+        }
+    
         public string nome { get; set; }
         public int nInterno { get; set; }
         public string morada { get; set; }
         public System.DateTime dataNascimento { get; set; }
         public string cargo { get; set; }
     
-        public virtual Exame Exame { get; set; }
-        public virtual Consulta Consulta { get; set; }
+        public virtual ICollection<Exame> Exame { get; set; }
+        public virtual ICollection<Consulta> Consulta { get; set; }
     }
 }
