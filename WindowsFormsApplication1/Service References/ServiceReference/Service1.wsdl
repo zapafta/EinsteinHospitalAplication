@@ -31,6 +31,24 @@
   <wsdl:message name="IService1_procurarUtilizadores_OutputMessage">
     <wsdl:part name="parameters" element="tns:procurarUtilizadoresResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_alterarSuspensao_InputMessage">
+    <wsdl:part name="parameters" element="tns:alterarSuspensao" />
+  </wsdl:message>
+  <wsdl:message name="IService1_alterarSuspensao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:alterarSuspensaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_adicionarUtilizador_InputMessage">
+    <wsdl:part name="parameters" element="tns:adicionarUtilizador" />
+  </wsdl:message>
+  <wsdl:message name="IService1_adicionarUtilizador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:adicionarUtilizadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_alterarUtilizador_InputMessage">
+    <wsdl:part name="parameters" element="tns:alterarUtilizador" />
+  </wsdl:message>
+  <wsdl:message name="IService1_alterarUtilizador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:alterarUtilizadorResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -47,6 +65,18 @@
     <wsdl:operation name="procurarUtilizadores">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/procurarUtilizadores" message="tns:IService1_procurarUtilizadores_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/procurarUtilizadoresResponse" message="tns:IService1_procurarUtilizadores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="alterarSuspensao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/alterarSuspensao" message="tns:IService1_alterarSuspensao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/alterarSuspensaoResponse" message="tns:IService1_alterarSuspensao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="adicionarUtilizador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/adicionarUtilizador" message="tns:IService1_adicionarUtilizador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/adicionarUtilizadorResponse" message="tns:IService1_adicionarUtilizador_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="alterarUtilizador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/alterarUtilizador" message="tns:IService1_alterarUtilizador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/alterarUtilizadorResponse" message="tns:IService1_alterarUtilizador_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -80,6 +110,33 @@
     </wsdl:operation>
     <wsdl:operation name="procurarUtilizadores">
       <soap:operation soapAction="http://tempuri.org/IService1/procurarUtilizadores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="alterarSuspensao">
+      <soap:operation soapAction="http://tempuri.org/IService1/alterarSuspensao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="adicionarUtilizador">
+      <soap:operation soapAction="http://tempuri.org/IService1/adicionarUtilizador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="alterarUtilizador">
+      <soap:operation soapAction="http://tempuri.org/IService1/alterarUtilizador" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
