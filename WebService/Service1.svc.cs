@@ -30,6 +30,8 @@ namespace WebService
             }
             return composite;
         }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // Parte Zé
         public UtilizadorWeb validarLogin(string username, string password)
         {
             EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
@@ -50,6 +52,7 @@ namespace WebService
                 utilizadorWeb.NInterno = medico.nInterno;
                 utilizadorWeb.Nome = medico.nome;
                 utilizadorWeb.DataNascimento = medico.dataNascimento;
+
                 
             }
             if (user.tipoUtilizador == "Enfermeiro")
@@ -175,6 +178,169 @@ namespace WebService
             return listaUtilizadoresWeb;
 
         }
+        public bool alterarSuspensao(int id)
+        {
+            try { 
+                EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
+                Utilizador user = context.UtilizadorSet.Where(i => i.Id == id).FirstOrDefault();
+                if(user.suspensao == true){
+                     user.suspensao = false;
+                 }else { user.suspensao = true; }
+                context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
+
+
+
+
+        public bool adicionarUtilizador(string nome, int nInterno, string morada, DateTime dataNascimento, string cargo, string password, string tipoUtilizador)
+        {
+            try
+            {
+                EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
+                if (tipoUtilizador == "Medico")
+                {
+                    Medico m = new Medico();
+                    m.nome = nome;
+                    m.morada = morada;
+                    m.cargo = cargo;
+                    m.dataNascimento = dataNascimento;
+                    m.nInterno = nInterno;
+                    m.password = password;
+                    m.suspensao = true;
+                    m.tipoUtilizador = tipoUtilizador;
+                    m.username = nInterno.ToString();
+                    context.UtilizadorSet.Add(m);
+                }
+                if (tipoUtilizador == "Enfermeiro")
+                {
+                    Enfermeiro m = new Enfermeiro();
+                    m.nome = nome;
+                    m.morada = morada;
+                    m.cargo = cargo;
+                    m.dataNascimento = dataNascimento;
+                    m.nInterno = nInterno;
+                    m.password = password;
+                    m.suspensao = true;
+                    m.tipoUtilizador = tipoUtilizador;
+                    m.username = nInterno.ToString();
+                    context.UtilizadorSet.Add(m);
+                }
+                if (tipoUtilizador == "Administrador")
+                {
+                    Administrador m = new Administrador();
+                    m.nome = nome;
+                    m.morada = morada;
+                    m.cargo = cargo;
+                    m.dataNascimento = dataNascimento;
+                    m.nInterno = nInterno;
+                    m.password = password;
+                    m.suspensao = true;
+                    m.tipoUtilizador = tipoUtilizador;
+                    m.username = nInterno.ToString();
+                    context.UtilizadorSet.Add(m);
+                }
+                if (tipoUtilizador == "Rececionista")
+                {
+                    Rececionista m = new Rececionista();
+                    m.nome = nome;
+                    m.morada = morada;
+                    m.cargo = cargo;
+                    m.dataNascimento = dataNascimento;
+                    m.nInterno = nInterno;
+                    m.password = password;
+                    m.suspensao = true;
+                    m.tipoUtilizador = tipoUtilizador;
+                    m.username = nInterno.ToString();
+                    context.UtilizadorSet.Add(m);
+                }
+
+                context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool alterarUtilizador(string nome, int nInterno, string morada, DateTime dataNascimento, string cargo, string password, string tipoUtilizador, int id)
+        {
+            try 
+            {
+                EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
+                Utilizador u = context.UtilizadorSet.Where(i => i.Id == id).FirstOrDefault();
+                if (tipoUtilizador == "Medico")
+                {
+                
+                    Medico m = (Medico)u; 
+                    m.nome = nome;
+                    m.morada = morada;
+                    m.cargo = cargo;
+                    m.dataNascimento = dataNascimento;
+                    m.nInterno = nInterno;
+                    m.password = password;
+             
+                    m.username = nInterno.ToString();
+                    
+                }
+                if (tipoUtilizador == "Enfermeiro")
+                {
+          
+                    Enfermeiro m = (Enfermeiro)u;
+                    m.nome = nome;
+                    m.morada = morada;
+                    m.cargo = cargo;
+                    m.dataNascimento = dataNascimento;
+                    m.nInterno = nInterno;
+                    m.password = password;
+    
+                    m.username = nInterno.ToString();
+                  
+                }
+                if (tipoUtilizador == "Administrador")
+                {
+                   
+                    Administrador m = (Administrador)u;
+                    m.nome = nome;
+                    m.morada = morada;
+                    m.cargo = cargo;
+                    m.dataNascimento = dataNascimento;
+                    m.nInterno = nInterno;
+                    m.password = password;
+       
+                    m.username = nInterno.ToString();
+           
+                }
+                if (tipoUtilizador == "Rececionista")
+                {
+                  
+                    Rececionista m = (Rececionista)u;
+                    m.nome = nome;
+                    m.morada = morada;
+                    m.cargo = cargo;
+                    m.dataNascimento = dataNascimento;
+                    m.nInterno = nInterno;
+                    m.password = password;
+ 
+                    m.username = nInterno.ToString();
+                
+                }
+                context.SaveChanges();
+                return true;
+            }
+            catch(Exception e)
+            {
+
+                return false;
+            }
+        }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
 
 }

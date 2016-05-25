@@ -19,7 +19,13 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
             webService = new Service1Client();
+            atualizarTabela();
+        }
+
+        private void atualizarTabela()
+        {
             users = webService.procurarUtilizadores("").ToList();
+            dataGridView1.Rows.Clear();
             dataGridView1.ColumnCount = 4;
             dataGridView1.Columns[0].Name = "Nome";
             dataGridView1.Columns[1].Name = "Tipo de Utilizador";
@@ -78,6 +84,16 @@ namespace WindowsFormsApplication1
         {
             int index = dataGridView1.CurrentCell.RowIndex;
             UtilizadorWeb user = users.ElementAt(index);
+           bool result = webService.alterarSuspensao(user.ID);
+           if (result)
+           {
+               MessageBox.Show("Suspensão do utilizador " + user.Nome + " foi alterada!");
+               atualizarTabela();
+           }
+           else
+           {
+               MessageBox.Show("Ocorreu um erro!");
+           }
         }
     }
 }

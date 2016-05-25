@@ -18,6 +18,8 @@ namespace WebService
 
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // Parte Zé
 
         [OperationContract]
         UtilizadorWeb validarLogin(string username, string password);
@@ -25,9 +27,15 @@ namespace WebService
         [OperationContract]
         List<UtilizadorWeb> procurarUtilizadores(string campoPesquisa);
 
+        [OperationContract]
+        bool alterarSuspensao(int id);
 
+        [OperationContract]
+        bool adicionarUtilizador(string nome, int nInterno, string morada, DateTime dataNascimento, string cargo, string password, string tipoUtilizador);
 
-        // TODO: Add your service operations here
+        [OperationContract]
+        bool alterarUtilizador(string nome, int nInterno, string morada, DateTime dataNascimento, string cargo, string password, string tipoUtilizador, int id);
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
 
 

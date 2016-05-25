@@ -290,6 +290,24 @@ namespace WindowsFormsApplication1.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/procurarUtilizadores", ReplyAction="http://tempuri.org/IService1/procurarUtilizadoresResponse")]
         System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.UtilizadorWeb[]> procurarUtilizadoresAsync(string campoPesquisa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/alterarSuspensao", ReplyAction="http://tempuri.org/IService1/alterarSuspensaoResponse")]
+        bool alterarSuspensao(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/alterarSuspensao", ReplyAction="http://tempuri.org/IService1/alterarSuspensaoResponse")]
+        System.Threading.Tasks.Task<bool> alterarSuspensaoAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/adicionarUtilizador", ReplyAction="http://tempuri.org/IService1/adicionarUtilizadorResponse")]
+        bool adicionarUtilizador(string nome, int nInterno, string morada, System.DateTime dataNascimento, string cargo, string password, string tipoUtilizador);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/adicionarUtilizador", ReplyAction="http://tempuri.org/IService1/adicionarUtilizadorResponse")]
+        System.Threading.Tasks.Task<bool> adicionarUtilizadorAsync(string nome, int nInterno, string morada, System.DateTime dataNascimento, string cargo, string password, string tipoUtilizador);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/alterarUtilizador", ReplyAction="http://tempuri.org/IService1/alterarUtilizadorResponse")]
+        bool alterarUtilizador(string nome, int nInterno, string morada, System.DateTime dataNascimento, string cargo, string password, string tipoUtilizador, int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/alterarUtilizador", ReplyAction="http://tempuri.org/IService1/alterarUtilizadorResponse")]
+        System.Threading.Tasks.Task<bool> alterarUtilizadorAsync(string nome, int nInterno, string morada, System.DateTime dataNascimento, string cargo, string password, string tipoUtilizador, int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -349,6 +367,30 @@ namespace WindowsFormsApplication1.ServiceReference {
         
         public System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.UtilizadorWeb[]> procurarUtilizadoresAsync(string campoPesquisa) {
             return base.Channel.procurarUtilizadoresAsync(campoPesquisa);
+        }
+        
+        public bool alterarSuspensao(int id) {
+            return base.Channel.alterarSuspensao(id);
+        }
+        
+        public System.Threading.Tasks.Task<bool> alterarSuspensaoAsync(int id) {
+            return base.Channel.alterarSuspensaoAsync(id);
+        }
+        
+        public bool adicionarUtilizador(string nome, int nInterno, string morada, System.DateTime dataNascimento, string cargo, string password, string tipoUtilizador) {
+            return base.Channel.adicionarUtilizador(nome, nInterno, morada, dataNascimento, cargo, password, tipoUtilizador);
+        }
+        
+        public System.Threading.Tasks.Task<bool> adicionarUtilizadorAsync(string nome, int nInterno, string morada, System.DateTime dataNascimento, string cargo, string password, string tipoUtilizador) {
+            return base.Channel.adicionarUtilizadorAsync(nome, nInterno, morada, dataNascimento, cargo, password, tipoUtilizador);
+        }
+        
+        public bool alterarUtilizador(string nome, int nInterno, string morada, System.DateTime dataNascimento, string cargo, string password, string tipoUtilizador, int id) {
+            return base.Channel.alterarUtilizador(nome, nInterno, morada, dataNascimento, cargo, password, tipoUtilizador, id);
+        }
+        
+        public System.Threading.Tasks.Task<bool> alterarUtilizadorAsync(string nome, int nInterno, string morada, System.DateTime dataNascimento, string cargo, string password, string tipoUtilizador, int id) {
+            return base.Channel.alterarUtilizadorAsync(nome, nInterno, morada, dataNascimento, cargo, password, tipoUtilizador, id);
         }
     }
 }
