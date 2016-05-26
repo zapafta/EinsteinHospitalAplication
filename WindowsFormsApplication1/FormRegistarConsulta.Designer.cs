@@ -38,9 +38,7 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -172,9 +170,7 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
-            this.columnHeader5,
             this.columnHeader6,
-            this.columnHeader7,
             this.columnHeader8});
             this.listView1.Location = new System.Drawing.Point(6, 67);
             this.listView1.Name = "listView1";
@@ -203,19 +199,9 @@
             this.columnHeader4.Text = "Morada";
             this.columnHeader4.Width = 276;
             // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Naturalidade";
-            this.columnHeader5.Width = 104;
-            // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "Sexo";
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Estado Civil";
-            this.columnHeader7.Width = 97;
             // 
             // columnHeader8
             // 
@@ -238,6 +224,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(388, 20);
             this.txtSearch.TabIndex = 1;
+            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
             // 
             // tabPage2
             // 
@@ -297,6 +284,7 @@
             this.btnLimpar.TabIndex = 9;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnRemover
             // 
@@ -306,6 +294,7 @@
             this.btnRemover.TabIndex = 8;
             this.btnRemover.Text = "<-- Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // btnAdicionar
             // 
@@ -315,6 +304,7 @@
             this.btnAdicionar.TabIndex = 7;
             this.btnAdicionar.Text = "Adicionar -->";
             this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // listSintomasFinal
             // 
@@ -368,6 +358,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Pesquisar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 
@@ -375,7 +366,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(388, 20);
             this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "Pesquisar";
             // 
             // tabPage3
             // 
@@ -769,9 +759,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;

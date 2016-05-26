@@ -18,3 +18,13 @@ C:\Users\DiogoMartins\Desktop\Esgps\EinsteinHospitalAplication\WebService\bin\En
 C:\Users\DiogoMartins\Desktop\Esgps\EinsteinHospitalAplication\WebService\bin\EntityFramework.SqlServer.dll
 C:\Users\DiogoMartins\Desktop\Esgps\EinsteinHospitalAplication\WebService\bin\EntityFramework.xml
 C:\Users\DiogoMartins\Desktop\Esgps\EinsteinHospitalAplication\WebService\bin\EntityFramework.SqlServer.xml
+D:\ESGPS 2605\Esgps\EinsteinHospitalAplication\WebService\obj\Debug\WebService.csprojResolveAssemblyReference.cache
+D:\ESGPS 2605\Esgps\EinsteinHospitalAplication\WebService\obj\Debug\WebService.dll
+D:\ESGPS 2605\Esgps\EinsteinHospitalAplication\WebService\obj\Debug\WebService.pdb
+D:\ESGPS 2605\Esgps\EinsteinHospitalAplication\WebService\bin\WebService.dll.config
+D:\ESGPS 2605\Esgps\EinsteinHospitalAplication\WebService\bin\WebService.dll
+D:\ESGPS 2605\Esgps\EinsteinHospitalAplication\WebService\bin\WebService.pdb
+D:\ESGPS 2605\Esgps\EinsteinHospitalAplication\WebService\bin\EntityFramework.dll
+D:\ESGPS 2605\Esgps\EinsteinHospitalAplication\WebService\bin\EntityFramework.SqlServer.dll
+D:\ESGPS 2605\Esgps\EinsteinHospitalAplication\WebService\bin\EntityFramework.xml
+D:\ESGPS 2605\Esgps\EinsteinHospitalAplication\WebService\bin\EntityFramework.SqlServer.xml

@@ -372,11 +372,24 @@ namespace WebService
             else
             {
                return null;
-            }
-            
+            }          
 
         }
 
+        public List<SintomaWeb> procurarSintomas(string campoPesquisa)
+        {
+            List<SintomaWeb> listaSintomaWeb = new List<SintomaWeb>();
+            EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
+            List<Sintomas> sintomas = context.SintomasSet.Where(i => i.descricao.Contains(campoPesquisa)).ToList();
+            foreach (Sintomas s in sintomas)
+            {
+                SintomaWeb sintomaWeb = new SintomaWeb();
+                sintomaWeb.Id = s.Id;
+                sintomaWeb.Descricao = s.descricao;
+                listaSintomaWeb.Add(sintomaWeb);              
+            }
+            return listaSintomaWeb;
+        }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
