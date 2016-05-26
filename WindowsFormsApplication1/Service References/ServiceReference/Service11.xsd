@@ -127,4 +127,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="procurarSintomas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="campoPesquisa" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="procurarSintomasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="procurarSintomasResult" nillable="true" type="q6:ArrayOfSintomaWeb" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

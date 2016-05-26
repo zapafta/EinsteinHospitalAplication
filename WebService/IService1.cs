@@ -39,6 +39,9 @@ namespace WebService
         // Parte Diogo
         [OperationContract]
         UtenteWeb procurarUtente(int snsId);
+
+        [OperationContract]
+        List<SintomaWeb> procurarSintomas(string campoPesquisa);
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
 
@@ -277,6 +280,7 @@ namespace WebService
             set { batimentoCardiaco = value; }
         }
 
+
         [DataMember]
         public int SnsId
         {
@@ -284,4 +288,25 @@ namespace WebService
             set { snsId = value; }
         }
     }
+
+        [DataContract]
+        public class SintomaWeb
+        {
+            int id;
+            string descricao;
+
+            [DataMember]
+            public int Id
+            {
+                get { return id; }
+                set { id = value; }
+            }
+
+            [DataMember]
+            public string Descricao
+            {
+                get { return descricao; }
+                set { descricao = value; }
+            }
+        }
 }
