@@ -146,7 +146,7 @@ namespace WebService
     [DataContract]
     public class UtenteWeb
     {
-        int Id;
+        int id;
         string primeiroNome;
         string apelido;
         DateTime dataNascimento;
@@ -168,120 +168,120 @@ namespace WebService
         [DataMember]
         public int ID
         {
-            get { return ID; }
-            set { ID = value; }
+            get { return id; }
+            set { id = value; }
         }
 
         [DataMember]
         public string PrimeiroNome
         {
-            get { return PrimeiroNome; }
-            set { PrimeiroNome = value; }
+            get { return primeiroNome; }
+            set { primeiroNome = value; }
         }
 
         [DataMember]
         public string Apelido
         {
-            get { return Apelido; }
-            set { Apelido = value; }
+            get { return apelido; }
+            set { apelido = value; }
         }
 
         [DataMember]
         public DateTime DataNascimento
         {
-            get { return DataNascimento; }
-            set { DataNascimento = value; }
+            get { return dataNascimento; }
+            set { dataNascimento = value; }
         }
 
         [DataMember]
         public string Morada
         {
-            get { return Morada; }
-            set { Morada = value; }
+            get { return morada; }
+            set { morada = value; }
         }
 
         [DataMember]
         public string CodigoPostal
         {
-            get { return CodigoPostal; }
-            set { CodigoPostal = value; }
+            get { return codigoPostal; }
+            set { codigoPostal = value; }
         }
 
         [DataMember]
         public string Email
         {
-            get { return Email; }
-            set { Email = value; }
+            get { return email; }
+            set { email = value; }
         }
 
         [DataMember]
         public string Sexo
         {
-            get { return Sexo; }
-            set { Sexo = value; }
+            get { return sexo; }
+            set { sexo = value; }
         }
 
         [DataMember]
         public string Contacto
         {
-            get { return Contacto; }
-            set { Contacto = value; }
+            get { return contacto; }
+            set { contacto = value; }
         }
 
         [DataMember]
         public string Peso
         {
-            get { return Peso; }
-            set { Peso = value; }
+            get { return peso; }
+            set { peso = value; }
         }
 
         [DataMember]
         public string Altura
         {
-            get { return Altura; }
-            set { Altura = value; }
+            get { return altura; }
+            set { altura = value; }
         }
 
         [DataMember]
         public string Glicemia
         {
-            get { return Glicemia; }
-            set { Glicemia = value; }
+            get { return glicemia; }
+            set { glicemia = value; }
         }
 
         [DataMember]
         public string Tensao
         {
-            get { return Tensao; }
-            set { Tensao = value; }
+            get { return tensao; }
+            set { tensao = value; }
         }
 
         [DataMember]
         public string Colestrol
         {
-            get { return Colestrol; }
-            set { Colestrol = value; }
+            get { return colestrol; }
+            set { colestrol = value; }
         }
 
         [DataMember]
         public string Saturacao
         {
-            get { return Saturacao; }
-            set { Saturacao = value; }
+            get { return saturacao; }
+            set { saturacao = value; }
         }
 
         [DataMember]
         public string BatimentoCardiaco
         {
-            get { return BatimentoCardiaco; }
-            set { BatimentoCardiaco = value; }
+            get { return batimentoCardiaco; }
+            set { batimentoCardiaco = value; }
         }
 
         [DataMember]
         public int SnsId
         {
-            get { return SnsId; }
-            set { SnsId = value; }
+            get { return snsId; }
+            set { snsId = value; }
         }
     }
 }

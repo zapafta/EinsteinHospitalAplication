@@ -346,7 +346,7 @@ namespace WebService
         {
             UtenteWeb uWeb = new UtenteWeb();
             EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
-            Utente ut = context.UtenteSet.Where(i => i.snsId == snsId).First();
+            Utente ut = context.UtenteSet.Where(i => i.snsId == snsId).FirstOrDefault();
             if(ut!=null)
             {
                 uWeb.Altura = ut.altura;
