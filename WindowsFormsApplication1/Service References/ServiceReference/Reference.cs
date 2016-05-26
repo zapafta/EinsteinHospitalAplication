@@ -263,6 +263,307 @@ namespace WindowsFormsApplication1.ServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UtenteWeb", Namespace="http://schemas.datacontract.org/2004/07/WebService")]
+    [System.SerializableAttribute()]
+    public partial class UtenteWeb : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AlturaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ApelidoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BatimentoCardiacoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodigoPostalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ColestrolField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ContactoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DataNascimentoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string GlicemiaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MoradaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PesoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PrimeiroNomeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SaturacaoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SexoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SnsIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TensaoField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Altura {
+            get {
+                return this.AlturaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AlturaField, value) != true)) {
+                    this.AlturaField = value;
+                    this.RaisePropertyChanged("Altura");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Apelido {
+            get {
+                return this.ApelidoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ApelidoField, value) != true)) {
+                    this.ApelidoField = value;
+                    this.RaisePropertyChanged("Apelido");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BatimentoCardiaco {
+            get {
+                return this.BatimentoCardiacoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BatimentoCardiacoField, value) != true)) {
+                    this.BatimentoCardiacoField = value;
+                    this.RaisePropertyChanged("BatimentoCardiaco");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CodigoPostal {
+            get {
+                return this.CodigoPostalField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodigoPostalField, value) != true)) {
+                    this.CodigoPostalField = value;
+                    this.RaisePropertyChanged("CodigoPostal");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Colestrol {
+            get {
+                return this.ColestrolField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ColestrolField, value) != true)) {
+                    this.ColestrolField = value;
+                    this.RaisePropertyChanged("Colestrol");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Contacto {
+            get {
+                return this.ContactoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ContactoField, value) != true)) {
+                    this.ContactoField = value;
+                    this.RaisePropertyChanged("Contacto");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime DataNascimento {
+            get {
+                return this.DataNascimentoField;
+            }
+            set {
+                if ((this.DataNascimentoField.Equals(value) != true)) {
+                    this.DataNascimentoField = value;
+                    this.RaisePropertyChanged("DataNascimento");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Glicemia {
+            get {
+                return this.GlicemiaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GlicemiaField, value) != true)) {
+                    this.GlicemiaField = value;
+                    this.RaisePropertyChanged("Glicemia");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Morada {
+            get {
+                return this.MoradaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MoradaField, value) != true)) {
+                    this.MoradaField = value;
+                    this.RaisePropertyChanged("Morada");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Peso {
+            get {
+                return this.PesoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PesoField, value) != true)) {
+                    this.PesoField = value;
+                    this.RaisePropertyChanged("Peso");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PrimeiroNome {
+            get {
+                return this.PrimeiroNomeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PrimeiroNomeField, value) != true)) {
+                    this.PrimeiroNomeField = value;
+                    this.RaisePropertyChanged("PrimeiroNome");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Saturacao {
+            get {
+                return this.SaturacaoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SaturacaoField, value) != true)) {
+                    this.SaturacaoField = value;
+                    this.RaisePropertyChanged("Saturacao");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Sexo {
+            get {
+                return this.SexoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SexoField, value) != true)) {
+                    this.SexoField = value;
+                    this.RaisePropertyChanged("Sexo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SnsId {
+            get {
+                return this.SnsIdField;
+            }
+            set {
+                if ((this.SnsIdField.Equals(value) != true)) {
+                    this.SnsIdField = value;
+                    this.RaisePropertyChanged("SnsId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Tensao {
+            get {
+                return this.TensaoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TensaoField, value) != true)) {
+                    this.TensaoField = value;
+                    this.RaisePropertyChanged("Tensao");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IService1")]
     public interface IService1 {
@@ -308,6 +609,12 @@ namespace WindowsFormsApplication1.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/alterarUtilizador", ReplyAction="http://tempuri.org/IService1/alterarUtilizadorResponse")]
         System.Threading.Tasks.Task<bool> alterarUtilizadorAsync(string nome, int nInterno, string morada, System.DateTime dataNascimento, string cargo, string password, string tipoUtilizador, int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/procurarUtente", ReplyAction="http://tempuri.org/IService1/procurarUtenteResponse")]
+        WindowsFormsApplication1.ServiceReference.UtenteWeb procurarUtente(int snsId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/procurarUtente", ReplyAction="http://tempuri.org/IService1/procurarUtenteResponse")]
+        System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.UtenteWeb> procurarUtenteAsync(int snsId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -391,6 +698,14 @@ namespace WindowsFormsApplication1.ServiceReference {
         
         public System.Threading.Tasks.Task<bool> alterarUtilizadorAsync(string nome, int nInterno, string morada, System.DateTime dataNascimento, string cargo, string password, string tipoUtilizador, int id) {
             return base.Channel.alterarUtilizadorAsync(nome, nInterno, morada, dataNascimento, cargo, password, tipoUtilizador, id);
+        }
+        
+        public WindowsFormsApplication1.ServiceReference.UtenteWeb procurarUtente(int snsId) {
+            return base.Channel.procurarUtente(snsId);
+        }
+        
+        public System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.UtenteWeb> procurarUtenteAsync(int snsId) {
+            return base.Channel.procurarUtenteAsync(snsId);
         }
     }
 }

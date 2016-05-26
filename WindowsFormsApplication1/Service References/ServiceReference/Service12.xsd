@@ -28,4 +28,26 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfUtilizadorWeb" nillable="true" type="tns:ArrayOfUtilizadorWeb" />
+  <xs:complexType name="UtenteWeb">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Altura" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Apelido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BatimentoCardiaco" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoPostal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Colestrol" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Contacto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataNascimento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Glicemia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Morada" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Peso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimeiroNome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Saturacao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sexo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SnsId" type="xs:int" />
+      <xs:element minOccurs="0" name="Tensao" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UtenteWeb" nillable="true" type="tns:UtenteWeb" />
 </xs:schema>

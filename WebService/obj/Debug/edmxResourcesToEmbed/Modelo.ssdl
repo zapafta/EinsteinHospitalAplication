@@ -108,6 +108,7 @@
     <Property Name="colestrol" Type="nvarchar(max)" Nullable="true" />
     <Property Name="saturacao" Type="nvarchar(max)" Nullable="true" />
     <Property Name="batimentoCardiaco" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="snsId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="ConsultaSet">
     <Key>
