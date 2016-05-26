@@ -113,6 +113,7 @@
     <Property Name="colestrol" Type="nvarchar(max)" Nullable="true" />
     <Property Name="saturacao" Type="nvarchar(max)" Nullable="true" />
     <Property Name="batimentoCardiaco" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="snsId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="ConsultaSet">
     <Key>
@@ -486,6 +487,7 @@
           <Property Name="saturacao" Type="String" Nullable="true" />
           <Property Name="batimentoCardiaco" Type="String" Nullable="true" />
           <NavigationProperty Name="Consulta" Relationship="EinsteinHospitalBDModel.UtenteConsulta" FromRole="Utente" ToRole="Consulta" />
+          <Property Name="snsId" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="ExameUtente">
           <End Type="EinsteinHospitalBDModel.Exame" Role="Exame" Multiplicity="*" />
@@ -630,6 +632,7 @@
           <ScalarProperty Name="colestrol" ColumnName="colestrol" />
           <ScalarProperty Name="saturacao" ColumnName="saturacao" />
           <ScalarProperty Name="batimentoCardiaco" ColumnName="batimentoCardiaco" />
+          <ScalarProperty Name="snsId" ColumnName="snsId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

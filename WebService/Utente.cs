@@ -36,6 +36,7 @@ namespace WebService
         public string colestrol { get; set; }
         public string saturacao { get; set; }
         public string batimentoCardiaco { get; set; }
+        public int snsId { get; set; }
     
         public virtual ICollection<Exame> Exame { get; set; }
         public virtual ICollection<Consulta> Consulta { get; set; }
