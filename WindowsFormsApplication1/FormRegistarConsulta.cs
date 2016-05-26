@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApplication1.ServiceReference;
 
 namespace WindowsFormsApplication1
 {
     public partial class FormRegistarConsulta : Form
     {
+        Service1Client webservice;
         public FormRegistarConsulta()
         {
             InitializeComponent();
@@ -19,6 +21,7 @@ namespace WindowsFormsApplication1
             tabPage3.Enabled = false;
             tabPage4.Enabled = false;
             tabPage5.Enabled = false;
+            webservice = new Service1Client();
 
         }
 
@@ -116,6 +119,26 @@ namespace WindowsFormsApplication1
             if (dialogResult == DialogResult.Yes)
             {
                 this.Close();
+            }
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            if (!txtSearch.Equals(""))
+            {
+                UtenteWeb utente = webservice.procurarUtente(int.Parse(txtSearch.Text));
+                if(utente==null)
+                {
+                    MessageBox.Show("Sem resultados!");
+                }
+                else
+                {
+                    MessageBox.Show(utente.PrimeiroNome);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Insira o número de utente!");
             }
         }
     }

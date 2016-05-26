@@ -230,6 +230,7 @@
             this.btnPesquisar.TabIndex = 2;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // txtSearch
             // 
@@ -237,7 +238,6 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(388, 20);
             this.txtSearch.TabIndex = 1;
-            this.txtSearch.Text = "Pesquisar";
             // 
             // tabPage2
             // 

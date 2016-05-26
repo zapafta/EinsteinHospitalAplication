@@ -81,6 +81,7 @@
           <ScalarProperty Name="colestrol" ColumnName="colestrol" />
           <ScalarProperty Name="saturacao" ColumnName="saturacao" />
           <ScalarProperty Name="batimentoCardiaco" ColumnName="batimentoCardiaco" />
+          <ScalarProperty Name="snsId" ColumnName="snsId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

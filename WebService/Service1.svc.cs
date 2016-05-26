@@ -341,6 +341,44 @@ namespace WebService
             }
         }
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // Parte Diogo
+        public UtenteWeb procurarUtente(int snsId)
+        {
+            UtenteWeb uWeb = new UtenteWeb();
+            EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
+            Utente ut = context.UtenteSet.Where(i => i.snsId == snsId).First();
+            if(ut!=null)
+            {
+                uWeb.Altura = ut.altura;
+                uWeb.Apelido = ut.apelido;
+                uWeb.BatimentoCardiaco = ut.batimentoCardiaco;
+                uWeb.CodigoPostal = ut.codigoPostal;
+                uWeb.Colestrol = ut.colestrol;
+                uWeb.Contacto = ut.contacto;
+                uWeb.DataNascimento = ut.dataNascimento;
+                uWeb.Email = ut.email;
+                uWeb.Glicemia = ut.glicemia;
+                uWeb.ID = ut.Id;
+                uWeb.Morada = ut.morada;
+                uWeb.Peso = ut.peso;
+                uWeb.PrimeiroNome = ut.primeiroNome;
+                uWeb.Saturacao = ut.saturacao;
+                uWeb.Sexo = ut.sexo;
+                uWeb.SnsId = ut.snsId;
+                uWeb.Tensao = ut.tensao;
+
+                return uWeb;
+            }
+            else
+            {
+               return null;
+            }
+            
+
+        }
+
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
 
 }

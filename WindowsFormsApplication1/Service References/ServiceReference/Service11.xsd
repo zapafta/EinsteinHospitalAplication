@@ -113,4 +113,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="procurarUtente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="snsId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="procurarUtenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="procurarUtenteResult" nillable="true" type="q5:UtenteWeb" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

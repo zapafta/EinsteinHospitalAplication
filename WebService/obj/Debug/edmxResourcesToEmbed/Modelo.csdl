@@ -115,6 +115,7 @@
     <Property Name="saturacao" Type="String" Nullable="true" />
     <Property Name="batimentoCardiaco" Type="String" Nullable="true" />
     <NavigationProperty Name="Consulta" Relationship="EinsteinHospitalBDModel.UtenteConsulta" FromRole="Utente" ToRole="Consulta" />
+    <Property Name="snsId" Type="Int32" Nullable="false" />
   </EntityType>
   <Association Name="ExameUtente">
     <End Type="EinsteinHospitalBDModel.Exame" Role="Exame" Multiplicity="*" />

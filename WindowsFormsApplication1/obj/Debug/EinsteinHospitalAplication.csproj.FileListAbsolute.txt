@@ -25,3 +25,17 @@ C:\Users\Zé-PC\Desktop\EinsteinHospitalAplication\WindowsFormsApplication1\obj\
 C:\Users\DiogoMartins\Desktop\Esgps\EinsteinHospitalAplication\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
 C:\Users\DiogoMartins\Desktop\Esgps\EinsteinHospitalAplication\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\DiogoMartins\Desktop\Esgps\EinsteinHospitalAplication\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\DiogoMartins\Desktop\Esgps\EinsteinHospitalAplication\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.CriarExame.resources
+C:\Users\DiogoMartins\Desktop\Esgps\EinsteinHospitalAplication\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.CriarMedicacao.resources
+C:\Users\DiogoMartins\Desktop\Esgps\EinsteinHospitalAplication\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\DiogoMartins\Desktop\Esgps\EinsteinHospitalAplication\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormLogin.resources
+C:\Users\DiogoMartins\Desktop\Esgps\EinsteinHospitalAplication\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormPaginaInicialAdministrador.resources
+C:\Users\DiogoMartins\Desktop\Esgps\EinsteinHospitalAplication\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormPesquisaUtilizador.resources
+C:\Users\DiogoMartins\Desktop\Esgps\EinsteinHospitalAplication\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormPrincipal.resources
+C:\Users\DiogoMartins\Desktop\Esgps\EinsteinHospitalAplication\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormDadosUtilizador.resources
+C:\Users\DiogoMartins\Desktop\Esgps\EinsteinHospitalAplication\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormRegistarConsulta.resources
+C:\Users\DiogoMartins\Desktop\Esgps\EinsteinHospitalAplication\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.PesquisaPaciente.resources
+C:\Users\DiogoMartins\Desktop\Esgps\EinsteinHospitalAplication\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\DiogoMartins\Desktop\Esgps\EinsteinHospitalAplication\WindowsFormsApplication1\obj\Debug\EinsteinHospitalAplication.csproj.GenerateResource.Cache
+C:\Users\DiogoMartins\Desktop\Esgps\EinsteinHospitalAplication\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\DiogoMartins\Desktop\Esgps\EinsteinHospitalAplication\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb

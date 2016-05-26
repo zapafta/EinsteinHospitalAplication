@@ -36,6 +36,10 @@ namespace WebService
         [OperationContract]
         bool alterarUtilizador(string nome, int nInterno, string morada, DateTime dataNascimento, string cargo, string password, string tipoUtilizador, int id);
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // Parte Diogo
+        [OperationContract]
+        UtenteWeb procurarUtente(int snsId);
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
 
 
@@ -136,6 +140,148 @@ namespace WebService
         {
             get { return cargo; }
             set { cargo = value; }
+        }
+    }
+
+    [DataContract]
+    public class UtenteWeb
+    {
+        int Id;
+        string primeiroNome;
+        string apelido;
+        DateTime dataNascimento;
+        string morada;
+        string codigoPostal;
+        string email;
+        string sexo;
+        string contacto;
+        string peso;
+        string altura;
+        string glicemia;
+        string tensao;
+        string colestrol;
+        string saturacao;
+        string batimentoCardiaco;
+        int snsId;
+
+
+        [DataMember]
+        public int ID
+        {
+            get { return ID; }
+            set { ID = value; }
+        }
+
+        [DataMember]
+        public string PrimeiroNome
+        {
+            get { return PrimeiroNome; }
+            set { PrimeiroNome = value; }
+        }
+
+        [DataMember]
+        public string Apelido
+        {
+            get { return Apelido; }
+            set { Apelido = value; }
+        }
+
+        [DataMember]
+        public DateTime DataNascimento
+        {
+            get { return DataNascimento; }
+            set { DataNascimento = value; }
+        }
+
+        [DataMember]
+        public string Morada
+        {
+            get { return Morada; }
+            set { Morada = value; }
+        }
+
+        [DataMember]
+        public string CodigoPostal
+        {
+            get { return CodigoPostal; }
+            set { CodigoPostal = value; }
+        }
+
+        [DataMember]
+        public string Email
+        {
+            get { return Email; }
+            set { Email = value; }
+        }
+
+        [DataMember]
+        public string Sexo
+        {
+            get { return Sexo; }
+            set { Sexo = value; }
+        }
+
+        [DataMember]
+        public string Contacto
+        {
+            get { return Contacto; }
+            set { Contacto = value; }
+        }
+
+        [DataMember]
+        public string Peso
+        {
+            get { return Peso; }
+            set { Peso = value; }
+        }
+
+        [DataMember]
+        public string Altura
+        {
+            get { return Altura; }
+            set { Altura = value; }
+        }
+
+        [DataMember]
+        public string Glicemia
+        {
+            get { return Glicemia; }
+            set { Glicemia = value; }
+        }
+
+        [DataMember]
+        public string Tensao
+        {
+            get { return Tensao; }
+            set { Tensao = value; }
+        }
+
+        [DataMember]
+        public string Colestrol
+        {
+            get { return Colestrol; }
+            set { Colestrol = value; }
+        }
+
+        [DataMember]
+        public string Saturacao
+        {
+            get { return Saturacao; }
+            set { Saturacao = value; }
+        }
+
+        [DataMember]
+        public string BatimentoCardiaco
+        {
+            get { return BatimentoCardiaco; }
+            set { BatimentoCardiaco = value; }
+        }
+
+        [DataMember]
+        public int SnsId
+        {
+            get { return SnsId; }
+            set { SnsId = value; }
         }
     }
 }
