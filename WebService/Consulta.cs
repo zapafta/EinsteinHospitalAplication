@@ -18,6 +18,7 @@ namespace WebService
         {
             this.Medicacao = new HashSet<Medicacao>();
             this.Sintomas = new HashSet<Sintomas>();
+            this.Diagnosticos = new HashSet<Diagnosticos>();
         }
     
         public int Id { get; set; }
@@ -28,5 +29,6 @@ namespace WebService
         public virtual Medico Medico { get; set; }
         public virtual ICollection<Medicacao> Medicacao { get; set; }
         public virtual ICollection<Sintomas> Sintomas { get; set; }
+        public virtual ICollection<Diagnosticos> Diagnosticos { get; set; }
     }
 }

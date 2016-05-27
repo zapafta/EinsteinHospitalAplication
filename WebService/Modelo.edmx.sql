@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/26/2016 12:48:57
+-- Date Created: 05/27/2016 15:57:19
 -- Generated from EDMX file: C:\Users\DiogoMartins\Desktop\Esgps\EinsteinHospitalAplication\WebService\Modelo.edmx
 -- --------------------------------------------------
 
@@ -44,6 +44,12 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_ConsultaSintomas_Sintomas]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[ConsultaSintomas] DROP CONSTRAINT [FK_ConsultaSintomas_Sintomas];
 GO
+IF OBJECT_ID(N'[dbo].[FK_DiagnosticosConsulta_Diagnosticos]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[DiagnosticosConsulta] DROP CONSTRAINT [FK_DiagnosticosConsulta_Diagnosticos];
+GO
+IF OBJECT_ID(N'[dbo].[FK_DiagnosticosConsulta_Consulta]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[DiagnosticosConsulta] DROP CONSTRAINT [FK_DiagnosticosConsulta_Consulta];
+GO
 IF OBJECT_ID(N'[dbo].[FK_Rececionista_inherits_Utilizador]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[UtilizadorSet_Rececionista] DROP CONSTRAINT [FK_Rececionista_inherits_Utilizador];
 GO
@@ -79,6 +85,9 @@ GO
 IF OBJECT_ID(N'[dbo].[SintomasSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[SintomasSet];
 GO
+IF OBJECT_ID(N'[dbo].[DiagnosticosSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DiagnosticosSet];
+GO
 IF OBJECT_ID(N'[dbo].[UtilizadorSet_Rececionista]', 'U') IS NOT NULL
     DROP TABLE [dbo].[UtilizadorSet_Rececionista];
 GO
@@ -96,6 +105,9 @@ IF OBJECT_ID(N'[dbo].[ConsultaMedicacao]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[ConsultaSintomas]', 'U') IS NOT NULL
     DROP TABLE [dbo].[ConsultaSintomas];
+GO
+IF OBJECT_ID(N'[dbo].[DiagnosticosConsulta]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DiagnosticosConsulta];
 GO
 
 -- --------------------------------------------------
@@ -175,6 +187,13 @@ CREATE TABLE [dbo].[SintomasSet] (
 );
 GO
 
+-- Creating table 'DiagnosticosSet'
+CREATE TABLE [dbo].[DiagnosticosSet] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [descricao] nvarchar(max)  NOT NULL
+);
+GO
+
 -- Creating table 'UtilizadorSet_Rececionista'
 CREATE TABLE [dbo].[UtilizadorSet_Rececionista] (
     [nome] nvarchar(max)  NOT NULL,
@@ -233,6 +252,13 @@ CREATE TABLE [dbo].[ConsultaSintomas] (
 );
 GO
 
+-- Creating table 'DiagnosticosConsulta'
+CREATE TABLE [dbo].[DiagnosticosConsulta] (
+    [Diagnosticos_Id] int  NOT NULL,
+    [Consulta_Id] int  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -273,6 +299,12 @@ ADD CONSTRAINT [PK_SintomasSet]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
+-- Creating primary key on [Id] in table 'DiagnosticosSet'
+ALTER TABLE [dbo].[DiagnosticosSet]
+ADD CONSTRAINT [PK_DiagnosticosSet]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
 -- Creating primary key on [Id] in table 'UtilizadorSet_Rececionista'
 ALTER TABLE [dbo].[UtilizadorSet_Rececionista]
 ADD CONSTRAINT [PK_UtilizadorSet_Rececionista]
@@ -307,6 +339,12 @@ GO
 ALTER TABLE [dbo].[ConsultaSintomas]
 ADD CONSTRAINT [PK_ConsultaSintomas]
     PRIMARY KEY CLUSTERED ([Consulta_Id], [Sintomas_Id] ASC);
+GO
+
+-- Creating primary key on [Diagnosticos_Id], [Consulta_Id] in table 'DiagnosticosConsulta'
+ALTER TABLE [dbo].[DiagnosticosConsulta]
+ADD CONSTRAINT [PK_DiagnosticosConsulta]
+    PRIMARY KEY CLUSTERED ([Diagnosticos_Id], [Consulta_Id] ASC);
 GO
 
 -- --------------------------------------------------
@@ -427,6 +465,29 @@ ADD CONSTRAINT [FK_ConsultaSintomas_Sintomas]
 CREATE INDEX [IX_FK_ConsultaSintomas_Sintomas]
 ON [dbo].[ConsultaSintomas]
     ([Sintomas_Id]);
+GO
+
+-- Creating foreign key on [Diagnosticos_Id] in table 'DiagnosticosConsulta'
+ALTER TABLE [dbo].[DiagnosticosConsulta]
+ADD CONSTRAINT [FK_DiagnosticosConsulta_Diagnosticos]
+    FOREIGN KEY ([Diagnosticos_Id])
+    REFERENCES [dbo].[DiagnosticosSet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating foreign key on [Consulta_Id] in table 'DiagnosticosConsulta'
+ALTER TABLE [dbo].[DiagnosticosConsulta]
+ADD CONSTRAINT [FK_DiagnosticosConsulta_Consulta]
+    FOREIGN KEY ([Consulta_Id])
+    REFERENCES [dbo].[ConsultaSet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_DiagnosticosConsulta_Consulta'
+CREATE INDEX [IX_FK_DiagnosticosConsulta_Consulta]
+ON [dbo].[DiagnosticosConsulta]
+    ([Consulta_Id]);
 GO
 
 -- Creating foreign key on [Id] in table 'UtilizadorSet_Rececionista'

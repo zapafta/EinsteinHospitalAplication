@@ -26,6 +26,8 @@
         <AssociationConnector Association="EinsteinHospitalBDModel.ConsultaMedicacao" />
         <EntityTypeShape EntityType="EinsteinHospitalBDModel.Sintomas" Width="1.5" PointX="6.75" PointY="9.875" />
         <AssociationConnector Association="EinsteinHospitalBDModel.ConsultaSintomas" />
+        <EntityTypeShape EntityType="EinsteinHospitalBDModel.Diagnosticos" Width="1.5" PointX="9.5" PointY="11.5" />
+        <AssociationConnector Association="EinsteinHospitalBDModel.DiagnosticosConsulta" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

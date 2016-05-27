@@ -12,12 +12,14 @@
     <EntitySet Name="ConsultaSet" EntityType="EinsteinHospitalBDModel.Store.ConsultaSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="MedicacaoSet" EntityType="EinsteinHospitalBDModel.Store.MedicacaoSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="SintomasSet" EntityType="EinsteinHospitalBDModel.Store.SintomasSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DiagnosticosSet" EntityType="EinsteinHospitalBDModel.Store.DiagnosticosSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="UtilizadorSet_Rececionista" EntityType="EinsteinHospitalBDModel.Store.UtilizadorSet_Rececionista" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="UtilizadorSet_Medico" EntityType="EinsteinHospitalBDModel.Store.UtilizadorSet_Medico" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="UtilizadorSet_Enfermeiro" EntityType="EinsteinHospitalBDModel.Store.UtilizadorSet_Enfermeiro" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="UtilizadorSet_Administrador" EntityType="EinsteinHospitalBDModel.Store.UtilizadorSet_Administrador" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ConsultaMedicacao" EntityType="EinsteinHospitalBDModel.Store.ConsultaMedicacao" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ConsultaSintomas" EntityType="EinsteinHospitalBDModel.Store.ConsultaSintomas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DiagnosticosConsulta" EntityType="EinsteinHospitalBDModel.Store.DiagnosticosConsulta" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="ExameRececionista" Association="EinsteinHospitalBDModel.Store.ExameRececionista">
       <End Role="Exame" EntitySet="ExameSet" />
       <End Role="Rececionista" EntitySet="UtilizadorSet_Rececionista" />
@@ -53,6 +55,14 @@
     <AssociationSet Name="FK_ConsultaSintomas_Sintomas" Association="EinsteinHospitalBDModel.Store.FK_ConsultaSintomas_Sintomas">
       <End Role="Sintomas" EntitySet="SintomasSet" />
       <End Role="ConsultaSintomas" EntitySet="ConsultaSintomas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DiagnosticosConsulta_Diagnosticos" Association="EinsteinHospitalBDModel.Store.FK_DiagnosticosConsulta_Diagnosticos">
+      <End Role="Diagnosticos" EntitySet="DiagnosticosSet" />
+      <End Role="DiagnosticosConsulta" EntitySet="DiagnosticosConsulta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DiagnosticosConsulta_Consulta" Association="EinsteinHospitalBDModel.Store.FK_DiagnosticosConsulta_Consulta">
+      <End Role="Consulta" EntitySet="ConsultaSet" />
+      <End Role="DiagnosticosConsulta" EntitySet="DiagnosticosConsulta" />
     </AssociationSet>
     <AssociationSet Name="FK_Rececionista_inherits_Utilizador" Association="EinsteinHospitalBDModel.Store.FK_Rececionista_inherits_Utilizador">
       <End Role="Utilizador" EntitySet="UtilizadorSet" />
@@ -144,6 +154,13 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="descricao" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
+  <EntityType Name="DiagnosticosSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descricao" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
   <EntityType Name="UtilizadorSet_Rececionista">
     <Key>
       <PropertyRef Name="Id" />
@@ -203,6 +220,14 @@
     </Key>
     <Property Name="Consulta_Id" Type="int" Nullable="false" />
     <Property Name="Sintomas_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DiagnosticosConsulta">
+    <Key>
+      <PropertyRef Name="Diagnosticos_Id" />
+      <PropertyRef Name="Consulta_Id" />
+    </Key>
+    <Property Name="Diagnosticos_Id" Type="int" Nullable="false" />
+    <Property Name="Consulta_Id" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="ExameRececionista">
     <End Role="Exame" Type="EinsteinHospitalBDModel.Store.ExameSet" Multiplicity="*" />
@@ -312,6 +337,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_DiagnosticosConsulta_Diagnosticos">
+    <End Role="Diagnosticos" Type="EinsteinHospitalBDModel.Store.DiagnosticosSet" Multiplicity="1" />
+    <End Role="DiagnosticosConsulta" Type="EinsteinHospitalBDModel.Store.DiagnosticosConsulta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Diagnosticos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DiagnosticosConsulta">
+        <PropertyRef Name="Diagnosticos_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DiagnosticosConsulta_Consulta">
+    <End Role="DiagnosticosConsulta" Type="EinsteinHospitalBDModel.Store.DiagnosticosConsulta" Multiplicity="*" />
+    <End Role="Consulta" Type="EinsteinHospitalBDModel.Store.ConsultaSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Consulta">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DiagnosticosConsulta">
+        <PropertyRef Name="Consulta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Rececionista_inherits_Utilizador">
     <End Role="Utilizador" Type="EinsteinHospitalBDModel.Store.UtilizadorSet" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -406,6 +455,11 @@
           <AssociationSet Name="ConsultaSintomas" Association="EinsteinHospitalBDModel.ConsultaSintomas">
             <End Role="Consulta" EntitySet="ConsultaSet" />
             <End Role="Sintomas" EntitySet="SintomasSet" />
+          </AssociationSet>
+          <EntitySet Name="DiagnosticosSet" EntityType="EinsteinHospitalBDModel.Diagnosticos" />
+          <AssociationSet Name="DiagnosticosConsulta" Association="EinsteinHospitalBDModel.DiagnosticosConsulta">
+            <End Role="Diagnosticos" EntitySet="DiagnosticosSet" />
+            <End Role="Consulta" EntitySet="ConsultaSet" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Utilizador">
@@ -508,6 +562,7 @@
           <NavigationProperty Name="Medico" Relationship="EinsteinHospitalBDModel.MedicoConsulta" FromRole="Consulta" ToRole="Medico" />
           <NavigationProperty Name="Medicacao" Relationship="EinsteinHospitalBDModel.ConsultaMedicacao" FromRole="Consulta" ToRole="Medicacao" />
           <NavigationProperty Name="Sintomas" Relationship="EinsteinHospitalBDModel.ConsultaSintomas" FromRole="Consulta" ToRole="Sintomas" />
+          <NavigationProperty Name="Diagnosticos" Relationship="EinsteinHospitalBDModel.DiagnosticosConsulta" FromRole="Consulta" ToRole="Diagnosticos" />
         </EntityType>
         <Association Name="UtenteConsulta">
           <End Type="EinsteinHospitalBDModel.Utente" Role="Utente" Multiplicity="1" />
@@ -545,6 +600,18 @@
         <Association Name="ConsultaSintomas">
           <End Type="EinsteinHospitalBDModel.Consulta" Role="Consulta" Multiplicity="*" />
           <End Type="EinsteinHospitalBDModel.Sintomas" Role="Sintomas" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Diagnosticos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="String" Nullable="false" />
+          <NavigationProperty Name="Consulta" Relationship="EinsteinHospitalBDModel.DiagnosticosConsulta" FromRole="Diagnosticos" ToRole="Consulta" />
+        </EntityType>
+        <Association Name="DiagnosticosConsulta">
+          <End Type="EinsteinHospitalBDModel.Diagnosticos" Role="Diagnosticos" Multiplicity="*" />
+          <End Type="EinsteinHospitalBDModel.Consulta" Role="Consulta" Multiplicity="*" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -666,6 +733,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="DiagnosticosSet">
+      <EntityTypeMapping TypeName="IsTypeOf(EinsteinHospitalBDModel.Diagnosticos)">
+        <MappingFragment StoreEntitySet="DiagnosticosSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <AssociationSetMapping Name="ExameRececionista" TypeName="EinsteinHospitalBDModel.ExameRececionista" StoreEntitySet="ExameSet">
       <EndProperty Name="Rececionista">
         <ScalarProperty Name="Id" ColumnName="Rececionista_Id" />
@@ -720,6 +795,14 @@
       </EndProperty>
       <EndProperty Name="Sintomas">
         <ScalarProperty Name="Id" ColumnName="Sintomas_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DiagnosticosConsulta" TypeName="EinsteinHospitalBDModel.DiagnosticosConsulta" StoreEntitySet="DiagnosticosConsulta">
+      <EndProperty Name="Diagnosticos">
+        <ScalarProperty Name="Id" ColumnName="Diagnosticos_Id" />
+      </EndProperty>
+      <EndProperty Name="Consulta">
+        <ScalarProperty Name="Id" ColumnName="Consulta_Id" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>
