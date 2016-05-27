@@ -391,6 +391,21 @@ namespace WebService
             return listaSintomaWeb;
         }
 
+        public List<DiagnosticoWeb> procurarDiagnosticos(string campoPesquisa)
+        {
+            List<DiagnosticoWeb> listaDiagnosticoWeb = new List<DiagnosticoWeb>();
+            EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
+            List<Diagnosticos> diagnosticos = context.DiagnosticosSet.Where(i => i.descricao.Contains(campoPesquisa)).ToList();
+            foreach (Diagnosticos d in diagnosticos)
+            {
+                DiagnosticoWeb diagnosticoWeb = new DiagnosticoWeb();
+                diagnosticoWeb.Id = d.Id;
+                diagnosticoWeb.Descricao = d.descricao;
+                listaDiagnosticoWeb.Add(diagnosticoWeb);
+            }
+            return listaDiagnosticoWeb;
+        }
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
 

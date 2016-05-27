@@ -35,6 +35,11 @@
       <End Role="Consulta" EntitySet="ConsultaSet" />
       <End Role="Sintomas" EntitySet="SintomasSet" />
     </AssociationSet>
+    <EntitySet Name="DiagnosticosSet" EntityType="EinsteinHospitalBDModel.Diagnosticos" />
+    <AssociationSet Name="DiagnosticosConsulta" Association="EinsteinHospitalBDModel.DiagnosticosConsulta">
+      <End Role="Diagnosticos" EntitySet="DiagnosticosSet" />
+      <End Role="Consulta" EntitySet="ConsultaSet" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Utilizador">
     <Key>
@@ -136,6 +141,7 @@
     <NavigationProperty Name="Medico" Relationship="EinsteinHospitalBDModel.MedicoConsulta" FromRole="Consulta" ToRole="Medico" />
     <NavigationProperty Name="Medicacao" Relationship="EinsteinHospitalBDModel.ConsultaMedicacao" FromRole="Consulta" ToRole="Medicacao" />
     <NavigationProperty Name="Sintomas" Relationship="EinsteinHospitalBDModel.ConsultaSintomas" FromRole="Consulta" ToRole="Sintomas" />
+    <NavigationProperty Name="Diagnosticos" Relationship="EinsteinHospitalBDModel.DiagnosticosConsulta" FromRole="Consulta" ToRole="Diagnosticos" />
   </EntityType>
   <Association Name="UtenteConsulta">
     <End Type="EinsteinHospitalBDModel.Utente" Role="Utente" Multiplicity="1" />
@@ -173,5 +179,17 @@
   <Association Name="ConsultaSintomas">
     <End Type="EinsteinHospitalBDModel.Consulta" Role="Consulta" Multiplicity="*" />
     <End Type="EinsteinHospitalBDModel.Sintomas" Role="Sintomas" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Diagnosticos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descricao" Type="String" Nullable="false" />
+    <NavigationProperty Name="Consulta" Relationship="EinsteinHospitalBDModel.DiagnosticosConsulta" FromRole="Diagnosticos" ToRole="Consulta" />
+  </EntityType>
+  <Association Name="DiagnosticosConsulta">
+    <End Type="EinsteinHospitalBDModel.Diagnosticos" Role="Diagnosticos" Multiplicity="*" />
+    <End Type="EinsteinHospitalBDModel.Consulta" Role="Consulta" Multiplicity="*" />
   </Association>
 </Schema>
