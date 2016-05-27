@@ -88,6 +88,9 @@
     <Compile Include="Consulta.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="Diagnosticos.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Enfermeiro.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>

@@ -31,5 +31,6 @@ namespace WebService
         public virtual DbSet<Consulta> ConsultaSet { get; set; }
         public virtual DbSet<Medicacao> MedicacaoSet { get; set; }
         public virtual DbSet<Sintomas> SintomasSet { get; set; }
+        public virtual DbSet<Diagnosticos> DiagnosticosSet { get; set; }
     }
 }
