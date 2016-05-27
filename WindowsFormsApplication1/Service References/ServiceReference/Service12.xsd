@@ -63,4 +63,17 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SintomaWeb" nillable="true" type="tns:SintomaWeb" />
+  <xs:complexType name="ArrayOfDiagnosticoWeb">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DiagnosticoWeb" nillable="true" type="tns:DiagnosticoWeb" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDiagnosticoWeb" nillable="true" type="tns:ArrayOfDiagnosticoWeb" />
+  <xs:complexType name="DiagnosticoWeb">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DiagnosticoWeb" nillable="true" type="tns:DiagnosticoWeb" />
 </xs:schema>

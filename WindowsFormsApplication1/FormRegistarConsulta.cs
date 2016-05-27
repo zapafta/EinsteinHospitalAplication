@@ -16,6 +16,9 @@ namespace WindowsFormsApplication1
         Service1Client webservice;
         List<SintomaWeb> listaFinalSintomas = new List<SintomaWeb>();
         List<SintomaWeb> listaSintomasEncontradas = new List<SintomaWeb>();
+
+        List<DiagnosticoWeb> listaFinalDiagnosticos = new List<DiagnosticoWeb>();
+        List<DiagnosticoWeb> listaDiagnosticosEncontrados = new List<DiagnosticoWeb>();
         public FormRegistarConsulta()
         {
             InitializeComponent();
@@ -237,6 +240,73 @@ namespace WindowsFormsApplication1
             listaFinalSintomas.Clear();
             listSintomas.Items.Clear();
             listaSintomasEncontradas.Clear();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            {
+                listView3.Items.Clear();
+                if (!textBox2.Text.Equals(""))
+                {
+                    listaDiagnosticosEncontrados.Clear();
+                    listaDiagnosticosEncontrados.AddRange(webservice.procurarDiagnosticos(textBox2.Text));
+                    if (listaDiagnosticosEncontrados.Count < 1)
+                    {
+                        MessageBox.Show("Sem resultados!");
+                    }
+                    else
+                    {
+                        foreach (DiagnosticoWeb s in listaDiagnosticosEncontrados)
+                        {
+                            ListViewItem linha = new ListViewItem(new[] { s.Id.ToString(), s.Descricao });
+                            listView3.Items.Add(linha);
+                        }
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Insira o diagnostico a pesquisar!");
+                }
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (listView3.SelectedItems.Count > 0)
+            {
+                int selecionado = listView3.SelectedIndices[0];
+                ListViewItem item = listView3.Items[listView3.SelectedIndices[0]];
+                listView3.Items.Remove(item);
+                listaFinalDiagnosticos.Add(listaDiagnosticosEncontrados[selecionado]);
+                ListViewItem linha = new ListViewItem(new[] { listaDiagnosticosEncontrados[selecionado].Id.ToString(), listaDiagnosticosEncontrados[selecionado].Descricao });
+                listaDiagnosticosEncontrados.RemoveAt(selecionado);
+                listView2.Items.Add(linha);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            if (listView2.SelectedItems.Count > 0)
+            {
+                int selecionado = listView2.SelectedIndices[0];
+                ListViewItem item = listView2.Items[selecionado];
+                ListViewItem linha = new ListViewItem(new[] { listaFinalDiagnosticos[selecionado].Id.ToString(), listaFinalDiagnosticos[selecionado].Descricao });
+                listaDiagnosticosEncontrados.Add(listaFinalDiagnosticos[selecionado]);
+                listView2.Items.Remove(item);
+                listaFinalDiagnosticos.RemoveAt(selecionado);
+                listView3.Items.Add(linha);
+
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            listView2.Items.Clear();
+            listaFinalDiagnosticos.Clear();
+            listView3.Items.Clear();
+            listaDiagnosticosEncontrados.Clear();
         }
     }
 }

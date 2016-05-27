@@ -42,6 +42,9 @@ namespace WebService
 
         [OperationContract]
         List<SintomaWeb> procurarSintomas(string campoPesquisa);
+
+        [OperationContract]
+        List<DiagnosticoWeb> procurarDiagnosticos(string campoPesquisa);
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
 
@@ -291,6 +294,27 @@ namespace WebService
 
         [DataContract]
         public class SintomaWeb
+        {
+            int id;
+            string descricao;
+
+            [DataMember]
+            public int Id
+            {
+                get { return id; }
+                set { id = value; }
+            }
+
+            [DataMember]
+            public string Descricao
+            {
+                get { return descricao; }
+                set { descricao = value; }
+            }
+        }
+
+        [DataContract]
+        public class DiagnosticoWeb
         {
             int id;
             string descricao;
