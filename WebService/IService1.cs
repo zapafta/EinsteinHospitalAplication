@@ -45,6 +45,9 @@ namespace WebService
 
         [OperationContract]
         List<DiagnosticoWeb> procurarDiagnosticos(string campoPesquisa);
+
+        [OperationContract]
+        List<MedicacaoWeb> procurarMedicacoes(string campoPesquisa);
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
 
@@ -104,7 +107,7 @@ namespace WebService
             get { return password; }
             set { password = value; }
         }
-        
+
         [DataMember]
         public string TipoUtilizador
         {
@@ -292,45 +295,106 @@ namespace WebService
         }
     }
 
-        [DataContract]
-        public class SintomaWeb
+    [DataContract]
+    public class SintomaWeb
+    {
+        int id;
+        string descricao;
+
+        [DataMember]
+        public int Id
         {
-            int id;
-            string descricao;
-
-            [DataMember]
-            public int Id
-            {
-                get { return id; }
-                set { id = value; }
-            }
-
-            [DataMember]
-            public string Descricao
-            {
-                get { return descricao; }
-                set { descricao = value; }
-            }
+            get { return id; }
+            set { id = value; }
         }
 
-        [DataContract]
-        public class DiagnosticoWeb
+        [DataMember]
+        public string Descricao
         {
-            int id;
-            string descricao;
-
-            [DataMember]
-            public int Id
-            {
-                get { return id; }
-                set { id = value; }
-            }
-
-            [DataMember]
-            public string Descricao
-            {
-                get { return descricao; }
-                set { descricao = value; }
-            }
+            get { return descricao; }
+            set { descricao = value; }
         }
+    }
+
+    [DataContract]
+    public class DiagnosticoWeb
+    {
+        int id;
+        string descricao;
+
+        [DataMember]
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        [DataMember]
+        public string Descricao
+        {
+            get { return descricao; }
+            set { descricao = value; }
+        }
+    }
+    [DataContract]
+    public class MedicacaoWeb
+    {
+        int id;
+        string nomeMedicacao;
+        string administracao;
+        string preco;
+        DateTime data;
+        string dosagem;
+        string comparticao;
+
+
+        [DataMember]
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        [DataMember]
+        public string NomeMedicamento
+        {
+            get { return nomeMedicacao; }
+            set { nomeMedicacao = value; }
+        }
+
+        [DataMember]
+        public string Administracao
+        {
+            get { return administracao; }
+            set { administracao = value; }
+        }
+
+        [DataMember]
+        public string Preco
+        {
+            get { return preco; }
+            set { preco = value; }
+        }
+
+        [DataMember]
+        public DateTime Data
+        {
+            get { return data; }
+            set { data = value; }
+        }
+
+        [DataMember]
+        public string Dosagem
+        {
+            get { return dosagem; }
+            set { dosagem = value; }
+        }
+
+        [DataMember]
+        public string Comparticao
+        {
+            get { return comparticao; }
+            set { comparticao = value; }
+        }
+    }
 }

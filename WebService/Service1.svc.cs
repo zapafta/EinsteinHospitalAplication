@@ -406,6 +406,25 @@ namespace WebService
             return listaDiagnosticoWeb;
         }
 
+        public List<MedicacaoWeb> procurarMedicacoes(string campoPesquisa)
+        {
+            List<MedicacaoWeb> listaMedicacaoWeb = new List<MedicacaoWeb>();
+            EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
+            List<Medicacao> medicacao = context.MedicacaoSet.Where(i => i.nomeMedicacao.Contains(campoPesquisa)).ToList();
+            foreach (Medicacao m in medicacao)
+            {
+                MedicacaoWeb medicacaoWeb = new MedicacaoWeb();
+                medicacaoWeb.Id = m.Id;
+                medicacaoWeb.NomeMedicamento = m.nomeMedicacao;
+                medicacaoWeb.Preco = m.preco;
+                medicacaoWeb.Data = m.data;
+                medicacaoWeb.Comparticao = m.comparticao;
+                medicacaoWeb.Administracao = m.administracao;
+                listaMedicacaoWeb.Add(medicacaoWeb);
+            }
+            return listaMedicacaoWeb;
+        }
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
 
