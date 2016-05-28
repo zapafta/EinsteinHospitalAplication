@@ -19,12 +19,20 @@ namespace WindowsFormsApplication1
 
         List<DiagnosticoWeb> listaFinalDiagnosticos = new List<DiagnosticoWeb>();
         List<DiagnosticoWeb> listaDiagnosticosEncontrados = new List<DiagnosticoWeb>();
+
+        List<MedicacaoWeb> listaFinalMedicacao = new List<MedicacaoWeb>();
+        List<MedicacaoWeb> listaMedicacaoEncontrados = new List<MedicacaoWeb>();
+
         public FormRegistarConsulta()
         {
             InitializeComponent();
             listView1.FullRowSelect = true;
             listSintomas.FullRowSelect = true;
             listSintomasFinal.FullRowSelect = true;
+            listView2.FullRowSelect = true;
+            listView3.FullRowSelect = true;
+            listView4.FullRowSelect = true;
+            listView5.FullRowSelect = true;
             tabPage2.Enabled = false;
             tabPage3.Enabled = false;
             tabPage4.Enabled = false;
@@ -65,16 +73,29 @@ namespace WindowsFormsApplication1
 
         private void button14_Click_1(object sender, EventArgs e)
         {
-            int i = tabControl1.SelectedIndex;
-            tabControl1.SelectTab(i + 1);
-            tabPage4.Enabled = true;
+            if (listaFinalDiagnosticos.Count > 0)
+            {
+                int i = tabControl1.SelectedIndex;
+                tabControl1.SelectTab(i + 1);
+                tabPage4.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Diagnósticos em falta!");
+            }
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
-            int i = tabControl1.SelectedIndex;
-            tabControl1.SelectTab(i + 1);
-            tabPage5.Enabled = true;
+            if (listaFinalMedicacao.Count > 0)
+            {
+                int i = tabControl1.SelectedIndex;
+                tabControl1.SelectTab(i + 1);
+                tabPage5.Enabled = true;
+            }
+            {
+                MessageBox.Show("Medicação em falta!");
+            }
         }
 
         private void button12_Click(object sender, EventArgs e)
@@ -307,6 +328,72 @@ namespace WindowsFormsApplication1
             listaFinalDiagnosticos.Clear();
             listView3.Items.Clear();
             listaDiagnosticosEncontrados.Clear();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            {
+                listView5.Items.Clear();
+                if (!textBox3.Text.Equals(""))
+                {
+                    listaMedicacaoEncontrados.Clear();
+                    listaMedicacaoEncontrados.AddRange(webservice.procurarMedicacoes(textBox3.Text));
+                    if (listaMedicacaoEncontrados.Count < 1)
+                    {
+                        MessageBox.Show("Sem resultados!");
+                    }
+                    else
+                    {
+                        foreach (MedicacaoWeb m in listaMedicacaoEncontrados)
+                        {
+                            ListViewItem linha = new ListViewItem(new[] { m.Id.ToString(), m.NomeMedicamento, m.Preco, m.Data.ToString(), m.Comparticao, m.Administracao });
+                            listView5.Items.Add(linha);
+                        }
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Insira a medicação a pesquisar!");
+                }
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (listView5.SelectedItems.Count > 0)
+            {
+                int selecionado = listView5.SelectedIndices[0];
+                ListViewItem item = listView5.Items[listView5.SelectedIndices[0]];
+                listView5.Items.Remove(item);
+                listaFinalMedicacao.Add(listaMedicacaoEncontrados[selecionado]);
+                ListViewItem linha = new ListViewItem(new[] { listaMedicacaoEncontrados[selecionado].Id.ToString(), listaMedicacaoEncontrados[selecionado].NomeMedicamento, listaMedicacaoEncontrados[selecionado].Preco, listaMedicacaoEncontrados[selecionado].Data.ToString(), listaMedicacaoEncontrados[selecionado].Comparticao, listaMedicacaoEncontrados[selecionado].Administracao});
+                listaMedicacaoEncontrados.RemoveAt(selecionado);
+                listView4.Items.Add(linha);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (listView4.SelectedItems.Count > 0)
+            {
+                int selecionado = listView4.SelectedIndices[0];
+                ListViewItem item = listView4.Items[selecionado];
+                ListViewItem linha = new ListViewItem(new[] { listaFinalMedicacao[selecionado].Id.ToString(), listaFinalMedicacao[selecionado].NomeMedicamento, listaFinalMedicacao[selecionado].Preco, listaFinalMedicacao[selecionado].Data.ToString(), listaFinalMedicacao[selecionado].Comparticao, listaFinalMedicacao[selecionado].Administracao });
+                listaMedicacaoEncontrados.Add(listaFinalMedicacao[selecionado]);
+                listView4.Items.Remove(item);
+                listaFinalMedicacao.RemoveAt(selecionado);
+                listView5.Items.Add(linha);
+
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            listView4.Items.Clear();
+            listaFinalMedicacao.Clear();
+            listView5.Items.Clear();
+            listaMedicacaoEncontrados.Clear();
         }
     }
 }

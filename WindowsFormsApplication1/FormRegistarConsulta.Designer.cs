@@ -79,9 +79,6 @@
             this.button9 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.listView4 = new System.Windows.Forms.ListView();
-            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listView5 = new System.Windows.Forms.ListView();
             this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -95,6 +92,17 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.btnPdf = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listView4 = new System.Windows.Forms.ListView();
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -507,17 +515,16 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(388, 20);
             this.textBox2.TabIndex = 9;
-            this.textBox2.Text = "Pesquisar";
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.listView4);
             this.tabPage4.Controls.Add(this.button16);
             this.tabPage4.Controls.Add(this.button17);
             this.tabPage4.Controls.Add(this.button18);
             this.tabPage4.Controls.Add(this.button9);
             this.tabPage4.Controls.Add(this.button5);
             this.tabPage4.Controls.Add(this.button6);
-            this.tabPage4.Controls.Add(this.listView4);
             this.tabPage4.Controls.Add(this.listView5);
             this.tabPage4.Controls.Add(this.button7);
             this.tabPage4.Controls.Add(this.textBox3);
@@ -566,6 +573,7 @@
             this.button9.TabIndex = 15;
             this.button9.Text = "Limpar";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button5
             // 
@@ -575,6 +583,7 @@
             this.button5.TabIndex = 14;
             this.button5.Text = "<-- Remover";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -584,35 +593,18 @@
             this.button6.TabIndex = 13;
             this.button6.Text = "Adicionar -->";
             this.button6.UseVisualStyleBackColor = true;
-            // 
-            // listView4
-            // 
-            this.listView4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader17,
-            this.columnHeader18});
-            this.listView4.Location = new System.Drawing.Point(729, 43);
-            this.listView4.Name = "listView4";
-            this.listView4.Size = new System.Drawing.Size(387, 300);
-            this.listView4.TabIndex = 12;
-            this.listView4.UseCompatibleStateImageBehavior = false;
-            this.listView4.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader17
-            // 
-            this.columnHeader17.Text = "Id";
-            this.columnHeader17.Width = 67;
-            // 
-            // columnHeader18
-            // 
-            this.columnHeader18.Text = "Descrição";
-            this.columnHeader18.Width = 315;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // listView5
             // 
             this.listView5.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader19,
-            this.columnHeader20});
-            this.listView5.Location = new System.Drawing.Point(7, 43);
+            this.columnHeader20,
+            this.columnHeader5,
+            this.columnHeader7,
+            this.columnHeader21,
+            this.columnHeader22});
+            this.listView5.Location = new System.Drawing.Point(6, 43);
             this.listView5.Name = "listView5";
             this.listView5.Size = new System.Drawing.Size(387, 300);
             this.listView5.TabIndex = 11;
@@ -626,7 +618,7 @@
             // 
             // columnHeader20
             // 
-            this.columnHeader20.Text = "Descrição";
+            this.columnHeader20.Text = "Nome";
             this.columnHeader20.Width = 315;
             // 
             // button7
@@ -637,6 +629,7 @@
             this.button7.TabIndex = 10;
             this.button7.Text = "Pesquisar";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // textBox3
             // 
@@ -644,7 +637,6 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(388, 20);
             this.textBox3.TabIndex = 9;
-            this.textBox3.Text = "Pesquisar";
             // 
             // tabPage5
             // 
@@ -727,6 +719,68 @@
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = true;
             // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Preço";
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Data";
+            // 
+            // columnHeader21
+            // 
+            this.columnHeader21.Text = "Compartição";
+            // 
+            // columnHeader22
+            // 
+            this.columnHeader22.Text = "Administração";
+            // 
+            // listView4
+            // 
+            this.listView4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader17,
+            this.columnHeader18,
+            this.columnHeader23,
+            this.columnHeader24,
+            this.columnHeader25,
+            this.columnHeader26});
+            this.listView4.Location = new System.Drawing.Point(729, 43);
+            this.listView4.Name = "listView4";
+            this.listView4.Size = new System.Drawing.Size(387, 300);
+            this.listView4.TabIndex = 19;
+            this.listView4.UseCompatibleStateImageBehavior = false;
+            this.listView4.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader17
+            // 
+            this.columnHeader17.Text = "Id";
+            this.columnHeader17.Width = 23;
+            // 
+            // columnHeader18
+            // 
+            this.columnHeader18.Text = "Nome";
+            this.columnHeader18.Width = 119;
+            // 
+            // columnHeader23
+            // 
+            this.columnHeader23.Text = "Preço";
+            this.columnHeader23.Width = 40;
+            // 
+            // columnHeader24
+            // 
+            this.columnHeader24.Text = "Data";
+            this.columnHeader24.Width = 61;
+            // 
+            // columnHeader25
+            // 
+            this.columnHeader25.Text = "Compartição";
+            this.columnHeader25.Width = 77;
+            // 
+            // columnHeader26
+            // 
+            this.columnHeader26.Text = "Administração";
+            this.columnHeader26.Width = 64;
+            // 
             // FormRegistarConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -789,9 +843,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.ListView listView4;
-        private System.Windows.Forms.ColumnHeader columnHeader17;
-        private System.Windows.Forms.ColumnHeader columnHeader18;
         private System.Windows.Forms.ListView listView5;
         private System.Windows.Forms.ColumnHeader columnHeader19;
         private System.Windows.Forms.ColumnHeader columnHeader20;
@@ -819,5 +870,16 @@
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader21;
+        private System.Windows.Forms.ColumnHeader columnHeader22;
+        private System.Windows.Forms.ListView listView4;
+        private System.Windows.Forms.ColumnHeader columnHeader17;
+        private System.Windows.Forms.ColumnHeader columnHeader18;
+        private System.Windows.Forms.ColumnHeader columnHeader23;
+        private System.Windows.Forms.ColumnHeader columnHeader24;
+        private System.Windows.Forms.ColumnHeader columnHeader25;
+        private System.Windows.Forms.ColumnHeader columnHeader26;
     }
 }
