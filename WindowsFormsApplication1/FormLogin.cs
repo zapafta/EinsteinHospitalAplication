@@ -39,7 +39,36 @@ namespace WindowsFormsApplication1
                         this.Hide();
                         
                     }
-                }
+
+                    else if (user.TipoUtilizador == "Medico")
+                    {
+
+                        FormRegistarConsulta df = new FormRegistarConsulta(user);
+
+                        df.Show();
+                        this.Hide();
+                        
+                    }
+
+                    else if (user.TipoUtilizador == "Rececionista")
+                    {
+
+                        Form1 df = new Form1(user);
+
+                        df.Show();
+                        this.Hide();
+
+                    }
+                    else 
+                    {
+                        PesquisaPaciente df = new PesquisaPaciente();
+
+                        df.Show();
+                        this.Hide();
+
+                    }
+                }                     
+                   
                 else
                 {
                     MessageBox.Show("Dados incorretos!");

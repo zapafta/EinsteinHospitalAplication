@@ -50,7 +50,7 @@ namespace WebService
         List<MedicacaoWeb> procurarMedicacoes(string campoPesquisa);
         
         [OperationContract]
-        bool adicionarConsulta(DateTime data, UtenteWeb utente, MedicoWeb medico, List<SintomaWeb> listaSintomas, List<DiagnosticoWeb> listaDiagnosticos, List<MedicacaoWeb> listaMedicacao);
+        bool adicionarConsulta(DateTime data, UtenteWeb utente, UtilizadorWeb medico, List<SintomaWeb> listaSintomas, List<DiagnosticoWeb> listaDiagnosticos, List<MedicacaoWeb> listaMedicacao);
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////// PARTE PINTO DA COSTA/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
