@@ -76,4 +76,33 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DiagnosticoWeb" nillable="true" type="tns:DiagnosticoWeb" />
+  <xs:complexType name="ArrayOfMedicacaoWeb">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MedicacaoWeb" nillable="true" type="tns:MedicacaoWeb" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMedicacaoWeb" nillable="true" type="tns:ArrayOfMedicacaoWeb" />
+  <xs:complexType name="MedicacaoWeb">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Administracao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comparticao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Data" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Dosagem" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="NomeMedicamento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Preco" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MedicacaoWeb" nillable="true" type="tns:MedicacaoWeb" />
+  <xs:complexType name="MedicoWeb">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cargo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataNascimento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdInterno" type="xs:int" />
+      <xs:element minOccurs="0" name="Morada" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MedicoWeb" nillable="true" type="tns:MedicoWeb" />
 </xs:schema>
