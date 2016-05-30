@@ -174,7 +174,7 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="data" type="xs:dateTime" />
         <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="utente" nillable="true" type="q9:UtenteWeb" />
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="medico" nillable="true" type="q10:UtilizadorWeb" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="medico" nillable="true" type="q10:MedicoWeb" />
         <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="listaSintomas" nillable="true" type="q11:ArrayOfSintomaWeb" />
         <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="listaDiagnosticos" nillable="true" type="q12:ArrayOfDiagnosticoWeb" />
         <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="listaMedicacao" nillable="true" type="q13:ArrayOfMedicacaoWeb" />

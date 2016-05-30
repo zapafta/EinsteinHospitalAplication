@@ -525,6 +525,7 @@ namespace WebService
             medicacaobd.administracao = administracao;
             medicacaobd.preco = preco;
             medicacaobd.dosagem = dosagem;
+            medicacaobd.data = data;
             medicacaobd.comparticao = comparticipacao;
 
 
