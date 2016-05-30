@@ -1016,7 +1016,18 @@ namespace WindowsFormsApplication1.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/procurarDiagnosticos", ReplyAction="http://tempuri.org/IService1/procurarDiagnosticosResponse")]
         System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[]> procurarDiagnosticosAsync(string campoPesquisa);
         
-<<<<<<< HEAD
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/procurarMedicacoes", ReplyAction="http://tempuri.org/IService1/procurarMedicacoesResponse")]
+        WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] procurarMedicacoes(string campoPesquisa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/procurarMedicacoes", ReplyAction="http://tempuri.org/IService1/procurarMedicacoesResponse")]
+        System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.MedicacaoWeb[]> procurarMedicacoesAsync(string campoPesquisa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/adicionarConsulta", ReplyAction="http://tempuri.org/IService1/adicionarConsultaResponse")]
+        bool adicionarConsulta(System.DateTime data, WindowsFormsApplication1.ServiceReference.UtenteWeb utente, WindowsFormsApplication1.ServiceReference.MedicoWeb medico, WindowsFormsApplication1.ServiceReference.SintomaWeb[] listaSintomas, WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[] listaDiagnosticos, WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] listaMedicacao);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/adicionarConsulta", ReplyAction="http://tempuri.org/IService1/adicionarConsultaResponse")]
+        System.Threading.Tasks.Task<bool> adicionarConsultaAsync(System.DateTime data, WindowsFormsApplication1.ServiceReference.UtenteWeb utente, WindowsFormsApplication1.ServiceReference.MedicoWeb medico, WindowsFormsApplication1.ServiceReference.SintomaWeb[] listaSintomas, WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[] listaDiagnosticos, WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] listaMedicacao);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegistarUtente", ReplyAction="http://tempuri.org/IService1/RegistarUtenteResponse")]
         int RegistarUtente(
                     int sns, 
@@ -1060,19 +1071,12 @@ namespace WindowsFormsApplication1.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegistarUtenteDadosNãoClinicos", ReplyAction="http://tempuri.org/IService1/RegistarUtenteDadosNãoClinicosResponse")]
         System.Threading.Tasks.Task<int> RegistarUtenteDadosNãoClinicosAsync(int sns, string PrimeiroNome, string apelido, System.DateTime dataNascimento, string morada, string codigoPostal, string email, string sexo, string contacto);
-=======
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/procurarMedicacoes", ReplyAction="http://tempuri.org/IService1/procurarMedicacoesResponse")]
-        WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] procurarMedicacoes(string campoPesquisa);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/procurarMedicacoes", ReplyAction="http://tempuri.org/IService1/procurarMedicacoesResponse")]
-        System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.MedicacaoWeb[]> procurarMedicacoesAsync(string campoPesquisa);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegistarMedicacao", ReplyAction="http://tempuri.org/IService1/RegistarMedicacaoResponse")]
+        int RegistarMedicacao(string nome, string administracao, string preco, System.DateTime data, string dosagem, string comparticipacao);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/adicionarConsulta", ReplyAction="http://tempuri.org/IService1/adicionarConsultaResponse")]
-        bool adicionarConsulta(System.DateTime data, WindowsFormsApplication1.ServiceReference.UtenteWeb utente, WindowsFormsApplication1.ServiceReference.MedicoWeb medico, WindowsFormsApplication1.ServiceReference.SintomaWeb[] listaSintomas, WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[] listaDiagnosticos, WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] listaMedicacao);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/adicionarConsulta", ReplyAction="http://tempuri.org/IService1/adicionarConsultaResponse")]
-        System.Threading.Tasks.Task<bool> adicionarConsultaAsync(System.DateTime data, WindowsFormsApplication1.ServiceReference.UtenteWeb utente, WindowsFormsApplication1.ServiceReference.MedicoWeb medico, WindowsFormsApplication1.ServiceReference.SintomaWeb[] listaSintomas, WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[] listaDiagnosticos, WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] listaMedicacao);
->>>>>>> refs/remotes/origin/master
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegistarMedicacao", ReplyAction="http://tempuri.org/IService1/RegistarMedicacaoResponse")]
+        System.Threading.Tasks.Task<int> RegistarMedicacaoAsync(string nome, string administracao, string preco, System.DateTime data, string dosagem, string comparticipacao);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1182,7 +1186,22 @@ namespace WindowsFormsApplication1.ServiceReference {
             return base.Channel.procurarDiagnosticosAsync(campoPesquisa);
         }
         
-<<<<<<< HEAD
+        public WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] procurarMedicacoes(string campoPesquisa) {
+            return base.Channel.procurarMedicacoes(campoPesquisa);
+        }
+        
+        public System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.MedicacaoWeb[]> procurarMedicacoesAsync(string campoPesquisa) {
+            return base.Channel.procurarMedicacoesAsync(campoPesquisa);
+        }
+        
+        public bool adicionarConsulta(System.DateTime data, WindowsFormsApplication1.ServiceReference.UtenteWeb utente, WindowsFormsApplication1.ServiceReference.MedicoWeb medico, WindowsFormsApplication1.ServiceReference.SintomaWeb[] listaSintomas, WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[] listaDiagnosticos, WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] listaMedicacao) {
+            return base.Channel.adicionarConsulta(data, utente, medico, listaSintomas, listaDiagnosticos, listaMedicacao);
+        }
+        
+        public System.Threading.Tasks.Task<bool> adicionarConsultaAsync(System.DateTime data, WindowsFormsApplication1.ServiceReference.UtenteWeb utente, WindowsFormsApplication1.ServiceReference.MedicoWeb medico, WindowsFormsApplication1.ServiceReference.SintomaWeb[] listaSintomas, WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[] listaDiagnosticos, WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] listaMedicacao) {
+            return base.Channel.adicionarConsultaAsync(data, utente, medico, listaSintomas, listaDiagnosticos, listaMedicacao);
+        }
+        
         public int RegistarUtente(
                     int sns, 
                     string PrimeiroNome, 
@@ -1229,22 +1248,14 @@ namespace WindowsFormsApplication1.ServiceReference {
         
         public System.Threading.Tasks.Task<int> RegistarUtenteDadosNãoClinicosAsync(int sns, string PrimeiroNome, string apelido, System.DateTime dataNascimento, string morada, string codigoPostal, string email, string sexo, string contacto) {
             return base.Channel.RegistarUtenteDadosNãoClinicosAsync(sns, PrimeiroNome, apelido, dataNascimento, morada, codigoPostal, email, sexo, contacto);
-=======
-        public WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] procurarMedicacoes(string campoPesquisa) {
-            return base.Channel.procurarMedicacoes(campoPesquisa);
         }
         
-        public System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.MedicacaoWeb[]> procurarMedicacoesAsync(string campoPesquisa) {
-            return base.Channel.procurarMedicacoesAsync(campoPesquisa);
+        public int RegistarMedicacao(string nome, string administracao, string preco, System.DateTime data, string dosagem, string comparticipacao) {
+            return base.Channel.RegistarMedicacao(nome, administracao, preco, data, dosagem, comparticipacao);
         }
         
-        public bool adicionarConsulta(System.DateTime data, WindowsFormsApplication1.ServiceReference.UtenteWeb utente, WindowsFormsApplication1.ServiceReference.MedicoWeb medico, WindowsFormsApplication1.ServiceReference.SintomaWeb[] listaSintomas, WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[] listaDiagnosticos, WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] listaMedicacao) {
-            return base.Channel.adicionarConsulta(data, utente, medico, listaSintomas, listaDiagnosticos, listaMedicacao);
-        }
-        
-        public System.Threading.Tasks.Task<bool> adicionarConsultaAsync(System.DateTime data, WindowsFormsApplication1.ServiceReference.UtenteWeb utente, WindowsFormsApplication1.ServiceReference.MedicoWeb medico, WindowsFormsApplication1.ServiceReference.SintomaWeb[] listaSintomas, WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[] listaDiagnosticos, WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] listaMedicacao) {
-            return base.Channel.adicionarConsultaAsync(data, utente, medico, listaSintomas, listaDiagnosticos, listaMedicacao);
->>>>>>> refs/remotes/origin/master
+        public System.Threading.Tasks.Task<int> RegistarMedicacaoAsync(string nome, string administracao, string preco, System.DateTime data, string dosagem, string comparticipacao) {
+            return base.Channel.RegistarMedicacaoAsync(nome, administracao, preco, data, dosagem, comparticipacao);
         }
     }
 }

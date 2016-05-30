@@ -155,7 +155,39 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-<<<<<<< HEAD
+  <xs:element name="procurarMedicacoes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="campoPesquisa" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="procurarMedicacoesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="procurarMedicacoesResult" nillable="true" type="q8:ArrayOfMedicacaoWeb" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="adicionarConsulta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="data" type="xs:dateTime" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="utente" nillable="true" type="q9:UtenteWeb" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="medico" nillable="true" type="q10:MedicoWeb" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="listaSintomas" nillable="true" type="q11:ArrayOfSintomaWeb" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="listaDiagnosticos" nillable="true" type="q12:ArrayOfDiagnosticoWeb" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="listaMedicacao" nillable="true" type="q13:ArrayOfMedicacaoWeb" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="adicionarConsultaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="adicionarConsultaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="RegistarUtente">
     <xs:complexType>
       <xs:sequence>
@@ -207,42 +239,23 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-=======
-  <xs:element name="procurarMedicacoes">
+  <xs:element name="RegistarMedicacao">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="campoPesquisa" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="procurarMedicacoesResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="procurarMedicacoesResult" nillable="true" type="q8:ArrayOfMedicacaoWeb" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-<<<<<<< HEAD
-  <xs:element name="adicionarConsulta">
-    <xs:complexType>
-      <xs:sequence>
+        <xs:element minOccurs="0" name="nome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="administracao" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="preco" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="data" type="xs:dateTime" />
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="utente" nillable="true" type="q9:UtenteWeb" />
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="medico" nillable="true" type="q10:MedicoWeb" />
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="listaSintomas" nillable="true" type="q11:ArrayOfSintomaWeb" />
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="listaDiagnosticos" nillable="true" type="q12:ArrayOfDiagnosticoWeb" />
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="listaMedicacao" nillable="true" type="q13:ArrayOfMedicacaoWeb" />
+        <xs:element minOccurs="0" name="dosagem" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="comparticipacao" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="adicionarConsultaResponse">
+  <xs:element name="RegistarMedicacaoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="adicionarConsultaResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="RegistarMedicacaoResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-=======
->>>>>>> origin/27/05inie
->>>>>>> refs/remotes/origin/master
 </xs:schema>
