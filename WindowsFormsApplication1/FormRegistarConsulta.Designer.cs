@@ -102,7 +102,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnPdf = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
-<<<<<<< HEAD
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -116,7 +115,6 @@
             this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader28 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader29 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-=======
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -128,7 +126,6 @@
             this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
->>>>>>> origin/27/05inie
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -808,7 +805,6 @@
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = true;
             // 
-<<<<<<< HEAD
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.textBox4);
@@ -919,7 +915,6 @@
             // columnHeader29
             // 
             this.columnHeader29.Text = "Descrição";
-=======
             // columnHeader5
             // 
             this.columnHeader5.Text = "Preço";
@@ -935,22 +930,7 @@
             // columnHeader22
             // 
             this.columnHeader22.Text = "Administração";
-            // 
-            // listView4
-            // 
-            this.listView4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader17,
-            this.columnHeader18,
-            this.columnHeader23,
-            this.columnHeader24,
-            this.columnHeader25,
-            this.columnHeader26});
-            this.listView4.Location = new System.Drawing.Point(729, 43);
-            this.listView4.Name = "listView4";
-            this.listView4.Size = new System.Drawing.Size(387, 300);
-            this.listView4.TabIndex = 19;
-            this.listView4.UseCompatibleStateImageBehavior = false;
-            this.listView4.View = System.Windows.Forms.View.Details;
+            
             // 
             // columnHeader17
             // 
@@ -981,7 +961,6 @@
             // 
             this.columnHeader26.Text = "Administração";
             this.columnHeader26.Width = 64;
->>>>>>> origin/27/05inie
             // 
             // FormRegistarConsulta
             // 
@@ -1089,7 +1068,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader24;
         private System.Windows.Forms.ColumnHeader columnHeader25;
         private System.Windows.Forms.ColumnHeader columnHeader26;
-<<<<<<< HEAD
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox6;
@@ -1103,7 +1081,5 @@
         private System.Windows.Forms.ColumnHeader columnHeader29;
         private System.Windows.Forms.ColumnHeader columnHeader28;
         private System.Windows.Forms.ColumnHeader columnHeader27;
-=======
->>>>>>> origin/27/05inie
     }
 }
