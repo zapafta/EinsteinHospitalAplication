@@ -14,6 +14,7 @@ namespace WindowsFormsApplication1
     public partial class FormRegistarConsulta : Form
     {
         Service1Client webservice;
+        UtenteWeb utente;
         List<SintomaWeb> listaFinalSintomas = new List<SintomaWeb>();
         List<SintomaWeb> listaSintomasEncontradas = new List<SintomaWeb>();
 
@@ -92,7 +93,32 @@ namespace WindowsFormsApplication1
                 int i = tabControl1.SelectedIndex;
                 tabControl1.SelectTab(i + 1);
                 tabPage5.Enabled = true;
+<<<<<<< HEAD
+                textBox4.Text = utente.PrimeiroNome + " " + utente.Apelido + System.Environment.NewLine + (DateTime.Today.Year - utente.DataNascimento.Year).ToString() + " anos" + System.Environment.NewLine + utente.Morada + System.Environment.NewLine + utente.Sexo;
+                textBox5.Text = "Data da consulta: " + DateTime.Now.ToString() + System.Environment.NewLine + "nome do medico" + " ";
+
+                foreach (SintomaWeb s in listaFinalSintomas)
+                {
+                     ListViewItem linha = new ListViewItem(new[] {s.Descricao});
+                     listView6.Items.Add(linha);
+                }
+
+                foreach (DiagnosticoWeb d in listaFinalDiagnosticos)
+                {
+                    ListViewItem linha = new ListViewItem(new[] { d.Descricao });
+                    listView7.Items.Add(linha);
+                }
+
+                foreach (MedicacaoWeb m in listaFinalMedicacao)
+                {
+                    ListViewItem linha = new ListViewItem(new[] { m.NomeMedicamento });
+                    listView8.Items.Add(linha);
+                }
             }
+            else
+=======
+            }
+>>>>>>> origin/27/05inie
             {
                 MessageBox.Show("Medicação em falta!");
             }
@@ -162,7 +188,17 @@ namespace WindowsFormsApplication1
             DialogResult dialogResult = MessageBox.Show("Deseja mesmo concluir a consulta?", "Aviso", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                this.Close();
+                MedicoWeb medico = new MedicoWeb();
+                medico.IdInterno = 112;
+                bool validar = webservice.adicionarConsulta(DateTime.Now, utente, medico, null, null, null);
+                if (validar)
+                {
+                    MessageBox.Show("Com sucesso!");
+                }
+                else
+                {
+                    MessageBox.Show("Sem sucesso!");
+                }
             }
         }
 
@@ -171,7 +207,7 @@ namespace WindowsFormsApplication1
             listView1.Items.Clear();
             if (!txtSearch.Text.Equals(""))
             {
-                UtenteWeb utente = webservice.procurarUtente(int.Parse(txtSearch.Text));
+                utente = webservice.procurarUtente(int.Parse(txtSearch.Text));
                 if(utente==null)
                 {
                     MessageBox.Show("Sem resultados!");

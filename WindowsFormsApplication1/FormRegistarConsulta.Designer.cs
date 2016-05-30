@@ -73,6 +73,13 @@
             this.button4 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.listView4 = new System.Windows.Forms.ListView();
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
@@ -82,6 +89,10 @@
             this.listView5 = new System.Windows.Forms.ListView();
             this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button7 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
@@ -89,9 +100,23 @@
             this.button20 = new System.Windows.Forms.Button();
             this.button21 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.btnPdf = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
+<<<<<<< HEAD
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.listView6 = new System.Windows.Forms.ListView();
+            this.listView7 = new System.Windows.Forms.ListView();
+            this.listView8 = new System.Windows.Forms.ListView();
+            this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader28 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader29 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+=======
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -103,6 +128,7 @@
             this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+>>>>>>> origin/27/05inie
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -110,6 +136,11 @@
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -535,6 +566,52 @@
             this.tabPage4.Text = "Registar Medicação";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // listView4
+            // 
+            this.listView4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader17,
+            this.columnHeader18,
+            this.columnHeader23,
+            this.columnHeader24,
+            this.columnHeader25,
+            this.columnHeader26});
+            this.listView4.Location = new System.Drawing.Point(729, 43);
+            this.listView4.Name = "listView4";
+            this.listView4.Size = new System.Drawing.Size(387, 300);
+            this.listView4.TabIndex = 19;
+            this.listView4.UseCompatibleStateImageBehavior = false;
+            this.listView4.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader17
+            // 
+            this.columnHeader17.Text = "Id";
+            this.columnHeader17.Width = 23;
+            // 
+            // columnHeader18
+            // 
+            this.columnHeader18.Text = "Nome";
+            this.columnHeader18.Width = 119;
+            // 
+            // columnHeader23
+            // 
+            this.columnHeader23.Text = "Preço";
+            this.columnHeader23.Width = 40;
+            // 
+            // columnHeader24
+            // 
+            this.columnHeader24.Text = "Data";
+            this.columnHeader24.Width = 61;
+            // 
+            // columnHeader25
+            // 
+            this.columnHeader25.Text = "Compartição";
+            this.columnHeader25.Width = 77;
+            // 
+            // columnHeader26
+            // 
+            this.columnHeader26.Text = "Administração";
+            this.columnHeader26.Width = 64;
+            // 
             // button16
             // 
             this.button16.Location = new System.Drawing.Point(1041, 353);
@@ -621,6 +698,22 @@
             this.columnHeader20.Text = "Nome";
             this.columnHeader20.Width = 315;
             // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Preço";
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Data";
+            // 
+            // columnHeader21
+            // 
+            this.columnHeader21.Text = "Compartição";
+            // 
+            // columnHeader22
+            // 
+            this.columnHeader22.Text = "Administração";
+            // 
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(400, 14);
@@ -685,21 +778,17 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.richTextBox1);
-            this.groupBox1.Location = new System.Drawing.Point(19, 59);
+            this.groupBox1.Controls.Add(this.groupBox6);
+            this.groupBox1.Controls.Add(this.groupBox5);
+            this.groupBox1.Controls.Add(this.groupBox4);
+            this.groupBox1.Controls.Add(this.groupBox3);
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Location = new System.Drawing.Point(19, 47);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1091, 276);
+            this.groupBox1.Size = new System.Drawing.Size(1091, 300);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registo Consulta";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(7, 20);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1078, 250);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
             // 
             // btnPdf
             // 
@@ -719,6 +808,118 @@
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = true;
             // 
+<<<<<<< HEAD
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Location = new System.Drawing.Point(6, 19);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(710, 100);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Utente";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.textBox5);
+            this.groupBox3.Location = new System.Drawing.Point(743, 19);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(342, 100);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Consulta";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.listView6);
+            this.groupBox4.Location = new System.Drawing.Point(6, 125);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(342, 169);
+            this.groupBox4.TabIndex = 2;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Sintomas";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.listView7);
+            this.groupBox5.Location = new System.Drawing.Point(374, 125);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(342, 169);
+            this.groupBox5.TabIndex = 3;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Diagnóstico";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.listView8);
+            this.groupBox6.Location = new System.Drawing.Point(743, 125);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(342, 169);
+            this.groupBox6.TabIndex = 3;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Medicação";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(7, 20);
+            this.textBox4.Multiline = true;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(697, 64);
+            this.textBox4.TabIndex = 0;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(7, 20);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(335, 64);
+            this.textBox5.TabIndex = 0;
+            // 
+            // listView6
+            // 
+            this.listView6.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader27});
+            this.listView6.Location = new System.Drawing.Point(7, 20);
+            this.listView6.Name = "listView6";
+            this.listView6.Size = new System.Drawing.Size(329, 143);
+            this.listView6.TabIndex = 0;
+            this.listView6.UseCompatibleStateImageBehavior = false;
+            this.listView6.View = System.Windows.Forms.View.Details;
+            // 
+            // listView7
+            // 
+            this.listView7.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader28});
+            this.listView7.Location = new System.Drawing.Point(6, 20);
+            this.listView7.Name = "listView7";
+            this.listView7.Size = new System.Drawing.Size(329, 143);
+            this.listView7.TabIndex = 1;
+            this.listView7.UseCompatibleStateImageBehavior = false;
+            this.listView7.View = System.Windows.Forms.View.Details;
+            // 
+            // listView8
+            // 
+            this.listView8.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader29});
+            this.listView8.Location = new System.Drawing.Point(7, 20);
+            this.listView8.Name = "listView8";
+            this.listView8.Size = new System.Drawing.Size(329, 143);
+            this.listView8.TabIndex = 1;
+            this.listView8.UseCompatibleStateImageBehavior = false;
+            this.listView8.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader27
+            // 
+            this.columnHeader27.Text = "Descrição";
+            // 
+            // columnHeader28
+            // 
+            this.columnHeader28.Text = "Descrição";
+            // 
+            // columnHeader29
+            // 
+            this.columnHeader29.Text = "Descrição";
+=======
             // columnHeader5
             // 
             this.columnHeader5.Text = "Preço";
@@ -780,6 +981,7 @@
             // 
             this.columnHeader26.Text = "Administração";
             this.columnHeader26.Width = 64;
+>>>>>>> origin/27/05inie
             // 
             // FormRegistarConsulta
             // 
@@ -800,6 +1002,13 @@
             this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -854,7 +1063,6 @@
         private System.Windows.Forms.Button btnPdf;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSeguinte;
         private System.Windows.Forms.Button btnVoltar;
@@ -881,5 +1089,21 @@
         private System.Windows.Forms.ColumnHeader columnHeader24;
         private System.Windows.Forms.ColumnHeader columnHeader25;
         private System.Windows.Forms.ColumnHeader columnHeader26;
+<<<<<<< HEAD
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.ListView listView8;
+        private System.Windows.Forms.ListView listView7;
+        private System.Windows.Forms.ListView listView6;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.ColumnHeader columnHeader29;
+        private System.Windows.Forms.ColumnHeader columnHeader28;
+        private System.Windows.Forms.ColumnHeader columnHeader27;
+=======
+>>>>>>> origin/27/05inie
     }
 }

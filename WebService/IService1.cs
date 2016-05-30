@@ -48,6 +48,12 @@ namespace WebService
 
         [OperationContract]
         List<MedicacaoWeb> procurarMedicacoes(string campoPesquisa);
+<<<<<<< HEAD
+        
+        [OperationContract]
+        bool adicionarConsulta(DateTime data, UtenteWeb utente, MedicoWeb medico, List<SintomaWeb> listaSintomas, List<DiagnosticoWeb> listaDiagnosticos, List<MedicacaoWeb> listaMedicacao);
+=======
+>>>>>>> origin/27/05inie
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
 
@@ -350,6 +356,7 @@ namespace WebService
 
         [DataMember]
         public int Id
+<<<<<<< HEAD
         {
             get { return id; }
             set { id = value; }
@@ -395,6 +402,128 @@ namespace WebService
         {
             get { return comparticao; }
             set { comparticao = value; }
+        }
+    }
+
+    [DataContract]
+    public class ConsultaWeb
+    {
+        int id;
+        DateTime data;
+
+        [DataMember]
+        public int Id
+=======
+>>>>>>> origin/27/05inie
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        [DataMember]
+<<<<<<< HEAD
+        public DateTime Data
+        {
+            get { return data; }
+            set { data = value; }
+        }
+    }
+
+     [DataContract]
+    public class MedicoWeb
+    {
+        int id;
+        string nome;
+        int idInterno;
+        string morada;
+        DateTime dataNascimento;
+        string cargo;
+
+        [DataMember]
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        [DataMember]
+        public DateTime DataNascimento
+        {
+            get { return dataNascimento; }
+            set { dataNascimento = value; }
+        }
+
+         
+        [DataMember]
+        public string Nome
+        {
+            get { return nome; }
+            set { nome = value; }
+        }
+
+         
+        [DataMember]
+        public int IdInterno
+        {
+            get { return idInterno; }
+            set { idInterno = value; }
+        }
+
+         
+        [DataMember]
+        public string Morada
+        {
+            get { return morada; }
+            set { morada = value; }
+        }
+
+            
+        [DataMember]
+        public string Cargo
+        {
+            get { return cargo; }
+            set { cargo = value; }
+=======
+        public string NomeMedicamento
+        {
+            get { return nomeMedicacao; }
+            set { nomeMedicacao = value; }
+        }
+
+        [DataMember]
+        public string Administracao
+        {
+            get { return administracao; }
+            set { administracao = value; }
+        }
+
+        [DataMember]
+        public string Preco
+        {
+            get { return preco; }
+            set { preco = value; }
+        }
+
+        [DataMember]
+        public DateTime Data
+        {
+            get { return data; }
+            set { data = value; }
+        }
+
+        [DataMember]
+        public string Dosagem
+        {
+            get { return dosagem; }
+            set { dosagem = value; }
+        }
+
+        [DataMember]
+        public string Comparticao
+        {
+            get { return comparticao; }
+            set { comparticao = value; }
+>>>>>>> origin/27/05inie
         }
     }
 }

@@ -73,6 +73,15 @@
   <wsdl:message name="IService1_procurarMedicacoes_OutputMessage">
     <wsdl:part name="parameters" element="tns:procurarMedicacoesResponse" />
   </wsdl:message>
+<<<<<<< HEAD
+  <wsdl:message name="IService1_adicionarConsulta_InputMessage">
+    <wsdl:part name="parameters" element="tns:adicionarConsulta" />
+  </wsdl:message>
+  <wsdl:message name="IService1_adicionarConsulta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:adicionarConsultaResponse" />
+  </wsdl:message>
+=======
+>>>>>>> origin/27/05inie
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -118,6 +127,13 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/procurarMedicacoes" message="tns:IService1_procurarMedicacoes_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/procurarMedicacoesResponse" message="tns:IService1_procurarMedicacoes_OutputMessage" />
     </wsdl:operation>
+<<<<<<< HEAD
+    <wsdl:operation name="adicionarConsulta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/adicionarConsulta" message="tns:IService1_adicionarConsulta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/adicionarConsultaResponse" message="tns:IService1_adicionarConsulta_OutputMessage" />
+    </wsdl:operation>
+=======
+>>>>>>> origin/27/05inie
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -220,6 +236,18 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+<<<<<<< HEAD
+    <wsdl:operation name="adicionarConsulta">
+      <soap:operation soapAction="http://tempuri.org/IService1/adicionarConsulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+=======
+>>>>>>> origin/27/05inie
   </wsdl:binding>
   <wsdl:service name="Service1">
     <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">

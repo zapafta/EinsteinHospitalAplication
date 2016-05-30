@@ -5,6 +5,8 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Data.Entity.Validation;
+using System.Diagnostics;
 
 
 namespace WebService
@@ -425,6 +427,40 @@ namespace WebService
             return listaMedicacaoWeb;
         }
 
+<<<<<<< HEAD
+        public bool adicionarConsulta(DateTime data, UtenteWeb utente, MedicoWeb medico, List<SintomaWeb> listaSintomas, List<DiagnosticoWeb> listaDiagnosticos, List<MedicacaoWeb> listaMedicacao)
+        {
+            try
+            {
+                EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
+                Consulta c = new Consulta();
+                c.data = data;
+                c.diagnostico = "nao";
+                c.Utente = context.UtenteSet.Where(i => i.snsId ==123).FirstOrDefault();
+                List<Utilizador> utilizadores = context.UtilizadorSet.Where(i => i.tipoUtilizador == "Medico").ToList();
+                List<Medico> listaMedicos = utilizadores.Cast<Medico>().ToList();
+                c.Medico = listaMedicos.Where(i => i.nInterno ==112).FirstOrDefault();
+                context.ConsultaSet.Add(c);
+                context.SaveChanges();
+                return true;
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        Trace.TraceInformation("Property: {0} Error: {1}",
+                                                validationError.PropertyName,
+                                                validationError.ErrorMessage);
+                    }
+                }
+            }
+            return true;
+            
+        }
+=======
+>>>>>>> origin/27/05inie
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
 
