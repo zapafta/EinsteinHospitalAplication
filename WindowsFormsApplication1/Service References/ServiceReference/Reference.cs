@@ -827,6 +827,7 @@ namespace WindowsFormsApplication1.ServiceReference {
         }
     }
     
+<<<<<<< HEAD
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="MedicoWeb", Namespace="http://schemas.datacontract.org/2004/07/WebService")]
@@ -952,6 +953,8 @@ namespace WindowsFormsApplication1.ServiceReference {
         }
     }
     
+=======
+>>>>>>> origin/27/05inie
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IService1")]
     public interface IService1 {
@@ -1021,12 +1024,15 @@ namespace WindowsFormsApplication1.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/procurarMedicacoes", ReplyAction="http://tempuri.org/IService1/procurarMedicacoesResponse")]
         System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.MedicacaoWeb[]> procurarMedicacoesAsync(string campoPesquisa);
+<<<<<<< HEAD
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/adicionarConsulta", ReplyAction="http://tempuri.org/IService1/adicionarConsultaResponse")]
         bool adicionarConsulta(System.DateTime data, WindowsFormsApplication1.ServiceReference.UtenteWeb utente, WindowsFormsApplication1.ServiceReference.MedicoWeb medico, WindowsFormsApplication1.ServiceReference.SintomaWeb[] listaSintomas, WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[] listaDiagnosticos, WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] listaMedicacao);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/adicionarConsulta", ReplyAction="http://tempuri.org/IService1/adicionarConsultaResponse")]
         System.Threading.Tasks.Task<bool> adicionarConsultaAsync(System.DateTime data, WindowsFormsApplication1.ServiceReference.UtenteWeb utente, WindowsFormsApplication1.ServiceReference.MedicoWeb medico, WindowsFormsApplication1.ServiceReference.SintomaWeb[] listaSintomas, WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[] listaDiagnosticos, WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] listaMedicacao);
+=======
+>>>>>>> origin/27/05inie
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1143,6 +1149,7 @@ namespace WindowsFormsApplication1.ServiceReference {
         public System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.MedicacaoWeb[]> procurarMedicacoesAsync(string campoPesquisa) {
             return base.Channel.procurarMedicacoesAsync(campoPesquisa);
         }
+<<<<<<< HEAD
         
         public bool adicionarConsulta(System.DateTime data, WindowsFormsApplication1.ServiceReference.UtenteWeb utente, WindowsFormsApplication1.ServiceReference.MedicoWeb medico, WindowsFormsApplication1.ServiceReference.SintomaWeb[] listaSintomas, WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[] listaDiagnosticos, WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] listaMedicacao) {
             return base.Channel.adicionarConsulta(data, utente, medico, listaSintomas, listaDiagnosticos, listaMedicacao);
@@ -1151,5 +1158,7 @@ namespace WindowsFormsApplication1.ServiceReference {
         public System.Threading.Tasks.Task<bool> adicionarConsultaAsync(System.DateTime data, WindowsFormsApplication1.ServiceReference.UtenteWeb utente, WindowsFormsApplication1.ServiceReference.MedicoWeb medico, WindowsFormsApplication1.ServiceReference.SintomaWeb[] listaSintomas, WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[] listaDiagnosticos, WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] listaMedicacao) {
             return base.Channel.adicionarConsultaAsync(data, utente, medico, listaSintomas, listaDiagnosticos, listaMedicacao);
         }
+=======
+>>>>>>> origin/27/05inie
     }
 }

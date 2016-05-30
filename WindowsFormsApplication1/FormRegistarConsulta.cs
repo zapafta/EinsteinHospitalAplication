@@ -93,6 +93,7 @@ namespace WindowsFormsApplication1
                 int i = tabControl1.SelectedIndex;
                 tabControl1.SelectTab(i + 1);
                 tabPage5.Enabled = true;
+<<<<<<< HEAD
                 textBox4.Text = utente.PrimeiroNome + " " + utente.Apelido + System.Environment.NewLine + (DateTime.Today.Year - utente.DataNascimento.Year).ToString() + " anos" + System.Environment.NewLine + utente.Morada + System.Environment.NewLine + utente.Sexo;
                 textBox5.Text = "Data da consulta: " + DateTime.Now.ToString() + System.Environment.NewLine + "nome do medico" + " ";
 
@@ -115,6 +116,9 @@ namespace WindowsFormsApplication1
                 }
             }
             else
+=======
+            }
+>>>>>>> origin/27/05inie
             {
                 MessageBox.Show("Medicação em falta!");
             }

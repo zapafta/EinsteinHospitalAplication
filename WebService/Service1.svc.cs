@@ -427,6 +427,7 @@ namespace WebService
             return listaMedicacaoWeb;
         }
 
+<<<<<<< HEAD
         public bool adicionarConsulta(DateTime data, UtenteWeb utente, MedicoWeb medico, List<SintomaWeb> listaSintomas, List<DiagnosticoWeb> listaDiagnosticos, List<MedicacaoWeb> listaMedicacao)
         {
             try
@@ -458,6 +459,8 @@ namespace WebService
             return true;
             
         }
+=======
+>>>>>>> origin/27/05inie
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
 

@@ -169,6 +169,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+<<<<<<< HEAD
   <xs:element name="adicionarConsulta">
     <xs:complexType>
       <xs:sequence>
@@ -188,4 +189,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+=======
+>>>>>>> origin/27/05inie
 </xs:schema>
