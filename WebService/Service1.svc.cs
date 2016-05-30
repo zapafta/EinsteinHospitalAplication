@@ -429,7 +429,7 @@ namespace WebService
             return listaMedicacaoWeb;
         }
 
-        public bool adicionarConsulta(DateTime data, UtenteWeb utente, MedicoWeb medico, List<SintomaWeb> listaSintomas, List<DiagnosticoWeb> listaDiagnosticos, List<MedicacaoWeb> listaMedicacao)
+        public bool adicionarConsulta(DateTime data, UtenteWeb utente, UtilizadorWeb medico, List<SintomaWeb> listaSintomas, List<DiagnosticoWeb> listaDiagnosticos, List<MedicacaoWeb> listaMedicacao)
         {
             try
             {
@@ -437,11 +437,32 @@ namespace WebService
                 Consulta c = new Consulta();
                 c.data = data;
                 c.diagnostico = "nao";
-                c.Utente = context.UtenteSet.Where(i => i.snsId == 123).FirstOrDefault();
+                c.Utente = context.UtenteSet.Where(i => i.snsId == utente.SnsId).FirstOrDefault();
                 List<Utilizador> utilizadores = context.UtilizadorSet.Where(i => i.tipoUtilizador == "Medico").ToList();
                 List<Medico> listaMedicos = utilizadores.Cast<Medico>().ToList();
-                c.Medico = listaMedicos.Where(i => i.nInterno == 112).FirstOrDefault();
-                context.ConsultaSet.Add(c);
+                c.Medico = listaMedicos.Where(i => i.nInterno == medico.NInterno).FirstOrDefault();
+                context.ConsultaSet.Add(c);               
+
+                foreach (SintomaWeb s in listaSintomas)
+                {
+                    Sintomas sin = new Sintomas();
+                    sin = context.SintomasSet.Where(i => i.Id == s.Id).FirstOrDefault();
+                    sin.Consulta.Add(c);
+                }
+
+                foreach (DiagnosticoWeb d in listaDiagnosticos)
+                {
+                    Diagnosticos dia = new Diagnosticos();
+                    dia = context.DiagnosticosSet.Where(i => i.Id == d.Id).FirstOrDefault();
+                    dia.Consulta.Add(c);
+                }
+
+                foreach (MedicacaoWeb m in listaMedicacao)
+                {
+                    Medicacao med = new Medicacao();
+                    med = context.MedicacaoSet.Where(i => i.Id == m.Id).FirstOrDefault();
+                    med.Consulta.Add(c);
+                }
                 context.SaveChanges();
                 return true;
             }

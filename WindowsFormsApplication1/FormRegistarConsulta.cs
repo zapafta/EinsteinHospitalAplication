@@ -15,6 +15,7 @@ namespace WindowsFormsApplication1
     {
         Service1Client webservice;
         UtenteWeb utente;
+        UtilizadorWeb medico;
         List<SintomaWeb> listaFinalSintomas = new List<SintomaWeb>();
         List<SintomaWeb> listaSintomasEncontradas = new List<SintomaWeb>();
 
@@ -24,9 +25,10 @@ namespace WindowsFormsApplication1
         List<MedicacaoWeb> listaFinalMedicacao = new List<MedicacaoWeb>();
         List<MedicacaoWeb> listaMedicacaoEncontrados = new List<MedicacaoWeb>();
 
-        public FormRegistarConsulta()
+        public FormRegistarConsulta(UtilizadorWeb medico)
         {
             InitializeComponent();
+            this.medico = medico;
             listView1.FullRowSelect = true;
             listSintomas.FullRowSelect = true;
             listSintomasFinal.FullRowSelect = true;
@@ -185,9 +187,8 @@ namespace WindowsFormsApplication1
             DialogResult dialogResult = MessageBox.Show("Deseja mesmo concluir a consulta?", "Aviso", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                MedicoWeb medico = new MedicoWeb();
-                medico.IdInterno = 112;
-                bool validar = webservice.adicionarConsulta(DateTime.Now, utente, medico, null, null, null);
+         
+                bool validar = webservice.adicionarConsulta(DateTime.Now, utente, medico, listaFinalSintomas.ToArray(), listaFinalDiagnosticos.ToArray(), listaFinalMedicacao.ToArray());
                 if (validar)
                 {
                     MessageBox.Show("Com sucesso!");

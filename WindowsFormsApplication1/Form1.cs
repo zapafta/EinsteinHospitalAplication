@@ -17,7 +17,7 @@ namespace WindowsFormsApplication1
         Service1Client webService;
         string sexo = "teste";
 
-        public Form1()
+        public Form1(UtilizadorWeb user)
         {
             InitializeComponent();
         }
