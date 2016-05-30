@@ -155,5 +155,10 @@ namespace WindowsFormsApplication1
                 return true;
             }
         }
+
+        private void FormDadosUtilizador_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

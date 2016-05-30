@@ -406,7 +406,91 @@ namespace WebService
             return listaDiagnosticoWeb;
         }
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /////////Parte Pinto da Costa/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+        public int RegistarUtenteDadosNãoClinicos(int sns, string PrimeiroNome, string apelido, DateTime dataNascimento, string morada, string codigoPostal, string email, string sexo, string contacto)
+        {
+
+
+            EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
+            Utente utentebd = new Utente();
+            utentebd.snsId = sns;
+            utentebd.primeiroNome = PrimeiroNome;
+            utentebd.apelido = apelido;
+            utentebd.dataNascimento = dataNascimento;
+            utentebd.morada = morada;
+            utentebd.codigoPostal = codigoPostal;
+            utentebd.email = email;
+            utentebd.sexo = sexo;
+            utentebd.contacto= contacto;
+      
+            context.UtenteSet.Add(utentebd);
+            context.SaveChanges();
+            int utenteid = utentebd.Id;
+            if (utenteid != null)
+            {
+                return utenteid;
+            }
+            else
+            {
+                return -1;
+
+            }
+
+
+
+        }
+
+
+
+
+
+
+
+
+        public int RegistarUtente(int sns, string PrimeiroNome, string apelido, DateTime dataNascimento, string morada, string codigoPostal, string email, string sexo, string contacto, string peso, string altura, string glicemia, string tensao, string colestrol, string saturacao, string batimento)
+        {
+
+
+            EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
+            Utente utentebd = new Utente();
+            utentebd.snsId = sns;
+            utentebd.primeiroNome = PrimeiroNome;
+            utentebd.apelido = apelido;
+            utentebd.dataNascimento = dataNascimento;
+            utentebd.morada = morada;
+            utentebd.codigoPostal = codigoPostal;
+            utentebd.email = email;
+            utentebd.sexo = sexo;
+            utentebd.contacto = contacto;
+            utentebd.peso = peso;
+            utentebd.altura = altura;
+            utentebd.glicemia = glicemia;
+            utentebd.tensao = tensao;
+            utentebd.colestrol = colestrol;
+            utentebd.saturacao = saturacao;
+            utentebd.batimentoCardiaco = batimento;
+
+            context.UtenteSet.Add(utentebd);
+            context.SaveChanges();
+            int utenteid = utentebd.Id;
+            if (utenteid != null)
+            {
+                return utenteid;
+            }
+            else
+            {
+                return -1;
+
+            }
+
+
+
+        }
+
+
+
     }
 
 }

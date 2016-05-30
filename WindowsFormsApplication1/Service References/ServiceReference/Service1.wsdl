@@ -67,6 +67,18 @@
   <wsdl:message name="IService1_procurarDiagnosticos_OutputMessage">
     <wsdl:part name="parameters" element="tns:procurarDiagnosticosResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_RegistarUtente_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistarUtente" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RegistarUtente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistarUtenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RegistarUtenteDadosNãoClinicos_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistarUtenteDadosNãoClinicos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RegistarUtenteDadosNãoClinicos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistarUtenteDadosNãoClinicosResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -107,6 +119,14 @@
     <wsdl:operation name="procurarDiagnosticos">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/procurarDiagnosticos" message="tns:IService1_procurarDiagnosticos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/procurarDiagnosticosResponse" message="tns:IService1_procurarDiagnosticos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistarUtente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RegistarUtente" message="tns:IService1_RegistarUtente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RegistarUtenteResponse" message="tns:IService1_RegistarUtente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistarUtenteDadosNãoClinicos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RegistarUtenteDadosNãoClinicos" message="tns:IService1_RegistarUtenteDadosNãoClinicos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RegistarUtenteDadosNãoClinicosResponse" message="tns:IService1_RegistarUtenteDadosNãoClinicos_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -194,6 +214,24 @@
     </wsdl:operation>
     <wsdl:operation name="procurarDiagnosticos">
       <soap:operation soapAction="http://tempuri.org/IService1/procurarDiagnosticos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistarUtente">
+      <soap:operation soapAction="http://tempuri.org/IService1/RegistarUtente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistarUtenteDadosNãoClinicos">
+      <soap:operation soapAction="http://tempuri.org/IService1/RegistarUtenteDadosNãoClinicos" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -155,4 +155,55 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="RegistarUtente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sns" type="xs:int" />
+        <xs:element minOccurs="0" name="PrimeiroNome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="apelido" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dataNascimento" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="morada" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codigoPostal" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sexo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="contacto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="peso" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="altura" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="glicemia" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tensao" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="colestrol" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="saturacao" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="batimento" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistarUtenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RegistarUtenteResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistarUtenteDadosNãoClinicos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sns" type="xs:int" />
+        <xs:element minOccurs="0" name="PrimeiroNome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="apelido" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dataNascimento" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="morada" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codigoPostal" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sexo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="contacto" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistarUtenteDadosNãoClinicosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RegistarUtenteDadosNãoClinicosResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
