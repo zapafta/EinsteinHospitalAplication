@@ -53,6 +53,12 @@ namespace WebService
         bool adicionarConsulta(DateTime data, UtenteWeb utente, MedicoWeb medico, List<SintomaWeb> listaSintomas, List<DiagnosticoWeb> listaDiagnosticos, List<MedicacaoWeb> listaMedicacao);
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////// PARTE PINTO DA COSTA/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        [OperationContract]
+        int RegistarUtente(int sns, string PrimeiroNome, string apelido, DateTime dataNascimento, string morada, string codigoPostal, string email, string sexo, string contacto, string peso, string altura, string glicemia, string tensao, string colestrol, string saturacao, string batimento);
+        [OperationContract]
+        int RegistarUtenteDadosNãoClinicos(int sns, string PrimeiroNome, string apelido, DateTime dataNascimento, string morada, string codigoPostal, string email, string sexo, string contacto);
+    
     }
 
 

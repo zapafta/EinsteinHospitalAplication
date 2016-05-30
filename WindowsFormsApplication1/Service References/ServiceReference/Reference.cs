@@ -1016,6 +1016,51 @@ namespace WindowsFormsApplication1.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/procurarDiagnosticos", ReplyAction="http://tempuri.org/IService1/procurarDiagnosticosResponse")]
         System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[]> procurarDiagnosticosAsync(string campoPesquisa);
         
+<<<<<<< HEAD
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegistarUtente", ReplyAction="http://tempuri.org/IService1/RegistarUtenteResponse")]
+        int RegistarUtente(
+                    int sns, 
+                    string PrimeiroNome, 
+                    string apelido, 
+                    System.DateTime dataNascimento, 
+                    string morada, 
+                    string codigoPostal, 
+                    string email, 
+                    string sexo, 
+                    string contacto, 
+                    string peso, 
+                    string altura, 
+                    string glicemia, 
+                    string tensao, 
+                    string colestrol, 
+                    string saturacao, 
+                    string batimento);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegistarUtente", ReplyAction="http://tempuri.org/IService1/RegistarUtenteResponse")]
+        System.Threading.Tasks.Task<int> RegistarUtenteAsync(
+                    int sns, 
+                    string PrimeiroNome, 
+                    string apelido, 
+                    System.DateTime dataNascimento, 
+                    string morada, 
+                    string codigoPostal, 
+                    string email, 
+                    string sexo, 
+                    string contacto, 
+                    string peso, 
+                    string altura, 
+                    string glicemia, 
+                    string tensao, 
+                    string colestrol, 
+                    string saturacao, 
+                    string batimento);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegistarUtenteDadosNãoClinicos", ReplyAction="http://tempuri.org/IService1/RegistarUtenteDadosNãoClinicosResponse")]
+        int RegistarUtenteDadosNãoClinicos(int sns, string PrimeiroNome, string apelido, System.DateTime dataNascimento, string morada, string codigoPostal, string email, string sexo, string contacto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegistarUtenteDadosNãoClinicos", ReplyAction="http://tempuri.org/IService1/RegistarUtenteDadosNãoClinicosResponse")]
+        System.Threading.Tasks.Task<int> RegistarUtenteDadosNãoClinicosAsync(int sns, string PrimeiroNome, string apelido, System.DateTime dataNascimento, string morada, string codigoPostal, string email, string sexo, string contacto);
+=======
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/procurarMedicacoes", ReplyAction="http://tempuri.org/IService1/procurarMedicacoesResponse")]
         WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] procurarMedicacoes(string campoPesquisa);
         
@@ -1027,6 +1072,7 @@ namespace WindowsFormsApplication1.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/adicionarConsulta", ReplyAction="http://tempuri.org/IService1/adicionarConsultaResponse")]
         System.Threading.Tasks.Task<bool> adicionarConsultaAsync(System.DateTime data, WindowsFormsApplication1.ServiceReference.UtenteWeb utente, WindowsFormsApplication1.ServiceReference.MedicoWeb medico, WindowsFormsApplication1.ServiceReference.SintomaWeb[] listaSintomas, WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[] listaDiagnosticos, WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] listaMedicacao);
+>>>>>>> refs/remotes/origin/master
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1136,6 +1182,54 @@ namespace WindowsFormsApplication1.ServiceReference {
             return base.Channel.procurarDiagnosticosAsync(campoPesquisa);
         }
         
+<<<<<<< HEAD
+        public int RegistarUtente(
+                    int sns, 
+                    string PrimeiroNome, 
+                    string apelido, 
+                    System.DateTime dataNascimento, 
+                    string morada, 
+                    string codigoPostal, 
+                    string email, 
+                    string sexo, 
+                    string contacto, 
+                    string peso, 
+                    string altura, 
+                    string glicemia, 
+                    string tensao, 
+                    string colestrol, 
+                    string saturacao, 
+                    string batimento) {
+            return base.Channel.RegistarUtente(sns, PrimeiroNome, apelido, dataNascimento, morada, codigoPostal, email, sexo, contacto, peso, altura, glicemia, tensao, colestrol, saturacao, batimento);
+        }
+        
+        public System.Threading.Tasks.Task<int> RegistarUtenteAsync(
+                    int sns, 
+                    string PrimeiroNome, 
+                    string apelido, 
+                    System.DateTime dataNascimento, 
+                    string morada, 
+                    string codigoPostal, 
+                    string email, 
+                    string sexo, 
+                    string contacto, 
+                    string peso, 
+                    string altura, 
+                    string glicemia, 
+                    string tensao, 
+                    string colestrol, 
+                    string saturacao, 
+                    string batimento) {
+            return base.Channel.RegistarUtenteAsync(sns, PrimeiroNome, apelido, dataNascimento, morada, codigoPostal, email, sexo, contacto, peso, altura, glicemia, tensao, colestrol, saturacao, batimento);
+        }
+        
+        public int RegistarUtenteDadosNãoClinicos(int sns, string PrimeiroNome, string apelido, System.DateTime dataNascimento, string morada, string codigoPostal, string email, string sexo, string contacto) {
+            return base.Channel.RegistarUtenteDadosNãoClinicos(sns, PrimeiroNome, apelido, dataNascimento, morada, codigoPostal, email, sexo, contacto);
+        }
+        
+        public System.Threading.Tasks.Task<int> RegistarUtenteDadosNãoClinicosAsync(int sns, string PrimeiroNome, string apelido, System.DateTime dataNascimento, string morada, string codigoPostal, string email, string sexo, string contacto) {
+            return base.Channel.RegistarUtenteDadosNãoClinicosAsync(sns, PrimeiroNome, apelido, dataNascimento, morada, codigoPostal, email, sexo, contacto);
+=======
         public WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] procurarMedicacoes(string campoPesquisa) {
             return base.Channel.procurarMedicacoes(campoPesquisa);
         }
@@ -1150,6 +1244,7 @@ namespace WindowsFormsApplication1.ServiceReference {
         
         public System.Threading.Tasks.Task<bool> adicionarConsultaAsync(System.DateTime data, WindowsFormsApplication1.ServiceReference.UtenteWeb utente, WindowsFormsApplication1.ServiceReference.MedicoWeb medico, WindowsFormsApplication1.ServiceReference.SintomaWeb[] listaSintomas, WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[] listaDiagnosticos, WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] listaMedicacao) {
             return base.Channel.adicionarConsultaAsync(data, utente, medico, listaSintomas, listaDiagnosticos, listaMedicacao);
+>>>>>>> refs/remotes/origin/master
         }
     }
 }

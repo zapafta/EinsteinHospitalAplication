@@ -67,6 +67,20 @@
   <wsdl:message name="IService1_procurarDiagnosticos_OutputMessage">
     <wsdl:part name="parameters" element="tns:procurarDiagnosticosResponse" />
   </wsdl:message>
+<<<<<<< HEAD
+  <wsdl:message name="IService1_RegistarUtente_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistarUtente" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RegistarUtente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistarUtenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RegistarUtenteDadosNãoClinicos_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistarUtenteDadosNãoClinicos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RegistarUtenteDadosNãoClinicos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistarUtenteDadosNãoClinicosResponse" />
+  </wsdl:message>
+=======
   <wsdl:message name="IService1_procurarMedicacoes_InputMessage">
     <wsdl:part name="parameters" element="tns:procurarMedicacoes" />
   </wsdl:message>
@@ -82,6 +96,7 @@
   </wsdl:message>
 =======
 >>>>>>> origin/27/05inie
+>>>>>>> refs/remotes/origin/master
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -123,6 +138,16 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/procurarDiagnosticos" message="tns:IService1_procurarDiagnosticos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/procurarDiagnosticosResponse" message="tns:IService1_procurarDiagnosticos_OutputMessage" />
     </wsdl:operation>
+<<<<<<< HEAD
+    <wsdl:operation name="RegistarUtente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RegistarUtente" message="tns:IService1_RegistarUtente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RegistarUtenteResponse" message="tns:IService1_RegistarUtente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistarUtenteDadosNãoClinicos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RegistarUtenteDadosNãoClinicos" message="tns:IService1_RegistarUtenteDadosNãoClinicos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RegistarUtenteDadosNãoClinicosResponse" message="tns:IService1_RegistarUtenteDadosNãoClinicos_OutputMessage" />
+    </wsdl:operation>
+=======
     <wsdl:operation name="procurarMedicacoes">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/procurarMedicacoes" message="tns:IService1_procurarMedicacoes_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/procurarMedicacoesResponse" message="tns:IService1_procurarMedicacoes_OutputMessage" />
@@ -134,6 +159,7 @@
     </wsdl:operation>
 =======
 >>>>>>> origin/27/05inie
+>>>>>>> refs/remotes/origin/master
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -227,8 +253,13 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+<<<<<<< HEAD
+    <wsdl:operation name="RegistarUtente">
+      <soap:operation soapAction="http://tempuri.org/IService1/RegistarUtente" style="document" />
+=======
     <wsdl:operation name="procurarMedicacoes">
       <soap:operation soapAction="http://tempuri.org/IService1/procurarMedicacoes" style="document" />
+>>>>>>> refs/remotes/origin/master
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -237,8 +268,13 @@
       </wsdl:output>
     </wsdl:operation>
 <<<<<<< HEAD
+    <wsdl:operation name="RegistarUtenteDadosNãoClinicos">
+      <soap:operation soapAction="http://tempuri.org/IService1/RegistarUtenteDadosNãoClinicos" style="document" />
+=======
+<<<<<<< HEAD
     <wsdl:operation name="adicionarConsulta">
       <soap:operation soapAction="http://tempuri.org/IService1/adicionarConsulta" style="document" />
+>>>>>>> refs/remotes/origin/master
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -246,8 +282,11 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+<<<<<<< HEAD
+=======
 =======
 >>>>>>> origin/27/05inie
+>>>>>>> refs/remotes/origin/master
   </wsdl:binding>
   <wsdl:service name="Service1">
     <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
