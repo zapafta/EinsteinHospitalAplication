@@ -408,7 +408,6 @@ namespace WebService
             return listaDiagnosticoWeb;
         }
 
-<<<<<<< HEAD
         /////////Parte Pinto da Costa/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -441,7 +440,68 @@ namespace WebService
 
             }
 
+             public int RegistarMedicacao(string nome, string administracao, string preco, DateTime data, string dosagem, string comparticipacao)
+        {
 
+            EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
+            Medicacao medicacaobd = new Medicacao();
+
+            medicacaobd.nomeMedicacao = nome;
+            medicacaobd.administracao = administracao;
+            medicacaobd.preco = preco;
+            medicacaobd.dosagem = dosagem;
+            medicacaobd.comparticao = comparticipacao;
+
+
+            context.MedicacaoSet.Add(medicacaobd);
+            context.SaveChanges();
+            int medicacoid = medicacaobd.Id;
+            if (medicacoid != null)
+            {
+                return medicacoid;
+            }
+            else
+            {
+                return -1;
+
+            }
+
+
+
+        }
+
+
+
+
+       public int RegistarExame(string especializacao, string preco, DateTime data, Rececionista rececionista, Utente utente, string medico)
+       {
+
+           EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
+           Exame examebd = new Exame();
+
+           examebd.especialidade = especializacao;
+           examebd.preco = preco;
+           examebd.data = data;
+           examebd.Rececionista = rececionista;
+           examebd.Utente = utente;
+
+
+           context.ExameSet.Add(examebd);
+           context.SaveChanges();
+           int examebdid = examebd.Id;
+           if (examebdid != null)
+           {
+               return examebdid;
+           }
+           else
+           {
+               return -1;
+
+           }
+
+
+
+       }
 
         }
 
@@ -494,7 +554,7 @@ namespace WebService
 
 
 
-=======
+
         public List<MedicacaoWeb> procurarMedicacoes(string campoPesquisa)
         {
             List<MedicacaoWeb> listaMedicacaoWeb = new List<MedicacaoWeb>();
@@ -546,7 +606,7 @@ namespace WebService
             
         }
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
->>>>>>> refs/remotes/origin/master
+
     }
 
 }
