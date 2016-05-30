@@ -408,6 +408,59 @@ namespace WebService
             return listaDiagnosticoWeb;
         }
 
+
+
+        public List<MedicacaoWeb> procurarMedicacoes(string campoPesquisa)
+        {
+            List<MedicacaoWeb> listaMedicacaoWeb = new List<MedicacaoWeb>();
+            EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
+            List<Medicacao> medicacao = context.MedicacaoSet.Where(i => i.nomeMedicacao.Contains(campoPesquisa)).ToList();
+            foreach (Medicacao m in medicacao)
+            {
+                MedicacaoWeb medicacaoWeb = new MedicacaoWeb();
+                medicacaoWeb.Id = m.Id;
+                medicacaoWeb.NomeMedicamento = m.nomeMedicacao;
+                medicacaoWeb.Preco = m.preco;
+                medicacaoWeb.Data = m.data;
+                medicacaoWeb.Comparticao = m.comparticao;
+                medicacaoWeb.Administracao = m.administracao;
+                listaMedicacaoWeb.Add(medicacaoWeb);
+            }
+            return listaMedicacaoWeb;
+        }
+
+        public bool adicionarConsulta(DateTime data, UtenteWeb utente, MedicoWeb medico, List<SintomaWeb> listaSintomas, List<DiagnosticoWeb> listaDiagnosticos, List<MedicacaoWeb> listaMedicacao)
+        {
+            try
+            {
+                EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
+                Consulta c = new Consulta();
+                c.data = data;
+                c.diagnostico = "nao";
+                c.Utente = context.UtenteSet.Where(i => i.snsId == 123).FirstOrDefault();
+                List<Utilizador> utilizadores = context.UtilizadorSet.Where(i => i.tipoUtilizador == "Medico").ToList();
+                List<Medico> listaMedicos = utilizadores.Cast<Medico>().ToList();
+                c.Medico = listaMedicos.Where(i => i.nInterno == 112).FirstOrDefault();
+                context.ConsultaSet.Add(c);
+                context.SaveChanges();
+                return true;
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        Trace.TraceInformation("Property: {0} Error: {1}",
+                                                validationError.PropertyName,
+                                                validationError.ErrorMessage);
+                    }
+                }
+            }
+            return true;
+
+        }
+
         /////////Parte Pinto da Costa/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -425,8 +478,8 @@ namespace WebService
             utentebd.codigoPostal = codigoPostal;
             utentebd.email = email;
             utentebd.sexo = sexo;
-            utentebd.contacto= contacto;
-      
+            utentebd.contacto = contacto;
+
             context.UtenteSet.Add(utentebd);
             context.SaveChanges();
             int utenteid = utentebd.Id;
@@ -439,6 +492,7 @@ namespace WebService
                 return -1;
 
             }
+        }
 
              public int RegistarMedicacao(string nome, string administracao, string preco, DateTime data, string dosagem, string comparticipacao)
         {
@@ -503,7 +557,7 @@ namespace WebService
 
        }
 
-        }
+        
 
 
 
@@ -555,56 +609,7 @@ namespace WebService
 
 
 
-        public List<MedicacaoWeb> procurarMedicacoes(string campoPesquisa)
-        {
-            List<MedicacaoWeb> listaMedicacaoWeb = new List<MedicacaoWeb>();
-            EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
-            List<Medicacao> medicacao = context.MedicacaoSet.Where(i => i.nomeMedicacao.Contains(campoPesquisa)).ToList();
-            foreach (Medicacao m in medicacao)
-            {
-                MedicacaoWeb medicacaoWeb = new MedicacaoWeb();
-                medicacaoWeb.Id = m.Id;
-                medicacaoWeb.NomeMedicamento = m.nomeMedicacao;
-                medicacaoWeb.Preco = m.preco;
-                medicacaoWeb.Data = m.data;
-                medicacaoWeb.Comparticao = m.comparticao;
-                medicacaoWeb.Administracao = m.administracao;
-                listaMedicacaoWeb.Add(medicacaoWeb);
-            }
-            return listaMedicacaoWeb;
-        }
-
-        public bool adicionarConsulta(DateTime data, UtenteWeb utente, MedicoWeb medico, List<SintomaWeb> listaSintomas, List<DiagnosticoWeb> listaDiagnosticos, List<MedicacaoWeb> listaMedicacao)
-        {
-            try
-            {
-                EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
-                Consulta c = new Consulta();
-                c.data = data;
-                c.diagnostico = "nao";
-                c.Utente = context.UtenteSet.Where(i => i.snsId ==123).FirstOrDefault();
-                List<Utilizador> utilizadores = context.UtilizadorSet.Where(i => i.tipoUtilizador == "Medico").ToList();
-                List<Medico> listaMedicos = utilizadores.Cast<Medico>().ToList();
-                c.Medico = listaMedicos.Where(i => i.nInterno ==112).FirstOrDefault();
-                context.ConsultaSet.Add(c);
-                context.SaveChanges();
-                return true;
-            }
-            catch (DbEntityValidationException dbEx)
-            {
-                foreach (var validationErrors in dbEx.EntityValidationErrors)
-                {
-                    foreach (var validationError in validationErrors.ValidationErrors)
-                    {
-                        Trace.TraceInformation("Property: {0} Error: {1}",
-                                                validationError.PropertyName,
-                                                validationError.ErrorMessage);
-                    }
-                }
-            }
-            return true;
-            
-        }
+       
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     }
