@@ -51,7 +51,8 @@ namespace WebService
         int RegistarUtente(int sns, string PrimeiroNome, string apelido, DateTime dataNascimento, string morada, string codigoPostal, string email, string sexo, string contacto, string peso, string altura, string glicemia, string tensao, string colestrol, string saturacao, string batimento);
         [OperationContract]
         int RegistarUtenteDadosNãoClinicos(int sns, string PrimeiroNome, string apelido, DateTime dataNascimento, string morada, string codigoPostal, string email, string sexo, string contacto);
-    
+        [OperationContract]
+        int RegistarMedicacao(string nome, string administracao, string preco, DateTime data, string dosagem, string comparticipacao);
     }
 
 

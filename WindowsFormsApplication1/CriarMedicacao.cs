@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApplication1.ServiceReference;
 
 namespace WindowsFormsApplication1
 {
@@ -24,6 +25,11 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("Dados em falta.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 //dataGridView1.Rows.Clear();
             }
+        }
+
+        private void CriarMedicacao_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
