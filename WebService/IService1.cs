@@ -45,6 +45,13 @@ namespace WebService
 
         [OperationContract]
         List<DiagnosticoWeb> procurarDiagnosticos(string campoPesquisa);
+
+        [OperationContract]
+        List<MedicacaoWeb> procurarMedicacoes(string campoPesquisa);
+        
+        [OperationContract]
+        bool adicionarConsulta(DateTime data, UtenteWeb utente, MedicoWeb medico, List<SintomaWeb> listaSintomas, List<DiagnosticoWeb> listaDiagnosticos, List<MedicacaoWeb> listaMedicacao);
+
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////// PARTE PINTO DA COSTA/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         [OperationContract]
@@ -110,7 +117,7 @@ namespace WebService
             get { return password; }
             set { password = value; }
         }
-        
+
         [DataMember]
         public string TipoUtilizador
         {
@@ -298,45 +305,185 @@ namespace WebService
         }
     }
 
-        [DataContract]
-        public class SintomaWeb
+    [DataContract]
+    public class SintomaWeb
+    {
+        int id;
+        string descricao;
+
+        [DataMember]
+        public int Id
         {
-            int id;
-            string descricao;
-
-            [DataMember]
-            public int Id
-            {
-                get { return id; }
-                set { id = value; }
-            }
-
-            [DataMember]
-            public string Descricao
-            {
-                get { return descricao; }
-                set { descricao = value; }
-            }
+            get { return id; }
+            set { id = value; }
         }
 
-        [DataContract]
-        public class DiagnosticoWeb
+        [DataMember]
+        public string Descricao
         {
-            int id;
-            string descricao;
-
-            [DataMember]
-            public int Id
-            {
-                get { return id; }
-                set { id = value; }
-            }
-
-            [DataMember]
-            public string Descricao
-            {
-                get { return descricao; }
-                set { descricao = value; }
-            }
+            get { return descricao; }
+            set { descricao = value; }
         }
+    }
+
+    [DataContract]
+    public class DiagnosticoWeb
+    {
+        int id;
+        string descricao;
+
+        [DataMember]
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        [DataMember]
+        public string Descricao
+        {
+            get { return descricao; }
+            set { descricao = value; }
+        }
+    }
+    [DataContract]
+    public class MedicacaoWeb
+    {
+        int id;
+        string nomeMedicacao;
+        string administracao;
+        string preco;
+        DateTime data;
+        string dosagem;
+        string comparticao;
+
+
+        [DataMember]
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        [DataMember]
+        public string NomeMedicamento
+        {
+            get { return nomeMedicacao; }
+            set { nomeMedicacao = value; }
+        }
+
+        [DataMember]
+        public string Administracao
+        {
+            get { return administracao; }
+            set { administracao = value; }
+        }
+
+        [DataMember]
+        public string Preco
+        {
+            get { return preco; }
+            set { preco = value; }
+        }
+
+        [DataMember]
+        public DateTime Data
+        {
+            get { return data; }
+            set { data = value; }
+        }
+
+        [DataMember]
+        public string Dosagem
+        {
+            get { return dosagem; }
+            set { dosagem = value; }
+        }
+
+        [DataMember]
+        public string Comparticao
+        {
+            get { return comparticao; }
+            set { comparticao = value; }
+        }
+    }
+
+    [DataContract]
+    public class ConsultaWeb
+    {
+        int id;
+        DateTime data;
+
+        [DataMember]
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        [DataMember]
+        public DateTime Data
+        {
+            get { return data; }
+            set { data = value; }
+        }
+    }
+
+     [DataContract]
+    public class MedicoWeb
+    {
+        int id;
+        string nome;
+        int idInterno;
+        string morada;
+        DateTime dataNascimento;
+        string cargo;
+
+        [DataMember]
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        [DataMember]
+        public DateTime DataNascimento
+        {
+            get { return dataNascimento; }
+            set { dataNascimento = value; }
+        }
+
+         
+        [DataMember]
+        public string Nome
+        {
+            get { return nome; }
+            set { nome = value; }
+        }
+
+         
+        [DataMember]
+        public int IdInterno
+        {
+            get { return idInterno; }
+            set { idInterno = value; }
+        }
+
+         
+        [DataMember]
+        public string Morada
+        {
+            get { return morada; }
+            set { morada = value; }
+        }
+
+
+        [DataMember]
+        public string Cargo
+        {
+            get { return cargo; }
+            set { cargo = value; }
+
+        }
+    }
 }
