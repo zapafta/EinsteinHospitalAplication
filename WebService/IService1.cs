@@ -414,6 +414,8 @@ namespace WebService
     {
         int id;
         DateTime data;
+        UtenteWeb utente;
+        MedicoWeb medico;
 
         [DataMember]
         public int Id
@@ -427,6 +429,20 @@ namespace WebService
         {
             get { return data; }
             set { data = value; }
+        }
+
+        [DataMember]
+        public UtenteWeb Utente
+        {
+            get { return utente; }
+            set { utente = value; }
+        }
+
+        [DataMember]
+        public MedicoWeb Medico
+        {
+            get { return medico; }
+            set { medico = value; }
         }
     }
 
