@@ -827,131 +827,6 @@ namespace WindowsFormsApplication1.ServiceReference {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MedicoWeb", Namespace="http://schemas.datacontract.org/2004/07/WebService")]
-    [System.SerializableAttribute()]
-    public partial class MedicoWeb : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CargoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DataNascimentoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdInternoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MoradaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NomeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Cargo {
-            get {
-                return this.CargoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CargoField, value) != true)) {
-                    this.CargoField = value;
-                    this.RaisePropertyChanged("Cargo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime DataNascimento {
-            get {
-                return this.DataNascimentoField;
-            }
-            set {
-                if ((this.DataNascimentoField.Equals(value) != true)) {
-                    this.DataNascimentoField = value;
-                    this.RaisePropertyChanged("DataNascimento");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdInterno {
-            get {
-                return this.IdInternoField;
-            }
-            set {
-                if ((this.IdInternoField.Equals(value) != true)) {
-                    this.IdInternoField = value;
-                    this.RaisePropertyChanged("IdInterno");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Morada {
-            get {
-                return this.MoradaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MoradaField, value) != true)) {
-                    this.MoradaField = value;
-                    this.RaisePropertyChanged("Morada");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Nome {
-            get {
-                return this.NomeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NomeField, value) != true)) {
-                    this.NomeField = value;
-                    this.RaisePropertyChanged("Nome");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IService1")]
     public interface IService1 {
@@ -1023,10 +898,10 @@ namespace WindowsFormsApplication1.ServiceReference {
         System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.MedicacaoWeb[]> procurarMedicacoesAsync(string campoPesquisa);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/adicionarConsulta", ReplyAction="http://tempuri.org/IService1/adicionarConsultaResponse")]
-        bool adicionarConsulta(System.DateTime data, WindowsFormsApplication1.ServiceReference.UtenteWeb utente, WindowsFormsApplication1.ServiceReference.MedicoWeb medico, WindowsFormsApplication1.ServiceReference.SintomaWeb[] listaSintomas, WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[] listaDiagnosticos, WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] listaMedicacao);
+        bool adicionarConsulta(System.DateTime data, WindowsFormsApplication1.ServiceReference.UtenteWeb utente, WindowsFormsApplication1.ServiceReference.UtilizadorWeb medico, WindowsFormsApplication1.ServiceReference.SintomaWeb[] listaSintomas, WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[] listaDiagnosticos, WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] listaMedicacao);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/adicionarConsulta", ReplyAction="http://tempuri.org/IService1/adicionarConsultaResponse")]
-        System.Threading.Tasks.Task<bool> adicionarConsultaAsync(System.DateTime data, WindowsFormsApplication1.ServiceReference.UtenteWeb utente, WindowsFormsApplication1.ServiceReference.MedicoWeb medico, WindowsFormsApplication1.ServiceReference.SintomaWeb[] listaSintomas, WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[] listaDiagnosticos, WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] listaMedicacao);
+        System.Threading.Tasks.Task<bool> adicionarConsultaAsync(System.DateTime data, WindowsFormsApplication1.ServiceReference.UtenteWeb utente, WindowsFormsApplication1.ServiceReference.UtilizadorWeb medico, WindowsFormsApplication1.ServiceReference.SintomaWeb[] listaSintomas, WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[] listaDiagnosticos, WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] listaMedicacao);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegistarUtente", ReplyAction="http://tempuri.org/IService1/RegistarUtenteResponse")]
         int RegistarUtente(
@@ -1194,11 +1069,11 @@ namespace WindowsFormsApplication1.ServiceReference {
             return base.Channel.procurarMedicacoesAsync(campoPesquisa);
         }
         
-        public bool adicionarConsulta(System.DateTime data, WindowsFormsApplication1.ServiceReference.UtenteWeb utente, WindowsFormsApplication1.ServiceReference.MedicoWeb medico, WindowsFormsApplication1.ServiceReference.SintomaWeb[] listaSintomas, WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[] listaDiagnosticos, WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] listaMedicacao) {
+        public bool adicionarConsulta(System.DateTime data, WindowsFormsApplication1.ServiceReference.UtenteWeb utente, WindowsFormsApplication1.ServiceReference.UtilizadorWeb medico, WindowsFormsApplication1.ServiceReference.SintomaWeb[] listaSintomas, WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[] listaDiagnosticos, WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] listaMedicacao) {
             return base.Channel.adicionarConsulta(data, utente, medico, listaSintomas, listaDiagnosticos, listaMedicacao);
         }
         
-        public System.Threading.Tasks.Task<bool> adicionarConsultaAsync(System.DateTime data, WindowsFormsApplication1.ServiceReference.UtenteWeb utente, WindowsFormsApplication1.ServiceReference.MedicoWeb medico, WindowsFormsApplication1.ServiceReference.SintomaWeb[] listaSintomas, WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[] listaDiagnosticos, WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] listaMedicacao) {
+        public System.Threading.Tasks.Task<bool> adicionarConsultaAsync(System.DateTime data, WindowsFormsApplication1.ServiceReference.UtenteWeb utente, WindowsFormsApplication1.ServiceReference.UtilizadorWeb medico, WindowsFormsApplication1.ServiceReference.SintomaWeb[] listaSintomas, WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[] listaDiagnosticos, WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] listaMedicacao) {
             return base.Channel.adicionarConsultaAsync(data, utente, medico, listaSintomas, listaDiagnosticos, listaMedicacao);
         }
         

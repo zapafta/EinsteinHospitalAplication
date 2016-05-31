@@ -429,5 +429,26 @@ namespace WindowsFormsApplication1
             listView5.Items.Clear();
             listaMedicacaoEncontrados.Clear();
         }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            historicoConsultas();
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            historicoConsultas();
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            historicoConsultas();
+        }
+
+        private void historicoConsultas()
+        {
+         
+        }
+
     }
 }
