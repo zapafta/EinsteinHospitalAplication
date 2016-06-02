@@ -827,6 +827,83 @@ namespace WindowsFormsApplication1.ServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsultaWeb", Namespace="http://schemas.datacontract.org/2004/07/WebService")]
+    [System.SerializableAttribute()]
+    public partial class ConsultaWeb : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MedicoField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Data {
+            get {
+                return this.DataField;
+            }
+            set {
+                if ((this.DataField.Equals(value) != true)) {
+                    this.DataField = value;
+                    this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Medico {
+            get {
+                return this.MedicoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MedicoField, value) != true)) {
+                    this.MedicoField = value;
+                    this.RaisePropertyChanged("Medico");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IService1")]
     public interface IService1 {
@@ -903,6 +980,36 @@ namespace WindowsFormsApplication1.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/adicionarConsulta", ReplyAction="http://tempuri.org/IService1/adicionarConsultaResponse")]
         System.Threading.Tasks.Task<bool> adicionarConsultaAsync(System.DateTime data, WindowsFormsApplication1.ServiceReference.UtenteWeb utente, WindowsFormsApplication1.ServiceReference.UtilizadorWeb medico, WindowsFormsApplication1.ServiceReference.SintomaWeb[] listaSintomas, WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[] listaDiagnosticos, WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] listaMedicacao);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/procurarConsultas", ReplyAction="http://tempuri.org/IService1/procurarConsultasResponse")]
+        WindowsFormsApplication1.ServiceReference.ConsultaWeb[] procurarConsultas(WindowsFormsApplication1.ServiceReference.UtenteWeb utente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/procurarConsultas", ReplyAction="http://tempuri.org/IService1/procurarConsultasResponse")]
+        System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.ConsultaWeb[]> procurarConsultasAsync(WindowsFormsApplication1.ServiceReference.UtenteWeb utente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/procurarSintomasConsulta", ReplyAction="http://tempuri.org/IService1/procurarSintomasConsultaResponse")]
+        WindowsFormsApplication1.ServiceReference.SintomaWeb[] procurarSintomasConsulta(int idConsulta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/procurarSintomasConsulta", ReplyAction="http://tempuri.org/IService1/procurarSintomasConsultaResponse")]
+        System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.SintomaWeb[]> procurarSintomasConsultaAsync(int idConsulta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/procurarDiagnosticosConsulta", ReplyAction="http://tempuri.org/IService1/procurarDiagnosticosConsultaResponse")]
+        WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[] procurarDiagnosticosConsulta(int idConsulta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/procurarDiagnosticosConsulta", ReplyAction="http://tempuri.org/IService1/procurarDiagnosticosConsultaResponse")]
+        System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[]> procurarDiagnosticosConsultaAsync(int idConsulta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/procurarMedicacoesConsulta", ReplyAction="http://tempuri.org/IService1/procurarMedicacoesConsultaResponse")]
+        WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] procurarMedicacoesConsulta(int idConsulta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/procurarMedicacoesConsulta", ReplyAction="http://tempuri.org/IService1/procurarMedicacoesConsultaResponse")]
+        System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.MedicacaoWeb[]> procurarMedicacoesConsultaAsync(int idConsulta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/procurarMedicacaoHistorico", ReplyAction="http://tempuri.org/IService1/procurarMedicacaoHistoricoResponse")]
+        WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] procurarMedicacaoHistorico(int snsId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/procurarMedicacaoHistorico", ReplyAction="http://tempuri.org/IService1/procurarMedicacaoHistoricoResponse")]
+        System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.MedicacaoWeb[]> procurarMedicacaoHistoricoAsync(int snsId);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegistarUtente", ReplyAction="http://tempuri.org/IService1/RegistarUtenteResponse")]
         int RegistarUtente(
                     int sns, 
@@ -970,6 +1077,18 @@ namespace WindowsFormsApplication1.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllUtente", ReplyAction="http://tempuri.org/IService1/GetAllUtenteResponse")]
         System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.UtenteWeb[]> GetAllUtenteAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PesquisaPaciente", ReplyAction="http://tempuri.org/IService1/PesquisaPacienteResponse")]
+        WindowsFormsApplication1.ServiceReference.UtenteWeb[] PesquisaPaciente(int sns, string PrimeiroNome, string apelido);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PesquisaPaciente", ReplyAction="http://tempuri.org/IService1/PesquisaPacienteResponse")]
+        System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.UtenteWeb[]> PesquisaPacienteAsync(int sns, string PrimeiroNome, string apelido);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AlterarPaciente", ReplyAction="http://tempuri.org/IService1/AlterarPacienteResponse")]
+        bool AlterarPaciente(int sns, string PrimeiroNome, string apelido, System.DateTime dataNascimento, string morada, string codigoPostal, string email, string sexo, string contacto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AlterarPaciente", ReplyAction="http://tempuri.org/IService1/AlterarPacienteResponse")]
+        System.Threading.Tasks.Task<bool> AlterarPacienteAsync(int sns, string PrimeiroNome, string apelido, System.DateTime dataNascimento, string morada, string codigoPostal, string email, string sexo, string contacto);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1095,6 +1214,46 @@ namespace WindowsFormsApplication1.ServiceReference {
             return base.Channel.adicionarConsultaAsync(data, utente, medico, listaSintomas, listaDiagnosticos, listaMedicacao);
         }
         
+        public WindowsFormsApplication1.ServiceReference.ConsultaWeb[] procurarConsultas(WindowsFormsApplication1.ServiceReference.UtenteWeb utente) {
+            return base.Channel.procurarConsultas(utente);
+        }
+        
+        public System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.ConsultaWeb[]> procurarConsultasAsync(WindowsFormsApplication1.ServiceReference.UtenteWeb utente) {
+            return base.Channel.procurarConsultasAsync(utente);
+        }
+        
+        public WindowsFormsApplication1.ServiceReference.SintomaWeb[] procurarSintomasConsulta(int idConsulta) {
+            return base.Channel.procurarSintomasConsulta(idConsulta);
+        }
+        
+        public System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.SintomaWeb[]> procurarSintomasConsultaAsync(int idConsulta) {
+            return base.Channel.procurarSintomasConsultaAsync(idConsulta);
+        }
+        
+        public WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[] procurarDiagnosticosConsulta(int idConsulta) {
+            return base.Channel.procurarDiagnosticosConsulta(idConsulta);
+        }
+        
+        public System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.DiagnosticoWeb[]> procurarDiagnosticosConsultaAsync(int idConsulta) {
+            return base.Channel.procurarDiagnosticosConsultaAsync(idConsulta);
+        }
+        
+        public WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] procurarMedicacoesConsulta(int idConsulta) {
+            return base.Channel.procurarMedicacoesConsulta(idConsulta);
+        }
+        
+        public System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.MedicacaoWeb[]> procurarMedicacoesConsultaAsync(int idConsulta) {
+            return base.Channel.procurarMedicacoesConsultaAsync(idConsulta);
+        }
+        
+        public WindowsFormsApplication1.ServiceReference.MedicacaoWeb[] procurarMedicacaoHistorico(int snsId) {
+            return base.Channel.procurarMedicacaoHistorico(snsId);
+        }
+        
+        public System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.MedicacaoWeb[]> procurarMedicacaoHistoricoAsync(int snsId) {
+            return base.Channel.procurarMedicacaoHistoricoAsync(snsId);
+        }
+        
         public int RegistarUtente(
                     int sns, 
                     string PrimeiroNome, 
@@ -1173,6 +1332,22 @@ namespace WindowsFormsApplication1.ServiceReference {
         
         public System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.UtenteWeb[]> GetAllUtenteAsync() {
             return base.Channel.GetAllUtenteAsync();
+        }
+        
+        public WindowsFormsApplication1.ServiceReference.UtenteWeb[] PesquisaPaciente(int sns, string PrimeiroNome, string apelido) {
+            return base.Channel.PesquisaPaciente(sns, PrimeiroNome, apelido);
+        }
+        
+        public System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.UtenteWeb[]> PesquisaPacienteAsync(int sns, string PrimeiroNome, string apelido) {
+            return base.Channel.PesquisaPacienteAsync(sns, PrimeiroNome, apelido);
+        }
+        
+        public bool AlterarPaciente(int sns, string PrimeiroNome, string apelido, System.DateTime dataNascimento, string morada, string codigoPostal, string email, string sexo, string contacto) {
+            return base.Channel.AlterarPaciente(sns, PrimeiroNome, apelido, dataNascimento, morada, codigoPostal, email, sexo, contacto);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AlterarPacienteAsync(int sns, string PrimeiroNome, string apelido, System.DateTime dataNascimento, string morada, string codigoPostal, string email, string sexo, string contacto) {
+            return base.Channel.AlterarPacienteAsync(sns, PrimeiroNome, apelido, dataNascimento, morada, codigoPostal, email, sexo, contacto);
         }
     }
 }

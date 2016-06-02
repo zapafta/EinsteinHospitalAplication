@@ -447,7 +447,10 @@ namespace WindowsFormsApplication1
 
         private void historicoConsultas()
         {
-         
+
+            FormHistoricoConsultas frm = new FormHistoricoConsultas(utente);
+            frm.Show();
+           
         }
 
     }

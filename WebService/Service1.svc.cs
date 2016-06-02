@@ -485,8 +485,93 @@ namespace WebService
 
         }
 
-        /////////Parte Pinto da Costa/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+          public  List<ConsultaWeb> procurarConsultas(UtenteWeb utente)
+        {
 
+            List<ConsultaWeb> listaFinal = new List<ConsultaWeb>();
+            EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
+            List<Consulta> consultas = context.ConsultaSet.Where(i => i.Utente.snsId == (utente.SnsId)).ToList();
+            foreach (Consulta c in consultas)
+            {
+                ConsultaWeb cweb = new ConsultaWeb();
+                cweb.Id = c.Id;
+                cweb.Data = c.data;
+                cweb.Medico = c.Medico.nome;
+                listaFinal.Add(cweb);
+            }
+           
+            return listaFinal;
+        }
+
+          public List<SintomaWeb> procurarSintomasConsulta(int idConsulta)
+          {
+              List<SintomaWeb> listaFinal = new List<SintomaWeb>();
+              EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
+              Consulta consulta = context.ConsultaSet.Where(i => i.Id == idConsulta).FirstOrDefault();
+              List<Sintomas> sintomas = consulta.Sintomas.ToList();
+              foreach (Sintomas s in sintomas)
+              {
+                  SintomaWeb sweb = new SintomaWeb();
+                  sweb.Id = s.Id;
+                  sweb.Descricao = s.descricao;
+                  listaFinal.Add(sweb);
+              }
+              return listaFinal;
+          }
+
+          public List<DiagnosticoWeb> procurarDiagnosticosConsulta(int idConsulta)
+          {
+              List<DiagnosticoWeb> listaFinal = new List<DiagnosticoWeb>();
+              EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
+              Consulta consulta = context.ConsultaSet.Where(i => i.Id == idConsulta).FirstOrDefault();
+              List<Diagnosticos> diagnosticos = consulta.Diagnosticos.ToList();
+              foreach (Diagnosticos d in diagnosticos)
+              {
+                  DiagnosticoWeb dweb = new DiagnosticoWeb();
+                  dweb.Id = d.Id;
+                  dweb.Descricao = d.descricao;
+                  listaFinal.Add(dweb);
+              }
+              return listaFinal;
+          }
+
+          public List<MedicacaoWeb> procurarMedicacoesConsulta(int idConsulta)
+          {
+              List<MedicacaoWeb> listaFinal = new List<MedicacaoWeb>();
+              EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
+              Consulta consulta = context.ConsultaSet.Where(i => i.Id == idConsulta).FirstOrDefault();
+              List<Medicacao> medicacoes = consulta.Medicacao.ToList();
+              foreach (Medicacao m in medicacoes)
+              {
+                  MedicacaoWeb mweb = new MedicacaoWeb();
+                  mweb.Id = m.Id;
+                  mweb.NomeMedicamento = m.nomeMedicacao;
+                  listaFinal.Add(mweb);
+              }
+              return listaFinal;
+          }
+
+          public List<MedicacaoWeb> procurarMedicacaoHistorico(int snsId)
+          {
+              List<MedicacaoWeb> listaFinal = new List<MedicacaoWeb>();
+              EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
+              List<Consulta> consultas = context.ConsultaSet.Where(i => i.Utente.snsId == snsId).ToList();
+              foreach (Consulta c in consultas)
+              {
+              List<Medicacao> medicacoes = c.Medicacao.ToList();
+              foreach (Medicacao m in medicacoes)
+              {
+                  MedicacaoWeb mweb = new MedicacaoWeb();
+                  mweb.Id = m.Id;
+                  mweb.NomeMedicamento = m.nomeMedicacao;
+                  listaFinal.Add(mweb);
+              }
+              }
+              
+              return listaFinal;
+          }
+
+        /////////Parte Pinto da Costa/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public int RegistarUtenteDadosNãoClinicos(int sns, string PrimeiroNome, string apelido, DateTime dataNascimento, string morada, string codigoPostal, string email, string sexo, string contacto)
         {
@@ -699,7 +784,77 @@ namespace WebService
 
        
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+
+        public List<UtenteWeb> PesquisaPaciente(int sns, string PrimeiroNome, string apelido)
+        {
+            EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
+            List<Utente> utentesBD = new List<Utente>();
+            if (sns != 0)
+            {
+                utentesBD = context.UtenteSet.Where(i => i.snsId == sns && i.primeiroNome.Contains("ze") && i.apelido.Contains("gu")).ToList();
+            }
+            else
+            {
+                utentesBD = context.UtenteSet.Where(i => i.primeiroNome.Contains(PrimeiroNome) && i.apelido.Contains(apelido)).ToList();
+
+            }
+            List<UtenteWeb> utentesWeb = new List<UtenteWeb>();
+            if (utentesBD.Count != 0)
+            {
+                foreach (Utente u in utentesBD)
+                {
+                    UtenteWeb uWeb = new UtenteWeb();
+                    uWeb.ID = u.Id;
+                    uWeb.PrimeiroNome = u.primeiroNome;
+                    uWeb.Apelido = u.apelido;
+                    uWeb.DataNascimento = u.dataNascimento;
+                    uWeb.Morada = u.morada;
+                    uWeb.CodigoPostal = u.codigoPostal;
+                    uWeb.Email = u.email;
+                    uWeb.Sexo = u.sexo;
+                    uWeb.Contacto = u.contacto;
+                    uWeb.Peso = u.peso;
+                    uWeb.Altura = u.altura;
+                    uWeb.Glicemia = u.glicemia;
+                    uWeb.Tensao = u.tensao;
+                    uWeb.Colestrol = u.colestrol;
+                    uWeb.Saturacao = u.saturacao;
+                    uWeb.BatimentoCardiaco = u.batimentoCardiaco;
+                    uWeb.SnsId = u.snsId;
+                    utentesWeb.Add(uWeb);
+
+
+                }
+                return utentesWeb;
+            }
+            else
+            {
+                return utentesWeb;
+            }
+        }
+        public bool AlterarPaciente(int sns, string PrimeiroNome, string apelido, DateTime dataNascimento, string morada, string codigoPostal, string email, string sexo, string contacto)
+        {
+            EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
+            Utente utenteBD = context.UtenteSet.Where(i => i.snsId == sns).FirstOrDefault();
+            if (utenteBD != null)
+            {
+
+                utenteBD.primeiroNome = PrimeiroNome;
+                utenteBD.apelido = apelido;
+                utenteBD.dataNascimento = dataNascimento;
+                utenteBD.morada = morada;
+                utenteBD.codigoPostal = codigoPostal;
+                utenteBD.email = email;
+                utenteBD.sexo = sexo;
+                utenteBD.contacto = contacto;
+                context.SaveChanges();
+                return true;
+            }
+            return false;
+        }
     }
 
 }

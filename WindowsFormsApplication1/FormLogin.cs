@@ -63,7 +63,7 @@ namespace WindowsFormsApplication1
                     }
                     else 
                     {
-                        PesquisaPaciente df = new PesquisaPaciente();
+                        FormEnfermeiro df = new FormEnfermeiro();
 
                         df.Show();
                         this.Hide();

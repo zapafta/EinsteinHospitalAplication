@@ -52,6 +52,22 @@ namespace WebService
         [OperationContract]
         bool adicionarConsulta(DateTime data, UtenteWeb utente, UtilizadorWeb medico, List<SintomaWeb> listaSintomas, List<DiagnosticoWeb> listaDiagnosticos, List<MedicacaoWeb> listaMedicacao);
 
+        [OperationContract]
+        List<ConsultaWeb> procurarConsultas(UtenteWeb utente);
+
+        [OperationContract]
+        List<SintomaWeb> procurarSintomasConsulta(int idConsulta);
+
+
+        [OperationContract]
+        List<DiagnosticoWeb> procurarDiagnosticosConsulta(int idConsulta);
+
+        [OperationContract]
+        List<MedicacaoWeb> procurarMedicacoesConsulta(int idConsulta);
+
+        [OperationContract]
+        List<MedicacaoWeb> procurarMedicacaoHistorico(int snsId);
+
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////// PARTE PINTO DA COSTA/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         [OperationContract]
@@ -66,6 +82,14 @@ namespace WebService
         List<UtilizadorWeb> GetAllMedicos();
         [OperationContract]
         List<UtenteWeb> GetAllUtente();
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////// PARTE Frederic//////////////////////////////////////////////////////////////////////
+        [OperationContract]
+        List<UtenteWeb> PesquisaPaciente(int sns, string PrimeiroNome, string apelido);
+        [OperationContract]
+        bool AlterarPaciente(int sns, string PrimeiroNome, string apelido, DateTime dataNascimento, string morada, string codigoPostal, string email, string sexo, string contacto);
+   
 
     }
 
@@ -421,8 +445,7 @@ namespace WebService
     {
         int id;
         DateTime data;
-        UtenteWeb utente;
-        MedicoWeb medico;
+        string medico;
 
         [DataMember]
         public int Id
@@ -439,14 +462,7 @@ namespace WebService
         }
 
         [DataMember]
-        public UtenteWeb Utente
-        {
-            get { return utente; }
-            set { utente = value; }
-        }
-
-        [DataMember]
-        public MedicoWeb Medico
+        public string Medico
         {
             get { return medico; }
             set { medico = value; }
