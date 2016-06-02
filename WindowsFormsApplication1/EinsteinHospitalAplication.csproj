@@ -65,6 +65,24 @@
     <Compile Include="FormCriarPaciente.Designer.cs">
       <DependentUpon>FormCriarPaciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEnfermeiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEnfermeiro.Designer.cs">
+      <DependentUpon>FormEnfermeiro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHistoricoConsultas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHistoricoConsultas.Designer.cs">
+      <DependentUpon>FormHistoricoConsultas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHistoricoMedicacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHistoricoMedicacoes.Designer.cs">
+      <DependentUpon>FormHistoricoMedicacoes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +141,15 @@
     <EmbeddedResource Include="FormCriarPaciente.resx">
       <DependentUpon>FormCriarPaciente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormEnfermeiro.resx">
+      <DependentUpon>FormEnfermeiro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHistoricoConsultas.resx">
+      <DependentUpon>FormHistoricoConsultas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHistoricoMedicacoes.resx">
+      <DependentUpon>FormHistoricoMedicacoes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +202,9 @@
     <None Include="Service References\ServiceReference\WindowsFormsApplication1.ServiceReference.CompositeType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference\WindowsFormsApplication1.ServiceReference.ConsultaWeb.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference\WindowsFormsApplication1.ServiceReference.DiagnosticoWeb.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -192,7 +222,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
