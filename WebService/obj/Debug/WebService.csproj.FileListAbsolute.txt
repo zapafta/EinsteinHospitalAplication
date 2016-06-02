@@ -57,6 +57,7 @@ C:\Users\Frederic\Documents\esgpspro\EinsteinHospitalAplication\WebService\bin\E
 C:\Users\Frederic\Documents\esgpspro\EinsteinHospitalAplication\WebService\obj\Debug\WebService.dll
 C:\Users\Frederic\Documents\esgpspro\EinsteinHospitalAplication\WebService\obj\Debug\WebService.pdb
 C:\Users\Frederic\Documents\esgpspro\EinsteinHospitalAplication\WebService\obj\Debug\WebService.csprojResolveAssemblyReference.cache
+<<<<<<< HEAD
 C:\Users\DiogoMartins\Desktop\esgpspro\EinsteinHospitalAplication\WebService\obj\Debug\WebService.dll
 C:\Users\DiogoMartins\Desktop\esgpspro\EinsteinHospitalAplication\WebService\bin\WebService.dll.config
 C:\Users\DiogoMartins\Desktop\esgpspro\EinsteinHospitalAplication\WebService\bin\WebService.dll
@@ -66,3 +67,5 @@ C:\Users\DiogoMartins\Desktop\esgpspro\EinsteinHospitalAplication\WebService\bin
 C:\Users\DiogoMartins\Desktop\esgpspro\EinsteinHospitalAplication\WebService\bin\EntityFramework.xml
 C:\Users\DiogoMartins\Desktop\esgpspro\EinsteinHospitalAplication\WebService\bin\EntityFramework.SqlServer.xml
 C:\Users\DiogoMartins\Desktop\esgpspro\EinsteinHospitalAplication\WebService\obj\Debug\WebService.pdb
+=======
+>>>>>>> origin/FinalRenato

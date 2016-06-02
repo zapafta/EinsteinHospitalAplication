@@ -409,4 +409,42 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="PesquisaPaciente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sns" type="xs:int" />
+        <xs:element minOccurs="0" name="PrimeiroNome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="apelido" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PesquisaPacienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="PesquisaPacienteResult" nillable="true" type="q19:ArrayOfUtenteWeb" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarPaciente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sns" type="xs:int" />
+        <xs:element minOccurs="0" name="PrimeiroNome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="apelido" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dataNascimento" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="morada" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codigoPostal" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sexo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="contacto" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarPacienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AlterarPacienteResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
