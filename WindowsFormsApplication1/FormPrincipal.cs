@@ -16,5 +16,11 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormCriarPaciente frm2 = new FormCriarPaciente(null);
+            frm2.ShowDialog();
+        }
     }
 }

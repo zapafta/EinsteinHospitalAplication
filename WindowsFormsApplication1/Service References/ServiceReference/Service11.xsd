@@ -258,4 +258,47 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="RegistarExame">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="especializacao" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="preco" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="data" type="xs:dateTime" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="rececionista" nillable="true" type="q14:UtilizadorWeb" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="utente" nillable="true" type="q15:UtenteWeb" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="medico" nillable="true" type="q16:UtilizadorWeb" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistarExameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RegistarExameResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllMedicos">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllMedicosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="GetAllMedicosResult" nillable="true" type="q17:ArrayOfUtilizadorWeb" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUtente">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUtenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="GetAllUtenteResult" nillable="true" type="q18:ArrayOfUtenteWeb" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

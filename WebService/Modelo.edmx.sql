@@ -525,7 +525,10 @@ ADD CONSTRAINT [FK_Administrador_inherits_Utilizador]
         ([Id])
     ON DELETE CASCADE ON UPDATE NO ACTION;
 GO
-
+Insert into [dbo].[UtilizadorSet] ([username], [password], [tipoUtilizador], [suspensao])
+Values ('admin', 'admin', 'Administrador', 'true')
+Insert into [dbo].[UtilizadorSet_Administrador] ([nome], [nInterno], [morada], [dataNascimento], [cargo], [Id])
+Values ('jose', '1', 'Leiria', 23/07/2016 , 'Administrador', '1')
 -- --------------------------------------------------
 -- Script has ended
 -- --------------------------------------------------

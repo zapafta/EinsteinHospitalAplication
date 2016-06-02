@@ -952,6 +952,24 @@ namespace WindowsFormsApplication1.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegistarMedicacao", ReplyAction="http://tempuri.org/IService1/RegistarMedicacaoResponse")]
         System.Threading.Tasks.Task<int> RegistarMedicacaoAsync(string nome, string administracao, string preco, System.DateTime data, string dosagem, string comparticipacao);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegistarExame", ReplyAction="http://tempuri.org/IService1/RegistarExameResponse")]
+        int RegistarExame(string especializacao, string preco, System.DateTime data, WindowsFormsApplication1.ServiceReference.UtilizadorWeb rececionista, WindowsFormsApplication1.ServiceReference.UtenteWeb utente, WindowsFormsApplication1.ServiceReference.UtilizadorWeb medico);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegistarExame", ReplyAction="http://tempuri.org/IService1/RegistarExameResponse")]
+        System.Threading.Tasks.Task<int> RegistarExameAsync(string especializacao, string preco, System.DateTime data, WindowsFormsApplication1.ServiceReference.UtilizadorWeb rececionista, WindowsFormsApplication1.ServiceReference.UtenteWeb utente, WindowsFormsApplication1.ServiceReference.UtilizadorWeb medico);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllMedicos", ReplyAction="http://tempuri.org/IService1/GetAllMedicosResponse")]
+        WindowsFormsApplication1.ServiceReference.UtilizadorWeb[] GetAllMedicos();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllMedicos", ReplyAction="http://tempuri.org/IService1/GetAllMedicosResponse")]
+        System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.UtilizadorWeb[]> GetAllMedicosAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllUtente", ReplyAction="http://tempuri.org/IService1/GetAllUtenteResponse")]
+        WindowsFormsApplication1.ServiceReference.UtenteWeb[] GetAllUtente();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllUtente", ReplyAction="http://tempuri.org/IService1/GetAllUtenteResponse")]
+        System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.UtenteWeb[]> GetAllUtenteAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1131,6 +1149,30 @@ namespace WindowsFormsApplication1.ServiceReference {
         
         public System.Threading.Tasks.Task<int> RegistarMedicacaoAsync(string nome, string administracao, string preco, System.DateTime data, string dosagem, string comparticipacao) {
             return base.Channel.RegistarMedicacaoAsync(nome, administracao, preco, data, dosagem, comparticipacao);
+        }
+        
+        public int RegistarExame(string especializacao, string preco, System.DateTime data, WindowsFormsApplication1.ServiceReference.UtilizadorWeb rececionista, WindowsFormsApplication1.ServiceReference.UtenteWeb utente, WindowsFormsApplication1.ServiceReference.UtilizadorWeb medico) {
+            return base.Channel.RegistarExame(especializacao, preco, data, rececionista, utente, medico);
+        }
+        
+        public System.Threading.Tasks.Task<int> RegistarExameAsync(string especializacao, string preco, System.DateTime data, WindowsFormsApplication1.ServiceReference.UtilizadorWeb rececionista, WindowsFormsApplication1.ServiceReference.UtenteWeb utente, WindowsFormsApplication1.ServiceReference.UtilizadorWeb medico) {
+            return base.Channel.RegistarExameAsync(especializacao, preco, data, rececionista, utente, medico);
+        }
+        
+        public WindowsFormsApplication1.ServiceReference.UtilizadorWeb[] GetAllMedicos() {
+            return base.Channel.GetAllMedicos();
+        }
+        
+        public System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.UtilizadorWeb[]> GetAllMedicosAsync() {
+            return base.Channel.GetAllMedicosAsync();
+        }
+        
+        public WindowsFormsApplication1.ServiceReference.UtenteWeb[] GetAllUtente() {
+            return base.Channel.GetAllUtente();
+        }
+        
+        public System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.UtenteWeb[]> GetAllUtenteAsync() {
+            return base.Channel.GetAllUtenteAsync();
         }
     }
 }

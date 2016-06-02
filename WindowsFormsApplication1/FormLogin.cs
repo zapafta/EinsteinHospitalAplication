@@ -53,7 +53,9 @@ namespace WindowsFormsApplication1
                     else if (user.TipoUtilizador == "Rececionista")
                     {
 
-                        Form1 df = new Form1(user);
+
+                        string a = user.Nome.ToString();
+                        FormCriarPaciente df = new FormCriarPaciente(user);
 
                         df.Show();
                         this.Hide();
@@ -84,6 +86,11 @@ namespace WindowsFormsApplication1
             Program.OpenDetailFormOnClose = true;
 
             this.Close();
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

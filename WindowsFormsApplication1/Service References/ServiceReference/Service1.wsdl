@@ -97,6 +97,24 @@
   <wsdl:message name="IService1_RegistarMedicacao_OutputMessage">
     <wsdl:part name="parameters" element="tns:RegistarMedicacaoResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_RegistarExame_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistarExame" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RegistarExame_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistarExameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllMedicos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMedicos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllMedicos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMedicosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllUtente_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUtente" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllUtente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUtenteResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -157,6 +175,18 @@
     <wsdl:operation name="RegistarMedicacao">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/RegistarMedicacao" message="tns:IService1_RegistarMedicacao_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/RegistarMedicacaoResponse" message="tns:IService1_RegistarMedicacao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistarExame">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RegistarExame" message="tns:IService1_RegistarExame_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RegistarExameResponse" message="tns:IService1_RegistarExame_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMedicos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllMedicos" message="tns:IService1_GetAllMedicos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllMedicosResponse" message="tns:IService1_GetAllMedicos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllUtente" message="tns:IService1_GetAllUtente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllUtenteResponse" message="tns:IService1_GetAllUtente_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -289,6 +319,33 @@
     </wsdl:operation>
     <wsdl:operation name="RegistarMedicacao">
       <soap:operation soapAction="http://tempuri.org/IService1/RegistarMedicacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistarExame">
+      <soap:operation soapAction="http://tempuri.org/IService1/RegistarExame" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMedicos">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllMedicos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtente">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllUtente" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

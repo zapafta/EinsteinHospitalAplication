@@ -39,10 +39,12 @@ namespace WebService
             EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
             UtilizadorWeb utilizadorWeb = new UtilizadorWeb();
             Utilizador user = context.UtilizadorSet.Where(i => i.username == username && i.password == password).FirstOrDefault();
+            if (user != null)
+            { 
             if(user.suspensao==false){
                 user = null;
             }
-            if (user != null) { 
+           
             utilizadorWeb.Username = user.username;
             utilizadorWeb.Password = user.password;
             utilizadorWeb.TipoUtilizador = user.tipoUtilizador;
@@ -76,6 +78,7 @@ namespace WebService
                 utilizadorWeb.NInterno = rececionista.nInterno;
                 utilizadorWeb.Nome = rececionista.nome;
                 utilizadorWeb.DataNascimento = rececionista.dataNascimento;
+                utilizadorWeb.ID = rececionista.Id;
 
             }
             if (user.tipoUtilizador == "Administrador")
@@ -549,7 +552,7 @@ namespace WebService
 
 
 
-       public int RegistarExame(string especializacao, string preco, DateTime data, Rececionista rececionista, Utente utente, string medico)
+             public int RegistarExame(string especializacao, string preco, DateTime data, UtilizadorWeb rececionista, UtenteWeb utente, UtilizadorWeb medico)
        {
 
            EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
@@ -558,9 +561,15 @@ namespace WebService
            examebd.especialidade = especializacao;
            examebd.preco = preco;
            examebd.data = data;
-           examebd.Rececionista = rececionista;
-           examebd.Utente = utente;
+           Rececionista rec =(Rececionista) context.UtilizadorSet.Where(i => i.Id == rececionista.ID).FirstOrDefault();
 
+           examebd.Rececionista = rec;
+           Utente ut = (Utente) context.UtenteSet.Where(i => i.Id == utente.ID).FirstOrDefault();
+           examebd.Utente = ut;
+
+           Medico med = (Medico)context.UtilizadorSet.Where(i => i.Id == medico.ID).FirstOrDefault();
+
+           examebd.Medico = med;
 
            context.ExameSet.Add(examebd);
            context.SaveChanges();
@@ -579,9 +588,66 @@ namespace WebService
 
        }
 
-        
+      
+       public List<UtenteWeb> GetAllUtente()
+       {
+
+           EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
+          List<Utente> utentebd = new List<Utente>();
+          List<UtenteWeb> listaweb = new List<UtenteWeb>();
+          utentebd = context.UtenteSet.ToList();
+      
+
+           foreach (Utente u in utentebd)
+           {
+                  UtenteWeb uWeb = new UtenteWeb();
+               uWeb.ID = u.Id;
+               uWeb.PrimeiroNome = u.primeiroNome;
+               uWeb.Apelido = u.apelido;
+               uWeb.DataNascimento = u.dataNascimento;
+               uWeb.Morada = u.morada;
+               uWeb.CodigoPostal = u.codigoPostal;
+               uWeb.Email = u.email;
+               uWeb.Sexo = u.sexo;
+               uWeb.Contacto = u.contacto;
+               uWeb.Peso = u.peso;
+               uWeb.Altura = u.altura;
+               uWeb.Glicemia = u.glicemia;
+               uWeb.Tensao = u.tensao;
+               uWeb.Colestrol = u.colestrol;
+               uWeb.Saturacao = u.saturacao;
+               uWeb.BatimentoCardiaco = u.batimentoCardiaco;
+               uWeb.SnsId = u.snsId;
+               listaweb.Add(uWeb);
+
+           }
+           
+           return listaweb;
+
+       }
+
+       public List<UtilizadorWeb> GetAllMedicos()
+       {
+
+          EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
+          List<Utilizador> medicobd = new List<Utilizador>();
+          List<UtilizadorWeb> listaweb = new List<UtilizadorWeb>();
+          medicobd = context.UtilizadorSet.Where(i => i.tipoUtilizador == "Medico").ToList();
+      
+
+           foreach (Medico u in medicobd)
+           {
+               UtilizadorWeb uWeb = new UtilizadorWeb();
+               uWeb.Nome = u.nome;
+               uWeb.ID = u.Id;
+               listaweb.Add(uWeb);
+
+           }
+
+           return listaweb;
 
 
+       }
 
 
 

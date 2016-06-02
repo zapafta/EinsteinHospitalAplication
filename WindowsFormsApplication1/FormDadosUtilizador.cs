@@ -69,7 +69,15 @@ namespace WindowsFormsApplication1
                         DateTime date = monthCalendar1.SelectionRange.Start;
                         string cargo = textBoxCargo.Text;
                         string pass = textBoxPassword.Text;
-                        string tipoUtilizador = checkedListBox1.SelectedItem.ToString();
+                        string tipoUtilizador = "";
+                        for (int i = 0; i < checkedListBox1.Items.Count; i++)
+                        {
+                            if (checkedListBox1.GetItemChecked(i))
+                            {
+                                tipoUtilizador = (string)checkedListBox1.Items[i];
+
+                            }
+                        }
                         if (webService.adicionarUtilizador(nome, nInterno, morada, date, cargo, pass, tipoUtilizador))
                         {
                             MessageBox.Show("Utilizador criado com sucesso!");
@@ -99,16 +107,26 @@ namespace WindowsFormsApplication1
                         string cargo = textBoxCargo.Text;
                         string pass = textBoxPassword.Text;
 
-                        string tipoUtilizador = utilizador.TipoUtilizador;
-                        if(verificaralteracoes()){
-                            
-                        if (webService.alterarUtilizador(nome, nInterno, morada, date, cargo, pass, tipoUtilizador, utilizador.ID))
+                        string tipoUtilizador = "";
+                        for (int i = 0; i < checkedListBox1.Items.Count; i++)
                         {
-                            MessageBox.Show("Utilizador alterado com sucesso!");
+                            if (checkedListBox1.GetItemChecked(i))
+                            {
+                                tipoUtilizador = (string)checkedListBox1.Items[i];
+
+                            }
                         }
-                        else { MessageBox.Show("Ocorreu um erro!"); }
-                   
-                        }else{MessageBox.Show("Não foram alterado dados nos campos");}
+                        if (verificaralteracoes())
+                        {
+
+                            if (webService.alterarUtilizador(nome, nInterno, morada, date, cargo, pass, tipoUtilizador, utilizador.ID))
+                            {
+                                MessageBox.Show("Utilizador alterado com sucesso!");
+                            }
+                            else { MessageBox.Show("Ocorreu um erro!"); }
+
+                        }
+                        else { MessageBox.Show("Não foram alterado dados nos campos"); }
                     }
                     else
                     {
@@ -119,13 +137,22 @@ namespace WindowsFormsApplication1
                 {
                     MessageBox.Show("Verifica as passwords!");
                 }
-             }
+            }
         }
         public bool verificarCampos()
         {
+            string tipoUtilizador = "";
+            for (int i = 0; i < checkedListBox1.Items.Count; i++)
+            {
+                if (checkedListBox1.GetItemChecked(i))
+                {
+                    tipoUtilizador = (string)checkedListBox1.Items[i];
+
+                }
+            }
             if (
             textBoxCargo.Text != "" && textBoxMorada.Text != "" && textBoxName.Text != "" && textBoxNInterno.Text != "" &&
-                textBoxPassword.Text != "")
+                textBoxPassword.Text != "" && tipoUtilizador != "")
             {
                 return true;
             }
@@ -142,10 +169,20 @@ namespace WindowsFormsApplication1
             DateTime date = monthCalendar1.SelectionRange.Start;
             string cargo = textBoxCargo.Text;
             string pass = textBoxPassword.Text;
-            string tipoUtilizador = checkedListBox1.SelectedItem.ToString();
+            string tipoUtilizador = "";
+            for (int i = 0; i < checkedListBox1.Items.Count; i++)
+            {
+                if (checkedListBox1.GetItemChecked(i))
+                {
+                    tipoUtilizador = (string)checkedListBox1.Items[i];
+
+                }
+            }
+
+
             if (
-            nome.Equals(utilizador.Nome) && morada.Equals(utilizador.Morada) && nInterno==utilizador.NInterno
-            && date==utilizador.DataNascimento && cargo.Equals(utilizador.Cargo) && pass.Equals(utilizador.Password) &&
+            nome.Equals(utilizador.Nome) && morada.Equals(utilizador.Morada) && nInterno == utilizador.NInterno
+            && date == utilizador.DataNascimento && cargo.Equals(utilizador.Cargo) && pass.Equals(utilizador.Password) &&
                 tipoUtilizador.Equals(utilizador.TipoUtilizador))
             {
                 return false;
@@ -156,9 +193,19 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void FormDadosUtilizador_Load(object sender, EventArgs e)
+        private void checkedListBox1_ItemCheck(object sender, ItemCheckEventArgs e)
         {
+            if (e.NewValue == CheckState.Checked)
+                for (int ix = 0; ix < checkedListBox1.Items.Count; ++ix)
+                    if (e.Index != ix) checkedListBox1.SetItemChecked(ix, false);
+        }
 
+        private void textBoxNInterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

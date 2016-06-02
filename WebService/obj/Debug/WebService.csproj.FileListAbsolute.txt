@@ -18,16 +18,6 @@ D:\ESGPS 2605\Esgps\EinsteinHospitalAplication\WebService\bin\EntityFramework.dl
 D:\ESGPS 2605\Esgps\EinsteinHospitalAplication\WebService\bin\EntityFramework.SqlServer.dll
 D:\ESGPS 2605\Esgps\EinsteinHospitalAplication\WebService\bin\EntityFramework.xml
 D:\ESGPS 2605\Esgps\EinsteinHospitalAplication\WebService\bin\EntityFramework.SqlServer.xml
-C:\Users\Renato Santos\Desktop\EinsteinHospitalAplication\WebService\bin\WebService.dll.config
-C:\Users\Renato Santos\Desktop\EinsteinHospitalAplication\WebService\bin\WebService.dll
-C:\Users\Renato Santos\Desktop\EinsteinHospitalAplication\WebService\bin\WebService.pdb
-C:\Users\Renato Santos\Desktop\EinsteinHospitalAplication\WebService\bin\EntityFramework.dll
-C:\Users\Renato Santos\Desktop\EinsteinHospitalAplication\WebService\bin\EntityFramework.SqlServer.dll
-C:\Users\Renato Santos\Desktop\EinsteinHospitalAplication\WebService\bin\EntityFramework.xml
-C:\Users\Renato Santos\Desktop\EinsteinHospitalAplication\WebService\bin\EntityFramework.SqlServer.xml
-C:\Users\Renato Santos\Desktop\EinsteinHospitalAplication\WebService\obj\Debug\WebService.csprojResolveAssemblyReference.cache
-C:\Users\Renato Santos\Desktop\EinsteinHospitalAplication\WebService\obj\Debug\WebService.dll
-C:\Users\Renato Santos\Desktop\EinsteinHospitalAplication\WebService\obj\Debug\WebService.pdb
 C:\Users\DiogoMartins\Documents\GitHub\EinsteinHospitalAplication\WebService\bin\WebService.dll.config
 C:\Users\DiogoMartins\Documents\GitHub\EinsteinHospitalAplication\WebService\bin\WebService.dll
 C:\Users\DiogoMartins\Documents\GitHub\EinsteinHospitalAplication\WebService\bin\WebService.pdb
@@ -47,3 +37,13 @@ C:\Users\DiogoMartins\Desktop\Esgps\EinsteinHospitalAplication\WebService\bin\En
 C:\Users\DiogoMartins\Desktop\Esgps\EinsteinHospitalAplication\WebService\obj\Debug\WebService.csprojResolveAssemblyReference.cache
 C:\Users\DiogoMartins\Desktop\Esgps\EinsteinHospitalAplication\WebService\obj\Debug\WebService.dll
 C:\Users\DiogoMartins\Desktop\Esgps\EinsteinHospitalAplication\WebService\obj\Debug\WebService.pdb
+C:\Users\Renato Santos\Desktop\EinsteinHospitalAplication\WebService\bin\WebService.dll.config
+C:\Users\Renato Santos\Desktop\EinsteinHospitalAplication\WebService\bin\WebService.dll
+C:\Users\Renato Santos\Desktop\EinsteinHospitalAplication\WebService\bin\WebService.pdb
+C:\Users\Renato Santos\Desktop\EinsteinHospitalAplication\WebService\bin\EntityFramework.dll
+C:\Users\Renato Santos\Desktop\EinsteinHospitalAplication\WebService\bin\EntityFramework.SqlServer.dll
+C:\Users\Renato Santos\Desktop\EinsteinHospitalAplication\WebService\bin\EntityFramework.xml
+C:\Users\Renato Santos\Desktop\EinsteinHospitalAplication\WebService\bin\EntityFramework.SqlServer.xml
+C:\Users\Renato Santos\Desktop\EinsteinHospitalAplication\WebService\obj\Debug\WebService.csprojResolveAssemblyReference.cache
+C:\Users\Renato Santos\Desktop\EinsteinHospitalAplication\WebService\obj\Debug\WebService.dll
+C:\Users\Renato Santos\Desktop\EinsteinHospitalAplication\WebService\obj\Debug\WebService.pdb

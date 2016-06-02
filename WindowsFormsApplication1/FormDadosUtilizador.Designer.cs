@@ -212,7 +212,6 @@
             this.Controls.Add(this.label1);
             this.Name = "FormDadosUtilizador";
             this.Text = "FormRegistarUtilizador";
-            this.Load += new System.EventHandler(this.FormDadosUtilizador_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

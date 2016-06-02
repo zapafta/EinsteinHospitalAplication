@@ -94,4 +94,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="MedicacaoWeb" nillable="true" type="tns:MedicacaoWeb" />
+  <xs:complexType name="ArrayOfUtenteWeb">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UtenteWeb" nillable="true" type="tns:UtenteWeb" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUtenteWeb" nillable="true" type="tns:ArrayOfUtenteWeb" />
 </xs:schema>
