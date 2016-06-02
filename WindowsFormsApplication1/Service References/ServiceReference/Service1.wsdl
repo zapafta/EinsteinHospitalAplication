@@ -79,6 +79,36 @@
   <wsdl:message name="IService1_adicionarConsulta_OutputMessage">
     <wsdl:part name="parameters" element="tns:adicionarConsultaResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_procurarConsultas_InputMessage">
+    <wsdl:part name="parameters" element="tns:procurarConsultas" />
+  </wsdl:message>
+  <wsdl:message name="IService1_procurarConsultas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:procurarConsultasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_procurarSintomasConsulta_InputMessage">
+    <wsdl:part name="parameters" element="tns:procurarSintomasConsulta" />
+  </wsdl:message>
+  <wsdl:message name="IService1_procurarSintomasConsulta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:procurarSintomasConsultaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_procurarDiagnosticosConsulta_InputMessage">
+    <wsdl:part name="parameters" element="tns:procurarDiagnosticosConsulta" />
+  </wsdl:message>
+  <wsdl:message name="IService1_procurarDiagnosticosConsulta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:procurarDiagnosticosConsultaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_procurarMedicacoesConsulta_InputMessage">
+    <wsdl:part name="parameters" element="tns:procurarMedicacoesConsulta" />
+  </wsdl:message>
+  <wsdl:message name="IService1_procurarMedicacoesConsulta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:procurarMedicacoesConsultaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_procurarMedicacaoHistorico_InputMessage">
+    <wsdl:part name="parameters" element="tns:procurarMedicacaoHistorico" />
+  </wsdl:message>
+  <wsdl:message name="IService1_procurarMedicacaoHistorico_OutputMessage">
+    <wsdl:part name="parameters" element="tns:procurarMedicacaoHistoricoResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_RegistarUtente_InputMessage">
     <wsdl:part name="parameters" element="tns:RegistarUtente" />
   </wsdl:message>
@@ -96,6 +126,36 @@
   </wsdl:message>
   <wsdl:message name="IService1_RegistarMedicacao_OutputMessage">
     <wsdl:part name="parameters" element="tns:RegistarMedicacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RegistarExame_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistarExame" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RegistarExame_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistarExameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllMedicos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMedicos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllMedicos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMedicosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllUtente_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUtente" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllUtente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUtenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PesquisaPaciente_InputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisaPaciente" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PesquisaPaciente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisaPacienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AlterarPaciente_InputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarPaciente" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AlterarPaciente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarPacienteResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
@@ -146,6 +206,26 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/adicionarConsulta" message="tns:IService1_adicionarConsulta_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/adicionarConsultaResponse" message="tns:IService1_adicionarConsulta_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="procurarConsultas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/procurarConsultas" message="tns:IService1_procurarConsultas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/procurarConsultasResponse" message="tns:IService1_procurarConsultas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="procurarSintomasConsulta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/procurarSintomasConsulta" message="tns:IService1_procurarSintomasConsulta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/procurarSintomasConsultaResponse" message="tns:IService1_procurarSintomasConsulta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="procurarDiagnosticosConsulta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/procurarDiagnosticosConsulta" message="tns:IService1_procurarDiagnosticosConsulta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/procurarDiagnosticosConsultaResponse" message="tns:IService1_procurarDiagnosticosConsulta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="procurarMedicacoesConsulta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/procurarMedicacoesConsulta" message="tns:IService1_procurarMedicacoesConsulta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/procurarMedicacoesConsultaResponse" message="tns:IService1_procurarMedicacoesConsulta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="procurarMedicacaoHistorico">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/procurarMedicacaoHistorico" message="tns:IService1_procurarMedicacaoHistorico_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/procurarMedicacaoHistoricoResponse" message="tns:IService1_procurarMedicacaoHistorico_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="RegistarUtente">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/RegistarUtente" message="tns:IService1_RegistarUtente_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/RegistarUtenteResponse" message="tns:IService1_RegistarUtente_OutputMessage" />
@@ -157,6 +237,26 @@
     <wsdl:operation name="RegistarMedicacao">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/RegistarMedicacao" message="tns:IService1_RegistarMedicacao_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/RegistarMedicacaoResponse" message="tns:IService1_RegistarMedicacao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistarExame">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RegistarExame" message="tns:IService1_RegistarExame_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RegistarExameResponse" message="tns:IService1_RegistarExame_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMedicos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllMedicos" message="tns:IService1_GetAllMedicos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllMedicosResponse" message="tns:IService1_GetAllMedicos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllUtente" message="tns:IService1_GetAllUtente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllUtenteResponse" message="tns:IService1_GetAllUtente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PesquisaPaciente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PesquisaPaciente" message="tns:IService1_PesquisaPaciente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PesquisaPacienteResponse" message="tns:IService1_PesquisaPaciente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarPaciente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AlterarPaciente" message="tns:IService1_AlterarPaciente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AlterarPacienteResponse" message="tns:IService1_AlterarPaciente_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -269,6 +369,51 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="procurarConsultas">
+      <soap:operation soapAction="http://tempuri.org/IService1/procurarConsultas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="procurarSintomasConsulta">
+      <soap:operation soapAction="http://tempuri.org/IService1/procurarSintomasConsulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="procurarDiagnosticosConsulta">
+      <soap:operation soapAction="http://tempuri.org/IService1/procurarDiagnosticosConsulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="procurarMedicacoesConsulta">
+      <soap:operation soapAction="http://tempuri.org/IService1/procurarMedicacoesConsulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="procurarMedicacaoHistorico">
+      <soap:operation soapAction="http://tempuri.org/IService1/procurarMedicacaoHistorico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="RegistarUtente">
       <soap:operation soapAction="http://tempuri.org/IService1/RegistarUtente" style="document" />
       <wsdl:input>
@@ -289,6 +434,51 @@
     </wsdl:operation>
     <wsdl:operation name="RegistarMedicacao">
       <soap:operation soapAction="http://tempuri.org/IService1/RegistarMedicacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistarExame">
+      <soap:operation soapAction="http://tempuri.org/IService1/RegistarExame" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMedicos">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllMedicos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtente">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllUtente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PesquisaPaciente">
+      <soap:operation soapAction="http://tempuri.org/IService1/PesquisaPaciente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarPaciente">
+      <soap:operation soapAction="http://tempuri.org/IService1/AlterarPaciente" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

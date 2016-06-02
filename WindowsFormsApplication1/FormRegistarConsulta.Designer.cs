@@ -43,6 +43,7 @@
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button22 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
@@ -58,6 +59,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button23 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
@@ -73,6 +75,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button24 = new System.Windows.Forms.Button();
             this.listView4 = new System.Windows.Forms.ListView();
             this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -115,9 +118,6 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.btnPdf = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -275,6 +275,16 @@
             this.tabPage2.Text = "Registar Sintomas";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // button22
+            // 
+            this.button22.Location = new System.Drawing.Point(884, 13);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(114, 23);
+            this.button22.TabIndex = 1;
+            this.button22.Text = "Histórico consultas";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
+            // 
             // button10
             // 
             this.button10.Location = new System.Drawing.Point(1041, 353);
@@ -417,6 +427,16 @@
             this.tabPage3.Text = "Registar Diagnóstico";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // button23
+            // 
+            this.button23.Location = new System.Drawing.Point(884, 13);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(114, 23);
+            this.button23.TabIndex = 19;
+            this.button23.Text = "Histórico consultas";
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
+            // 
             // button13
             // 
             this.button13.Location = new System.Drawing.Point(1041, 353);
@@ -557,6 +577,16 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Registar Medicação";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // button24
+            // 
+            this.button24.Location = new System.Drawing.Point(884, 13);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(114, 23);
+            this.button24.TabIndex = 20;
+            this.button24.Text = "Histórico consultas";
+            this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
             // listView4
             // 
@@ -806,6 +836,7 @@
             // columnHeader29
             // 
             this.columnHeader29.Text = "Descrição";
+            this.columnHeader29.Width = 323;
             // 
             // groupBox5
             // 
@@ -831,6 +862,7 @@
             // columnHeader28
             // 
             this.columnHeader28.Text = "Descrição";
+            this.columnHeader28.Width = 323;
             // 
             // groupBox4
             // 
@@ -856,6 +888,7 @@
             // columnHeader27
             // 
             this.columnHeader27.Text = "Descrição";
+            this.columnHeader27.Width = 322;
             // 
             // groupBox3
             // 
@@ -910,36 +943,6 @@
             this.btnPrint.TabIndex = 0;
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = true;
-            // 
-            // button22
-            // 
-            this.button22.Location = new System.Drawing.Point(884, 13);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(114, 23);
-            this.button22.TabIndex = 1;
-            this.button22.Text = "Histórico consultas";
-            this.button22.UseVisualStyleBackColor = true;
-            this.button22.Click += new System.EventHandler(this.button22_Click);
-            // 
-            // button23
-            // 
-            this.button23.Location = new System.Drawing.Point(884, 13);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(114, 23);
-            this.button23.TabIndex = 19;
-            this.button23.Text = "Histórico consultas";
-            this.button23.UseVisualStyleBackColor = true;
-            this.button23.Click += new System.EventHandler(this.button23_Click);
-            // 
-            // button24
-            // 
-            this.button24.Location = new System.Drawing.Point(884, 13);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(114, 23);
-            this.button24.TabIndex = 20;
-            this.button24.Text = "Histórico consultas";
-            this.button24.UseVisualStyleBackColor = true;
-            this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
             // FormRegistarConsulta
             // 

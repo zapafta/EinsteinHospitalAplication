@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -12,14 +13,21 @@ using WindowsFormsApplication1.ServiceReference;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Form1 : Form
+    public partial class FormCriarPaciente : Form
     {
         Service1Client webService;
         string sexo = "teste";
+        UtilizadorWeb utilizador;
 
-        public Form1(UtilizadorWeb user)
+        public FormCriarPaciente(UtilizadorWeb user)
         {
             InitializeComponent();
+            utilizador = user;
+        }
+
+        public FormCriarPaciente()
+        {
+            // TODO: Complete member initialization
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -44,40 +52,72 @@ namespace WindowsFormsApplication1
            if (String.IsNullOrEmpty(txtSNS.Text) && String.IsNullOrEmpty(txtPrimeiroNome.Text) && String.IsNullOrEmpty(txtApelido.Text) && String.IsNullOrEmpty(txtCodigoPostal.Text) && String.IsNullOrEmpty(txtEmail.Text) && String.IsNullOrEmpty(txtTelefone.Text))
             {
                 MessageBox.Show("Dados em falta.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+             
+             
 
+               
 
 
              
             }else{
 
-                webService.RegistarUtente(int.Parse(txtSNS.Text), txtPrimeiroNome.Text, txtApelido.Text, dateTimePicker1.Value, txtMorada.Text, txtCodigoPostal.Text, txtEmail.Text, sexo, txtTelefone.Text, txtPeso.Text, txtAltura.Text, txtGlicemia.Text, txtTensao.Text, txtColestrol.Text, txtSaturacao.Text, txtBatimento.Text);
-                MessageBox.Show("Paciente registado");
-                ///This is a test.
-               
-              
-                            //if(String.IsNullOrEmpty(txtPeso.Text)||String.IsNullOrEmpty(txtAltura.Text)||String.IsNullOrEmpty(txtGlicemia.Text)||String.IsNullOrEmpty(txtColestrol.Text)||String.IsNullOrEmpty(txtSaturacao.Text)||String.IsNullOrEmpty(txtBatimento.Text))
-                            //{
-                            //    DialogResult result = MessageBox.Show("Deseja criar um paciente sem dados clínicos inseridos?", "Confirmation", MessageBoxButtons.YesNo);
-                            //    if (result == DialogResult.Yes)
-                            //    {
-                            //        MessageBox.Show("Paciente registado");
-                            //        webService.RegistarUtente(int.Parse(txtSNS.Text), txtPrimeiroNome.Text, txtApelido.Text, dateTimePicker1.Value, txtMorada.Text, txtCodigoPostal.Text, txtEmail.Text, sexo, txtTelefone.Text, txtPeso.Text, txtAltura.Text, txtGlicemia.Text, txtTensao.Text, txtColestrol.Text, txtSaturacao.Text, txtBatimento.Text);
-                            //    }
-                            //    else if (result == DialogResult.No)
-                            //    {
+                string email = txtEmail.Text;
+                Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+                Match match = regex.Match(email);
+                if (match.Success)
+                {
+                    if(radBFem.Checked = true)
+                    {
+                        sexo = "feminino";
 
-                            //                    if (String.IsNullOrEmpty(txtSNS.Text) || String.IsNullOrEmpty(txtPrimeiroNome.Text) || String.IsNullOrEmpty(txtApelido.Text) || String.IsNullOrEmpty(txtCodigoPostal.Text) || String.IsNullOrEmpty(txtEmail.Text) || String.IsNullOrEmpty(txtTelefone.Text))
-                            //                    {
-                            //                        MessageBox.Show("Dados em falta.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else if (rbMasc.Checked = true)
+                    {
+                        sexo = "masculino";
 
-                            //                    }
+                    } else
 
+                 
+                    {
+                        sexo = "outro";
 
-                            //    }
+                    }
 
 
-                            //}
-                ///</remarks>
+
+
+
+                    webService.RegistarUtente(int.Parse(txtSNS.Text), txtPrimeiroNome.Text, txtApelido.Text, dateTimePicker1.Value, txtMorada.Text, txtCodigoPostal.Text, txtEmail.Text, sexo, txtTelefone.Text, txtPeso.Text, txtAltura.Text, txtGlicemia.Text, txtTensao.Text, txtColestrol.Text, txtSaturacao.Text, txtBatimento.Text);
+                    MessageBox.Show("Paciente registado");
+                    ///This is a test.
+
+
+                    //if(String.IsNullOrEmpty(txtPeso.Text)||String.IsNullOrEmpty(txtAltura.Text)||String.IsNullOrEmpty(txtGlicemia.Text)||String.IsNullOrEmpty(txtColestrol.Text)||String.IsNullOrEmpty(txtSaturacao.Text)||String.IsNullOrEmpty(txtBatimento.Text))
+                    //{
+                    //    DialogResult result = MessageBox.Show("Deseja criar um paciente sem dados clínicos inseridos?", "Confirmation", MessageBoxButtons.YesNo);
+                    //    if (result == DialogResult.Yes)
+                    //    {
+                    //        MessageBox.Show("Paciente registado");
+                    //        webService.RegistarUtente(int.Parse(txtSNS.Text), txtPrimeiroNome.Text, txtApelido.Text, dateTimePicker1.Value, txtMorada.Text, txtCodigoPostal.Text, txtEmail.Text, sexo, txtTelefone.Text, txtPeso.Text, txtAltura.Text, txtGlicemia.Text, txtTensao.Text, txtColestrol.Text, txtSaturacao.Text, txtBatimento.Text);
+                    //    }
+                    //    else if (result == DialogResult.No)
+                    //    {
+
+                    //                    if (String.IsNullOrEmpty(txtSNS.Text) || String.IsNullOrEmpty(txtPrimeiroNome.Text) || String.IsNullOrEmpty(txtApelido.Text) || String.IsNullOrEmpty(txtCodigoPostal.Text) || String.IsNullOrEmpty(txtEmail.Text) || String.IsNullOrEmpty(txtTelefone.Text))
+                    //                    {
+                    //                        MessageBox.Show("Dados em falta.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    //                    }
+
+
+                    //    }
+
+
+                    //}
+                    ///</remarks>
+                }
+                else
+                    MessageBox.Show("Email inválido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
 
@@ -118,7 +158,7 @@ namespace WindowsFormsApplication1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            CriarExame a = new CriarExame();
+            CriarExame a = new CriarExame(utilizador);
             a.Show();
         }
 

@@ -94,4 +94,24 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="MedicacaoWeb" nillable="true" type="tns:MedicacaoWeb" />
+  <xs:complexType name="ArrayOfConsultaWeb">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConsultaWeb" nillable="true" type="tns:ConsultaWeb" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConsultaWeb" nillable="true" type="tns:ArrayOfConsultaWeb" />
+  <xs:complexType name="ConsultaWeb">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Data" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Medico" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsultaWeb" nillable="true" type="tns:ConsultaWeb" />
+  <xs:complexType name="ArrayOfUtenteWeb">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UtenteWeb" nillable="true" type="tns:UtenteWeb" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUtenteWeb" nillable="true" type="tns:ArrayOfUtenteWeb" />
 </xs:schema>

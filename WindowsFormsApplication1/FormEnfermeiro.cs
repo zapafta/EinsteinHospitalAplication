@@ -10,17 +10,23 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class FormPrincipal : Form
+    public partial class FormEnfermeiro : Form
     {
-        public FormPrincipal()
+        public FormEnfermeiro()
         {
             InitializeComponent();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormCriarPaciente frm2 = new FormCriarPaciente(null);
-            frm2.ShowDialog();
+            PesquisaPaciente frm = new PesquisaPaciente();
+            frm.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormHistoricoMedicacoes frm = new FormHistoricoMedicacoes();
+            frm.Show();
         }
     }
 }

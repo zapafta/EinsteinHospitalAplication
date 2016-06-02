@@ -18,11 +18,11 @@ namespace WindowsFormsApplication1
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             OpenDetailFormOnClose = false;
-            Application.Run(new FormPrincipal());
+            Application.Run(new FormLogin());
 
             if (OpenDetailFormOnClose)
             {
-                Application.Run(new FormPrincipal());
+                Application.Run(new FormLogin());
             }
         }
     }
