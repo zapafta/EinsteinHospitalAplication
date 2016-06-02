@@ -799,7 +799,6 @@ namespace WebService
             else
             {
                 utentesBD = context.UtenteSet.Where(i => i.primeiroNome.Contains(PrimeiroNome) && i.apelido.Contains(apelido)).ToList();
-<<<<<<< HEAD
 
             }
             List<UtenteWeb> utentesWeb = new List<UtenteWeb>();
@@ -827,38 +826,8 @@ namespace WebService
                     uWeb.SnsId = u.snsId;
                     utentesWeb.Add(uWeb);
 
-
-=======
-
             }
-            List<UtenteWeb> utentesWeb = new List<UtenteWeb>();
-            if (utentesBD.Count != 0)
-            {
-                foreach (Utente u in utentesBD)
-                {
-                    UtenteWeb uWeb = new UtenteWeb();
-                    uWeb.ID = u.Id;
-                    uWeb.PrimeiroNome = u.primeiroNome;
-                    uWeb.Apelido = u.apelido;
-                    uWeb.DataNascimento = u.dataNascimento;
-                    uWeb.Morada = u.morada;
-                    uWeb.CodigoPostal = u.codigoPostal;
-                    uWeb.Email = u.email;
-                    uWeb.Sexo = u.sexo;
-                    uWeb.Contacto = u.contacto;
-                    uWeb.Peso = u.peso;
-                    uWeb.Altura = u.altura;
-                    uWeb.Glicemia = u.glicemia;
-                    uWeb.Tensao = u.tensao;
-                    uWeb.Colestrol = u.colestrol;
-                    uWeb.Saturacao = u.saturacao;
-                    uWeb.BatimentoCardiaco = u.batimentoCardiaco;
-                    uWeb.SnsId = u.snsId;
-                    utentesWeb.Add(uWeb);
-
-
->>>>>>> origin/FinalRenato
-                }
+           
                 return utentesWeb;
             }
             else
