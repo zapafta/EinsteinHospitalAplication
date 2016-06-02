@@ -115,6 +115,18 @@
   <wsdl:message name="IService1_GetAllUtente_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllUtenteResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_PesquisaPaciente_InputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisaPaciente" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PesquisaPaciente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisaPacienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AlterarPaciente_InputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarPaciente" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AlterarPaciente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarPacienteResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -187,6 +199,14 @@
     <wsdl:operation name="GetAllUtente">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllUtente" message="tns:IService1_GetAllUtente_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllUtenteResponse" message="tns:IService1_GetAllUtente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PesquisaPaciente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PesquisaPaciente" message="tns:IService1_PesquisaPaciente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PesquisaPacienteResponse" message="tns:IService1_PesquisaPaciente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarPaciente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AlterarPaciente" message="tns:IService1_AlterarPaciente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AlterarPacienteResponse" message="tns:IService1_AlterarPaciente_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -346,6 +366,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllUtente">
       <soap:operation soapAction="http://tempuri.org/IService1/GetAllUtente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PesquisaPaciente">
+      <soap:operation soapAction="http://tempuri.org/IService1/PesquisaPaciente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarPaciente">
+      <soap:operation soapAction="http://tempuri.org/IService1/AlterarPaciente" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

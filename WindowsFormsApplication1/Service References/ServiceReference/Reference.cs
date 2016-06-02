@@ -970,6 +970,18 @@ namespace WindowsFormsApplication1.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllUtente", ReplyAction="http://tempuri.org/IService1/GetAllUtenteResponse")]
         System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.UtenteWeb[]> GetAllUtenteAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PesquisaPaciente", ReplyAction="http://tempuri.org/IService1/PesquisaPacienteResponse")]
+        WindowsFormsApplication1.ServiceReference.UtenteWeb[] PesquisaPaciente(int sns, string PrimeiroNome, string apelido);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PesquisaPaciente", ReplyAction="http://tempuri.org/IService1/PesquisaPacienteResponse")]
+        System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.UtenteWeb[]> PesquisaPacienteAsync(int sns, string PrimeiroNome, string apelido);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AlterarPaciente", ReplyAction="http://tempuri.org/IService1/AlterarPacienteResponse")]
+        bool AlterarPaciente(int sns, string PrimeiroNome, string apelido, System.DateTime dataNascimento, string morada, string codigoPostal, string email, string sexo, string contacto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AlterarPaciente", ReplyAction="http://tempuri.org/IService1/AlterarPacienteResponse")]
+        System.Threading.Tasks.Task<bool> AlterarPacienteAsync(int sns, string PrimeiroNome, string apelido, System.DateTime dataNascimento, string morada, string codigoPostal, string email, string sexo, string contacto);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1173,6 +1185,22 @@ namespace WindowsFormsApplication1.ServiceReference {
         
         public System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.UtenteWeb[]> GetAllUtenteAsync() {
             return base.Channel.GetAllUtenteAsync();
+        }
+        
+        public WindowsFormsApplication1.ServiceReference.UtenteWeb[] PesquisaPaciente(int sns, string PrimeiroNome, string apelido) {
+            return base.Channel.PesquisaPaciente(sns, PrimeiroNome, apelido);
+        }
+        
+        public System.Threading.Tasks.Task<WindowsFormsApplication1.ServiceReference.UtenteWeb[]> PesquisaPacienteAsync(int sns, string PrimeiroNome, string apelido) {
+            return base.Channel.PesquisaPacienteAsync(sns, PrimeiroNome, apelido);
+        }
+        
+        public bool AlterarPaciente(int sns, string PrimeiroNome, string apelido, System.DateTime dataNascimento, string morada, string codigoPostal, string email, string sexo, string contacto) {
+            return base.Channel.AlterarPaciente(sns, PrimeiroNome, apelido, dataNascimento, morada, codigoPostal, email, sexo, contacto);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AlterarPacienteAsync(int sns, string PrimeiroNome, string apelido, System.DateTime dataNascimento, string morada, string codigoPostal, string email, string sexo, string contacto) {
+            return base.Channel.AlterarPacienteAsync(sns, PrimeiroNome, apelido, dataNascimento, morada, codigoPostal, email, sexo, contacto);
         }
     }
 }

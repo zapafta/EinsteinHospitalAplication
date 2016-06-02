@@ -67,6 +67,14 @@ namespace WebService
         [OperationContract]
         List<UtenteWeb> GetAllUtente();
 
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////// PARTE Frederic//////////////////////////////////////////////////////////////////////
+        [OperationContract]
+        List<UtenteWeb> PesquisaPaciente(int sns, string PrimeiroNome, string apelido);
+        [OperationContract]
+        bool AlterarPaciente(int sns, string PrimeiroNome, string apelido, DateTime dataNascimento, string morada, string codigoPostal, string email, string sexo, string contacto);
+   
+
     }
 
 

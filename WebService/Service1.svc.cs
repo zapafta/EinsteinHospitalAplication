@@ -699,7 +699,77 @@ namespace WebService
 
        
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+
+        public List<UtenteWeb> PesquisaPaciente(int sns, string PrimeiroNome, string apelido)
+        {
+            EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
+            List<Utente> utentesBD = new List<Utente>();
+            if (sns != 0)
+            {
+                utentesBD = context.UtenteSet.Where(i => i.snsId == sns && i.primeiroNome.Contains("ze") && i.apelido.Contains("gu")).ToList();
+            }
+            else
+            {
+                utentesBD = context.UtenteSet.Where(i => i.primeiroNome.Contains(PrimeiroNome) && i.apelido.Contains(apelido)).ToList();
+
+            }
+            List<UtenteWeb> utentesWeb = new List<UtenteWeb>();
+            if (utentesBD.Count != 0)
+            {
+                foreach (Utente u in utentesBD)
+                {
+                    UtenteWeb uWeb = new UtenteWeb();
+                    uWeb.ID = u.Id;
+                    uWeb.PrimeiroNome = u.primeiroNome;
+                    uWeb.Apelido = u.apelido;
+                    uWeb.DataNascimento = u.dataNascimento;
+                    uWeb.Morada = u.morada;
+                    uWeb.CodigoPostal = u.codigoPostal;
+                    uWeb.Email = u.email;
+                    uWeb.Sexo = u.sexo;
+                    uWeb.Contacto = u.contacto;
+                    uWeb.Peso = u.peso;
+                    uWeb.Altura = u.altura;
+                    uWeb.Glicemia = u.glicemia;
+                    uWeb.Tensao = u.tensao;
+                    uWeb.Colestrol = u.colestrol;
+                    uWeb.Saturacao = u.saturacao;
+                    uWeb.BatimentoCardiaco = u.batimentoCardiaco;
+                    uWeb.SnsId = u.snsId;
+                    utentesWeb.Add(uWeb);
+
+
+                }
+                return utentesWeb;
+            }
+            else
+            {
+                return utentesWeb;
+            }
+        }
+        public bool AlterarPaciente(int sns, string PrimeiroNome, string apelido, DateTime dataNascimento, string morada, string codigoPostal, string email, string sexo, string contacto)
+        {
+            EinsteinHospitalBDEntities context = new EinsteinHospitalBDEntities();
+            Utente utenteBD = context.UtenteSet.Where(i => i.snsId == sns).FirstOrDefault();
+            if (utenteBD != null)
+            {
+
+                utenteBD.primeiroNome = PrimeiroNome;
+                utenteBD.apelido = apelido;
+                utenteBD.dataNascimento = dataNascimento;
+                utenteBD.morada = morada;
+                utenteBD.codigoPostal = codigoPostal;
+                utenteBD.email = email;
+                utenteBD.sexo = sexo;
+                utenteBD.contacto = contacto;
+                context.SaveChanges();
+                return true;
+            }
+            return false;
+        }
     }
 
 }
